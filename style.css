@@ -55,3 +55,12 @@
 }
 
 /* RODAPÉ */
+
+footer {
+    background-color: var(--roxo-escuro);
+    color: rgb(236, 230, 227);
+}
+
+.creditos {
+    color: var(--amarelo-texto);
+}

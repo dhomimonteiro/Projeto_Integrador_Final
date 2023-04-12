@@ -19,6 +19,9 @@
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
     <?php include_once('cabecalho.php'); ?>
 
+    <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
+    <?php include_once('rodape.php');?>
+
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
 </body>
