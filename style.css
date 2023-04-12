@@ -1,0 +1,57 @@
+:root {
+    --roxo-escuro: #261e2f;
+    --amarelo-texto: #ffc600;
+}
+/* CABEÇALHO */
+.navbar {
+    background-color: var(--roxo-escuro);
+}
+
+.navbar img {
+    height: 100px;
+}
+
+.navbar a {
+    color: var(--amarelo-texto);
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: var(--amarelo-texto);
+    font-size: 22px;
+    text-shadow:
+        0 0 21px var(--amarelo-texto),
+        0 0 42px var(--amarelo-texto),
+        0 0 82px var(--amarelo-texto),
+        0 0 92px var(--amarelo-texto),
+        0 0 102px var(--amarelo-texto),
+        0 0 151px var(--amarelo-texto);
+    transition: 0.2s;
+}
+
+.navbar .ola-usuario {
+    margin-top: 7px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+}
+
+.navbar .ola {
+    color: #e6e6e6;
+    line-height: 0;
+}
+
+.usuario {
+    color: var(--amarelo-texto);
+    font-size: 25px;
+    line-height: 5px;
+    text-shadow:
+        0 0 0px var(--amarelo-texto),
+        0 0 6px var(--amarelo-texto);
+}
+
+.navbar .menu-hamburg {
+    color: white;
+}
+
+/* RODAPÉ */
