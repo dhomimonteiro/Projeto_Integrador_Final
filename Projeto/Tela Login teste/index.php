@@ -39,7 +39,24 @@ if($_POST){
             }
             else
             {
-                $mensagem = '<div class="col-sm-12 p-2"><p>Usuário ou senha inválido</p></div>';
+                $sql = $conn->query("
+                select * from Freelancer where login_freelancer = '$login_conectar' and senha_freelancer = '$senha_conectar'
+                ");
+                if($sql->rowCount() == 1)
+                {
+                session_start();
+                foreach($sql as $linha)
+                        {
+                            $_SESSION['idUsuario'] = $linha[0];
+                            $_SESSION['nomeUsuario'] = $linha[1];
+                            $_SESSION['loginUsuario'] = $linha[2];
+                        }
+                        header('Location:/Projeto_Integrador_Final/home.php');
+                }
+                else
+                {
+                    $mensagem = '<div class="col-sm-12 p-2"><p>Usuário ou senha inválido</p></div>';
+                } 
             }        
         }
 
