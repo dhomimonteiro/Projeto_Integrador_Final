@@ -1,3 +1,4 @@
+<?php include_once('autenticar.php'); ?>
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="home.php">
@@ -34,7 +35,7 @@
                     <div class="row d-flex flex-column">
                         <p class="ola">Olá,</p>
                         <a href="" style="text-decoration: none;">
-                            <p class="usuario">USUÁRIO</p>
+                            <p class="usuario"><?= $nomeUsuario ?></p>
                         </a>
                     </div>
                 </li>

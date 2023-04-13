@@ -33,7 +33,7 @@ if($_POST){
                 {
                     $_SESSION['idUsuario'] = $linha[0];
                     $_SESSION['nomeUsuario'] = $linha[1];
-                    $_SESSION['loginUsuario'] = $linha[2];
+                    $_SESSION['loginUsuario'] = $linha[11];
                 }
                 header('Location:/Projeto_Integrador_Final/home.php');
             }
@@ -49,7 +49,7 @@ if($_POST){
                         {
                             $_SESSION['idUsuario'] = $linha[0];
                             $_SESSION['nomeUsuario'] = $linha[1];
-                            $_SESSION['loginUsuario'] = $linha[2];
+                            $_SESSION['loginUsuario'] = $linha[17];
                         }
                         header('Location:/Projeto_Integrador_Final/home.php');
                 }
@@ -126,7 +126,7 @@ if($_POST){
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="button form-control">Click Here</button>
+                            <button class="button form-control">Cadastrar como colaborador</button>
                         </div>
                     </div>
                 </form>
