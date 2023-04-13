@@ -67,8 +67,8 @@ create table Freelancer
 	cep_freelancer char(9) not null ,
 	dtNascimento_freelancer date not null ,
 	banco_freelancer varchar(50) not null,
-	agencia_freelancer varchar(50) not null,
-	contaCorrente_freelancer varchar(255) not null ,
+	agencia_freelancer varchar(5) not null,
+	contaCorrente_freelancer varchar(20) not null ,
 	login_freelancer varchar(50) not null unique,
 	senha_freelancer varchar(50) not null ,
 	status_freelancer varchar(20) not null ,
@@ -77,14 +77,18 @@ create table Freelancer
 
 insert into Freelancer
 	(nome_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer,
-	numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, contaBancaria_freelancer,
-	login_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
+	numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer,
+	agencia_freelancer, contaCorrente_freelancer,login_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
 values
-	('André Moreira', '256.656.990-86', '75.123.580-98', '(11)96074-9683', '(11)93874-9116', '', 'Rua Pajé', 740, 'Cabo Norte', 'Guarulhos', 'SP', '61153-818', '01-05-1980', '256.656.990-86', 'AndreMoreira@gmail.com', '5591', 'Ativo', ''),
-	('Julia Alves', '997.853.619-84', '16.720.887-15', '(11)97229-9059', '', '', 'Rua Antônio', 979, 'Piratininga', 'Guararema', 'SP', '57897-495', '15-05-1979', '997.853.619-84', 'JuliaAlves@gmail.com', '2293', 'Ativo', ''),
-	('Sabrina Sato', '887.632.485-96', '89.798.369-27', '(11)90614-9332', '(11)93840-9673', '', 'Rua Conde', 392, 'São Domingos', 'Domingos', 'SP', '31415-176', '13-11-1972', '887.632.485-96', 'SabrinaSato@outlook.com', '2236', 'Ativo', ''),
-	('José Maria', '762.698.648-24', '82.656.991-71', '(11)98646-9225', '(11)93252-9921', '', 'Av Bonde do Forró', 760, 'São João', 'Lindomar', 'SP', '13189-579', '28-08-1961', '762.698.648-24', 'JoseMaria@outlook.com', '4707', 'Ativo', ''),
-	('Moisés Carvalho', '156.200.724-23', '57.455.985-49', '(11)96437-9300', '', '', 'Rua Casemiro', 184, 'Piracanjuba', 'São Paulo', 'SP', '87949-604', '12-05-1956', '156.200.724-23', 'MoisesCarvalho@gmail.com', '9296', 'Ativo', '');
+	('André Moreira', '256.656.990-86', '75.123.580-98', '(11)96074-9683', '(11)93874-9116', '', 'Rua Pajé', 740, 'Cabo Norte', 'Guarulhos', 'SP', '61153-818', '1980-05-01', 'Banco do Brasil', '59285', '194029842','AndreMoreira@gmail.com', '5591', 'Ativo', ''),
+	('Julia Alves', '997.853.619-84', '16.720.887-15', '(11)97229-9059', '', '', 'Rua Antônio', 979, 'Piratininga', 'Guararema', 'SP', '57897-495', '1979-10-15', 'Banco do Brasil','82749', '194029841', 'JuliaAlves@gmail.com', '2293', 'Ativo', ''),
+	('Sabrina Sato', '887.632.485-96', '89.798.369-27', '(11)90614-9332', '(11)93840-9673', '', 'Rua Conde', 392, 'São Domingos', 'Domingos', 'SP', '31415-176', '1972-11-13', 'Banco do Brasil', '74840', '194029840','SabrinaSato@outlook.com', '2236', 'Ativo', ''),
+	('José Maria', '762.698.648-24', '82.656.991-71', '(11)98646-9225', '(11)93252-9921', '', 'Av Bonde do Forró', 760, 'São João', 'Lindomar', 'SP', '13189-579', '1961-08-20', 'Banco do Brasil', '80229', '194029843', 'JoseMaria@outlook.com', '4707', 'Ativo', ''),
+	('Moisés Carvalho', '156.200.724-23', '57.455.985-49', '(11)96437-9300', '', '', 'Rua Casemiro', 184, 'Piracanjuba', 'São Paulo', 'SP', '87949-604', '1956-05-15', 'Banco do Brasil', '92749', '194029844', 'MoisesCarvalho@gmail.com', '9296', 'Ativo', '');
+    
+select * from freelancer;
+
+drop table freelancer;
 
 create table TipoPagamento
 (

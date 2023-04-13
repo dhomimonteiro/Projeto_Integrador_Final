@@ -14,7 +14,7 @@
                     <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Freelancers</a>
+                    <a class="nav-link" href="tela_freelancers.php">Freelancers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contratantes</a>
