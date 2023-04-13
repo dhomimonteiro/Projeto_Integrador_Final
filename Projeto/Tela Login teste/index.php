@@ -1,6 +1,7 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="">
+
+<?php 
+
+include_once('conexao.php');
+$mensagem = '';
+if($_POST){
+
+    $login_conectar = $_POST['txtLogin'];
+    $senha_conectar = $_POST['txtSenha'];
+
+
+    $sql = $conn->query("
+    select * from Contratante where login_contratante = '$login_conectar' and senha_contratante = '$senha_conectar'
+    ");
+
+    if($sql->rowCount() == 1){
+
+        session_start();
+        foreach($sql as $linha)
+                {
+                    $_SESSION['idUsuario'] = $linha[0];
+                    $_SESSION['nomeUsuario'] = $linha[1];
+                    $_SESSION['loginUsuario'] = $linha[2];
+                }
+                header('Location:/Projeto_Integrador_Final/home.php');
+            }
+            else
+            {
+                $mensagem = '<div class="col-sm-12 p-2"><p>Usuário ou senha inválido</p></div>';
+            }        
+        }
+
+?>
     <div class="containerLogin">
         <div class="bgBranco">
             <div class="caixa entrar">
@@ -32,7 +65,7 @@
         </div>
         <div class="caixaForm">
             <div class="form formEntrar">
-                <form>
+                <form action="" method="POST">
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 class="h3Entrar">Entrar agora</h3>
@@ -40,19 +73,20 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" placeholder="Usuário">
+                            <input type="text" name="txtLogin" id="txtLogin" class="form-control" placeholder="Usuário">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="password" class="form-control" placeholder="Senha">
+                            <input type="password" name="txtSenha" id="txtSenha" class="form-control" placeholder="Senha">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="submit" class="form-control" placeholder="Login">
+                            <button class="form-control">Entrar</button>
                         </div>
                     </div>
+                    <?=$mensagem?>
                     <a href="#" class="esqueceu">Esqueci minha senha</a>
                 </form>
             </div>
