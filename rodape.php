@@ -40,15 +40,15 @@
         <!--Grid row-->
         <div class="row d-flex justify-content-center">
           <!--Grid column-->
-          <div class="col-5">
-            <p class="pt-2">
+          <div class="col-6 d-flex flex-row justify-content-end">
+            <p class="pt-2 chamadaCadastro">
               <strong>Deseja fazer parte da GetDev?</strong>
             </p>
           </div>
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-md-2 col-12">
+          <div class="col-md-6 col-sm-12 mb-sm-3 d-flex flex-row justify-content-md-start justify-content-center">
             <!-- BOTÃO CADASTRAR -->
             <button class="btn btn-warning">CADASTRE-SE</button>
           </div>
@@ -76,8 +76,8 @@
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase link">Links</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -97,8 +97,8 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase link">Links</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -118,8 +118,8 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase link">Links</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -139,8 +139,8 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase link">Links</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
@@ -168,7 +168,7 @@
   <!-- Copyright -->
   <div class="text-center p-3 creditos" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2023 Copyright:
-    <a class="text-white" href="#">GetDev</a>
+    <a class="linkEmpresa" href="#">GetDev</a>
   </div>
   <!-- Copyright -->
 </footer>
