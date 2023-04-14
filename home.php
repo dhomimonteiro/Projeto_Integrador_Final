@@ -12,6 +12,7 @@
 
     <!--LINK DO FONT AWESOME PARA ÍCONES-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -23,6 +24,18 @@
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
     <?php include_once('imagem_home.php'); ?>
 
+    <?php include_once('quem_somos_home.php');?>
+
+    <div class="container-fluid">
+        <div class="row sessaoParceiros">
+            <?php include_once('parceiros_home.php');?>
+        </div>
+        <div class="row sessaoProjetos">
+            <?php include_once('projetos_home.php');?>
+        </div>
+    </div>
+    
+
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
     <?php include_once('rodape.php'); ?>
 
@@ -30,6 +43,7 @@
 
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
+    <script src="Projeto/TelaLoginteste/script.js"></script>
 </body>
 
 </html>

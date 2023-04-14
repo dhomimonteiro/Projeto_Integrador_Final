@@ -1,3 +1,4 @@
+
 const caixaForm = document.querySelector(".caixaForm");
 const btnEntrar = document.querySelector(".btnEntrar");
 const btnCadastrar = document.querySelector(".btnCadastrar");
@@ -12,3 +13,6 @@ btnEntrar.onclick = function() {
     caixaForm.classList.remove('active');
     body.classList.remove('active');
 }
+
+
+

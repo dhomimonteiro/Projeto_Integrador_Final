@@ -1,8 +1,16 @@
+/*************************************************************************************/
+/*********************************** ROOT DE CORES ***********************************/
+/*************************************************************************************/
 :root {
     --roxo-escuro: #1e102e;
     --amarelo-texto: #ffc600;
+    --cinza-claro: #e6e6e6;
 }
-/* CABEÇALHO */
+
+/*********************************************************************************/
+/*********************************** CABEÇALHO ***********************************/
+/*********************************************************************************/
+
 .navbar {
     background-color: var(--roxo-escuro);
 }
@@ -11,12 +19,12 @@
     height: 100px;
 }
 
-.navbar a {
-    color: var(--amarelo-texto);
+.navbar .nav-link {
+    color: var(--cinza-claro);
     font-size: 20px;
 }
 
-.navbar a:hover {
+.navbar .nav-link:hover {
     color: var(--amarelo-texto);
     font-size: 22px;
     text-shadow:
@@ -37,7 +45,7 @@
 }
 
 .navbar .ola {
-    color: #e6e6e6;
+    color: var(--cinza-claro);
     line-height: 0;
 }
 
@@ -51,10 +59,45 @@
 }
 
 .navbar .menu-hamburg {
-    color: rgb(236, 230, 227);
+    color: var(--cinza-claro);
 }
 
-/* IMAGEM HOME */
+.menuUsuario {
+    display: none;
+    position: absolute;
+    top: 85px;
+    right: 5px;
+    width: 150px;
+    background-color: var(--cinza-claro);
+    border-radius: 5%;
+    color: var(--roxo-escuro);
+}
+
+.menuUsuario a {
+    color:rgb(38, 27, 53);
+}
+
+.btoMenuUsuario{
+    width:100%
+}
+
+.btoMenuUsuario:hover {
+    /* background-color: #cfccd4; */
+    cursor: pointer;  
+} 
+
+.botaoUsuario {
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/***********************************************************************************/
+/*********************************** IMAGEM HOME ***********************************/
+/***********************************************************************************/
 .fundo-img{
     background-color:rgb(38, 27, 53);
     width: 100%;
@@ -79,20 +122,61 @@
 }
 
 .p-img {
-    color: whitesmoke;
+    color: var(--cinza-claro);
 }
 
 .btnContratar:hover {
-    background-color: #e6e6e6;
-    border: 1px solid #e6e6e6;
+    background-color: var(--cinza-claro);
+    border: 1px solid var(--cinza-claro);
 }
 
+/*************************************************************************************/
+/*********************************** O QUE FAZEMOS ***********************************/
+/*************************************************************************************/
 
-/* RODAPÉ */
+.sessaoQueFazemos {
+    background-color: var(--cinza-claro);
+    color: var(--roxo-escuro);
+}
+
+.sessaoQueFazemos h1{
+    color: var(--roxo-escuro);
+}
+
+/************************************************************************************************/
+/*********************************** CONHEÇA NOSSOS PARCEIROS ***********************************/
+/************************************************************************************************/
+
+.sessaoParceiros {
+    background-color: var(--roxo-escuro);
+}
+
+.sessaoParceiros h1 {
+    color: var(--amarelo-texto);
+    text-shadow:
+    0 0 0px var(--amarelo-texto),
+    0 0 4px var(--amarelo-texto);
+}
+
+.scrollParceiros {
+    overflow-x: hidden;
+}
+
+.imagemParceiro{
+    height: 80px;
+}
+
+.imagemParceiro img {
+    height: 100%;
+}
+
+/******************************************************************************/
+/*********************************** RODAPÉ ***********************************/
+/******************************************************************************/
 
 footer {
     background-color: var(--roxo-escuro);
-    color: rgb(236, 230, 227);
+    color: var(--cinza-claro);
 }
 
 .chamadaCadastro {
@@ -108,5 +192,6 @@ footer {
 }
 
 .linkEmpresa:hover {
-    color: rgb(236, 230, 227);;
+    color: var(--cinza-claro);
 }
+

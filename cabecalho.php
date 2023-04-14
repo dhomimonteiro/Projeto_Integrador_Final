@@ -20,25 +20,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contratantes</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
+
                 <li class="nav-item ola-usuario">
                     <div class="row d-flex flex-column">
                         <p class="ola">Olá,</p>
-                        <a href="" style="text-decoration: none;">
-                            <p class="usuario"><?= $nomeUsuario ?></p>
-                        </a>
+                        <button class="botaoUsuario" id="botaoUsuario">
+                            <p class="usuario" id="usuario"><?= $nomeUsuario ?></p>
+                        </button>
+
+                        <div class="menuUsuario" id="menuUsuario">
+                            <p class="pt-3 px-0 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
+                            <p class="pt-1 px-0 btoPerfil btoMenuUsuario">Perfil</p>
+                            <p class="py-1 px-0 btoSair btoMenuUsuario">
+                                <a href="autenticar_sair.php" style="text-decoration: none;">
+                                    Sair
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </li>
+
             </ul>
 
             <!-- <form class="d-flex">
@@ -48,3 +49,12 @@
         </div>
     </div>
 </nav>
+
+<script src="js/jquery-3.6.4.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#botaoUsuario').click(function() {
+            $('#menuUsuario').toggle();
+        })
+    });
+</script>
