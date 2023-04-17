@@ -207,8 +207,8 @@ create table Funcionarios
     
 );
 
-create table oxi
-(
-id_oxi int not null auto_increment primary key
 
+create table nada
+(
+obs_nada varchar(255) null
 );
