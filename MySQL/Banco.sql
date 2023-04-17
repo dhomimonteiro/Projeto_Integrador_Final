@@ -80,7 +80,7 @@ insert into Freelancer
 	numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer,
 	agencia_freelancer, contaCorrente_freelancer,login_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
 values
-	('André Moreira', '256.656.990-86', '75.123.580-98', '(11)96074-9683', '(11)93874-9116', '', 'Rua Pajé', 740, 'Cabo Norte', 'Guarulhos', 'SP', '61153-818', '1980-05-01', 'Banco do Brasil', '59285', '194029842','AndreMoreira@gmail.com', '5591', 'Ativo', ''),
+	('André Moreira', '256.656.090-86', '75.923.580-98', '(11)96074-9683', '(11)93874-9116', '', 'Rua Pajé', 740, 'Cabo Norte', 'Guarulhos', 'SP', '61153-818', '1980-05-01', 'Banco do Brasil', '59285', '194029842','admin', '123', 'Ativo', ''),
 	('Julia Alves', '997.853.619-84', '16.720.887-15', '(11)97229-9059', '', '', 'Rua Antônio', 979, 'Piratininga', 'Guararema', 'SP', '57897-495', '1979-10-15', 'Banco do Brasil','82749', '194029841', 'JuliaAlves@gmail.com', '2293', 'Ativo', ''),
 	('Sabrina Sato', '887.632.485-96', '89.798.369-27', '(11)90614-9332', '(11)93840-9673', '', 'Rua Conde', 392, 'São Domingos', 'Domingos', 'SP', '31415-176', '1972-11-13', 'Banco do Brasil', '74840', '194029840','SabrinaSato@outlook.com', '2236', 'Ativo', ''),
 	('José Maria', '762.698.648-24', '82.656.991-71', '(11)98646-9225', '(11)93252-9921', '', 'Av Bonde do Forró', 760, 'São João', 'Lindomar', 'SP', '13189-579', '1961-08-20', 'Banco do Brasil', '80229', '194029843', 'JoseMaria@outlook.com', '4707', 'Ativo', ''),
@@ -162,6 +162,7 @@ create table Projeto
 	versao_projeto varchar(20) not null,
 	status_projeto varchar(20) not null,
 	obs_projeto varchar(300) null,
+    
 
 	constraint Fk_Id_Freelancer_Projeto foreign key(id_freelancer_projeto) references Freelancer(id_freelancer)
 );
@@ -203,4 +204,11 @@ create table Funcionarios
 	cep_funcionario char(9) not null,
 	status_Funcionario varchar(50) not null,
 	obs_Funcionario varchar(255) null
+    
+);
+
+create table oxi
+(
+id_oxi int not null auto_increment primary key
+
 );

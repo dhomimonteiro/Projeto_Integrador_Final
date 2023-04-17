@@ -18,7 +18,7 @@
                     <a class="nav-link" href="tela_freelancers.php">Freelancers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contratantes</a>
+                    <a class="nav-link" href="TelaContratante.php">Contratantes</a>
                 </li>
 
                 <li class="nav-item ola-usuario">
@@ -39,7 +39,6 @@
                         </div>
                     </div>
                 </li>
-
             </ul>
 
             <!-- <form class="d-flex">
