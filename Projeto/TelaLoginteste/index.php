@@ -104,7 +104,7 @@ if($_POST){
                         </div>
                     </div>
                     <?=$mensagem?>
-                    <a href="#" class="esqueceu">Esqueci minha senha</a>
+                    <a href="form_CadastroContratante.php" class="esqueceu">Esqueci minha senha</a>
                 </form>
             </div>
             <div class="form formInscrever">
@@ -116,7 +116,7 @@ if($_POST){
                     </div>
                     <div class="row mb-4">
                         <div class="col-sm-12">
-                            <button class=" btn-lg">Cadastrar como colaborador</button>
+                            <button class=" btn-lg" onclick="">Cadastrar como colaborador</button>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -126,7 +126,8 @@ if($_POST){
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="button form-control">Cadastrar como colaborador</button>
+                            <a href="form_CadastroContratante.php"></a>
+                            <button class="button form-control" formaction="../../../Projeto_Integrador_Final/form_CadastroContratante.php"> Cadastrar como colaborador</button>
                         </div>
                     </div>
                 </form>

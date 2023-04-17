@@ -195,3 +195,13 @@ footer {
     color: var(--cinza-claro);
 }
 
+
+.borda{
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+

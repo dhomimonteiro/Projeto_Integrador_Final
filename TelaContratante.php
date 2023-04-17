@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <?php include_once('cabecalho.php')?>
+    <?php include_once('cabecalhoLogado.php')?>
 
     <div class="container">
         <div class="row">

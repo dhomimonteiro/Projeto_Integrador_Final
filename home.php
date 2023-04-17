@@ -16,11 +16,9 @@
 </head>
 
 <body>
-
-    <?php include_once('autenticar.php'); ?>
     
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
-    <?php include_once('cabecalho.php'); ?>
+    <?php include_once('cabecalhoDeslogado.php'); ?>
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
     <?php include_once('imagem_home.php'); ?>
 
@@ -44,6 +42,8 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
     <script src="Projeto/TelaLoginteste/script.js"></script>
+
+    
 </body>
 
 </html>
