@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
+}
+#form{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,7%); 
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    width: 700px ;
+    align-items: center;
+    color: #2b343b;
+}
+.title{
+    font-size: 1.8em;
+    margin-bottom: 5%;
+}
+.input{
+    border-radius: 20px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
+.input i {
+    font-size: 1.2em;
+    padding: 5px;
+    background: -webkit-linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.input input{
+    width:80% ;
+    border: none;
+    outline: none;
+    transform: translateY(-10%);
+    color: #2b343b;
+    font-size: 11pt;
+
+}
+#btn{
+    margin-top: 5%;
+    text-align: center;
+}
+#btn button{
+    background: linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
+  
+    height: 40px;
+    border: none;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+#btn button:hover{
+    background: linear-gradient(-45deg,#9731b6,#632b74, #5e015e);
+
+}
+#btnSair{
+    text-align: center;
+    margin-top: 10px;
+}
+#btnSair button{
+    background: linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
+
+
+    height: 40px;
+    border: none;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+#btnSair button:hover{
+    background: linear-gradient(-45deg,#9731b6,#632b74, #5e015e);
+
+}
