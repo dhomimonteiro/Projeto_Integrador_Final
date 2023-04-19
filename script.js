@@ -130,22 +130,3 @@
                 }
             });
         });
-
-    // $(document).ready(function() {
-    //     $("p").alert();
-    //     $('#btnCadastrar').click(function(){
-    //         $("form").submit(function () { return false; });
-    //         var emailFilter=/^.+@.+\..{2,}$/;
-    //         var illegalChars= /[\(\)\<\>\,\;\:\\\/\"\[\]]/
-    //         if(!(emailFilter.test(sEmail))||sEmail.match(illegalChars)){
-    //             $("p").show().removeClass("ok").addClass("erro")
-    //             .text('Por favor, informe um email válido.');
-    //         }else{
-    //             $("p").show().addClass("ok")
-    //             .text('Email informado está correto!');
-    //         }
-    //     });
-    //     $('#txtLogin').focus(function(){
-    //         $("p.erro").hide();
-    //     });
-    // });	

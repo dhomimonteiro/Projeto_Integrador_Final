@@ -13,27 +13,27 @@
 </head>
 
 <body>
+    <?php include_once('Projeto/TelaLoginteste/conexao.php')?>
     <div class="container">
-
-
         <div id="form">
-            <form action="">
+            <form action="" method="POST" onsubmit="return false">
                 <div class="row">
                     <h2 class="title">Cadastrar</h2>
                 </div>
+                <div id="resultado"></div>
                 <div class="row">
                     <div class="col-sm-8">
                         <label for="Nome">Nome</label>
                         <div class="input">
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" id="txtNome" class="txtNome" placeholder="Insira o nome da empresa">
+                            <input type="text" id="txtNome" name="txtNome" placeholder="Insira o nome da empresa">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <label for="CNPJ">CNPJ</label>
                         <div class="input">
-                        <i class="fa-solid fa-id-badge"></i>
-                            <input type="text" id="txtCNPJ" class="txtCNPJ" placeholder="Insira o CNPJ">
+                            <i class="fa-solid fa-id-badge"></i>
+                            <input type="text" id="txtCNPJ" name="txtCNPJ" placeholder="Insira o CNPJ">
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <label for="Login">Login</label>
                     <div class="input">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="text" id="txtLogin" class="txtLogin" placeholder="Insira o Login">
+                        <input type="text" id="txtLogin" name="txtLogin" placeholder="Insira o Login">
                     </div>
                 </div>
                 <div class="row">
@@ -49,30 +49,36 @@
                         <label for="Senha">Senha</label>
                         <div class="input">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="txtSenha" class="txtSenha " placeholder="Insira a senha">
+                            <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira a senha">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label for="ConfirmarSenha">Confirmar Senha</label>
                         <div class="input">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="txtConfirmarSenha" class="txtConfirmarSenha" placeholder="Conforme sua senha">
+                            <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Conforme sua senha">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-6">
                         <label for="Logradouro">Logradouro</label>
                         <div class="input">
-                        <i class="fa-solid fa-street-view"></i>
-                            <input type="text" id="txtLogradouro" class="txtLogradouro " placeholder="Insira o logradouro">
+                            <i class="fa-solid fa-street-view"></i>
+                            <input type="text" id="txtLogradouro" name="txtLogradouro" placeholder="Insira o logradouro">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <label for="Numero">Numero</label>
                         <div class="input">
-                        <i class="fa-sharp fa-solid fa-location-crosshairs"></i>
-                            <input type="text" id="txtNumero" class="txtNumero" placeholder="Insira o numero">
+                            <i class="fa-sharp fa-solid fa-location-crosshairs"></i>
+                            <input type="text" id="txtNumero" name="txtNumero" placeholder="Insira o numero">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="Numero">UF</label>
+                        <div class="input">
+                            <input type="text" id="txtUF" name="txtUF" placeholder="UF">
                         </div>
                     </div>
                 </div>
@@ -80,22 +86,22 @@
                     <div class="col-sm-4">
                         <label for="Cidade">Cidade</label>
                         <div class="input">
-                        <i class="fa-sharp fa-solid fa-building"></i>
-                            <input type="text" id="txtCidade" class="txtCidade" placeholder="Insira a Cidade">
+                            <i class="fa-sharp fa-solid fa-building"></i>
+                            <input type="text" id="txtCidade" name="txtCidade" placeholder="Insira a Cidade">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <label for="Bairro">Bairro</label>
                         <div class="input">
-                        <i class="fa-solid fa-location-dot"></i>
-                            <input type="text" id="txtBairro" class="txtBairro" placeholder="Insira o bairro">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="txtBairro" name="txtBairro" placeholder="Insira o bairro">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <label for="CEP">CEP</label>
                         <div class="input">
-                        <i class="fa-solid fa-hashtag"></i>
-                            <input type="text" id="txtCEP" class="txtCEP" placeholder="Insira o CEP">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <input type="text" id="txtCEP" name="txtCEP" placeholder="Insira o CEP">
                         </div>
                     </div>
                 </div>
@@ -103,15 +109,15 @@
                     <div class="col-sm-6">
                         <label for="Telefone1">Telefone 1</label>
                         <div class="input ">
-                        <i class="fa-solid fa-phone"></i>
-                            <input type="text" id="txtTelefone1" class="txtTelefone1 " placeholder="Insira o Telefone 1">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text"  id="txtTelefone1" name="txtTelefone1" placeholder="Insira o Telefone 1">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <label for="telefone2">telefone 2</label>
                         <div class="input">
-                        <i class="fa-solid fa-phone"></i>
-                            <input type="text" id="txtTelefone2" class="txtTelefone2" placeholder="Insira o telefone 2">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" name="txtTelefone2" id="txtTelefone2" name="txtTelefone2" placeholder="Insira o telefone 2">
                         </div>
                     </div>
                 </div>
@@ -119,13 +125,13 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <div id="btn">
-                            <button type="submit" id="btnCadastrar" class="btn form-control">Cadastrar</button>
+                            <button id="btnCadastrar" class="btn form-control" onclick="CadastrarContratante()">Cadastrar</button>
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <div id="btnSair">
-                            <button type="submit" class="btn form-control" formaction="Projeto/TelaLoginteste/index.php">Sair</button>
+                            <button class="btn form-control" formaction="Projeto/TelaLoginteste/index.php">Sair</button>
                         </div>
                     </div>
                     <div class="col-sm-2"></div>
@@ -134,6 +140,7 @@
         </div>
     </div>
 
+    <script src="form_CadastroContratante.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
     <script src="script.js"></script>

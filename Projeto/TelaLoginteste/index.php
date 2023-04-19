@@ -116,7 +116,7 @@ if($_POST){
                     </div>
                     <div class="row mb-4">
                         <div class="col-sm-12">
-                            <button class=" btn-lg" onclick="">Cadastrar como colaborador</button>
+                            <button class=" btn-lg" formaction="../../../Projeto_Integrador_Final/form_CadastroFreelancer.php">Cadastrar como Freelancer</button>
                         </div>
                     </div>
                     <div class="row mt-5">

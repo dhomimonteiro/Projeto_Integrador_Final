@@ -20,8 +20,12 @@ body{
     color: #2b343b;
 }
 .title{
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 5%;
+    text-align: center;
+    color: purple;
+    border-bottom: 2px black solid;
+
 }
 .input{
     border-radius: 20px;
