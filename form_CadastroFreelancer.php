@@ -13,7 +13,7 @@
         <div class="col-lg-2 col-sm-0"></div>
         <div class="col-lg-8 col-md-12">
             <p>Itens com <span class="importante">*</span> são obrigatórios.</p>
-            <form action="" class="form-control">
+            <form action="" class="form-control"  method="post" onsubmit="return false">
                 <div class="row">
                     <div class="col-lg-12 mt-2">
                         <label for="txtNome" class="mt-2">Nome <span class="importante">*</span></label>
@@ -33,11 +33,11 @@
                 <div class="row">
                     <div class="col-sm-6 mt-2">
                         <label for="txtNome" class="mt-2">Senha <span class="importante">*</span></label>
-                        <input type="text" id="txtSenha" name="txtSenha" placeholder="Insira seu nome completo" class="form-control input">
+                        <input type="text" id="txtSenha" name="txtSenha" placeholder="Insira sua senha" class="form-control input">
                     </div>
                     <div class="col-sm-6 mt-2">
                         <label for="txtNome" class="mt-2">Confirmação de senha <span class="importante">*</span></label>
-                        <input type="text" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Insira seu nome completo" class="form-control input">
+                        <input type="text" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme a senha" class="form-control input">
                     </div>
                 </div>
                 <div class="row">
@@ -50,8 +50,8 @@
                         <input type="text" id="txtRG" name="txtRG" placeholder="Insira seu RG" class="form-control input">
                     </div>
                     <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Data de nascimento <span class="importante">*</span></label>
-                        <input type="date" id="txtNascimento" name="txtNascimento" placeholder="Insira sua data de nascimento" class="form-control input">
+                        <label for="txtNome" class="mt-2">Data de nascimento<span class="importante">*</span></label>
+                        <input type="text" id="txtNascimento" name="txtNascimento" placeholder="Insira sua data de nascimento" class="form-control input txtNascimento">
                     </div>
                 </div>
 
@@ -107,11 +107,18 @@
                     </div>
                     <div class="col-sm-4 mt-2">
                         <label for="txtNome" class="mt-2">Agência Bancária <span class="importante">*</span></label>
-                        <input type="text" id="txtUF" name="txtUF" class="form-control input">
+                        <input type="text" id="txtAgencia" name="txtAgencia" class="form-control input" maxlength="5">
                     </div>
                     <div class="col-sm-4 mt-2">
                         <label for="txtNome" class="mt-2">Conta corrente <span class="importante">*</span></label>
-                        <input type="text" id="txtUF" name="txtUF" class="form-control input">
+                        <input type="text" id="txtContaCorrente" name="txtContaCorrente" class="form-control input">
+                    </div>
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="row mt-2">
+                    <div class="col-sm-12">
+                        <button class="btn btn-success" id="btoCadastrar" name="btoCadastrar" onclick="cadastrarFreelancer()">Cadastrar</button>
                     </div>
                 </div>
 
@@ -126,6 +133,7 @@
 include_once('rodape.php')
 ?>
 
+<script src="freelancer_cadastrar.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
 <script type="text/javascript">
     function mask(o, f) {
@@ -155,6 +163,13 @@ include_once('rodape.php')
         return v;
     }
 
+    function maskNasc(v) {
+        v = v.replace(/\D/g, "");
+        v = v.replace(/(\d{2})(\d)/, "$1-$2");
+        v = v.replace(/(\d{2})(\d)/, "$1-$2");
+        return v;
+    }
+
     function maskrg(v) {
         v = v.replace(/\D/g, "");
         v = v.replace(/(\d{2})(\d)/, "$1.$2");
@@ -168,7 +183,6 @@ include_once('rodape.php')
         v = v.replace(/(\d{5})(\d)/, "$1-$2");
         return v;
     }
-
 
     function maskcnpj(v) {
         v = v.replace(/\D/g, "");
@@ -225,11 +239,18 @@ include_once('rodape.php')
 
         //CEP ---------
         idcss('txtCEP').setAttribute('maxlength', 9);
-
         idcss('txtCEP').onkeypress = function() {
             mask(this, maskcep);
         }
         //-------------
+
+        //NASCIMENTO ---------
+        idcss('txtNascimento').setAttribute('maxlength', 10);
+        idcss('txtNascimento').onkeypress = function() {
+            mask(this, maskNasc);
+        }
+        //-------------
+        
     }
 
     $(document).ready(function() {
@@ -258,7 +279,6 @@ include_once('rodape.php')
                             alert("CEP não encontrado.");
                         }
                     });
-
                 }
             }
         })
