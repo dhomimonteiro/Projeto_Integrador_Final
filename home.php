@@ -31,6 +31,9 @@
         <div class="row sessaoProjetos">
             <?php include_once('projetos_home.php');?>
         </div>
+        <div class="row sessaoLinguagens">
+            <?php include_once('linguagens_home.php');?>
+        </div>
     </div>
     
 

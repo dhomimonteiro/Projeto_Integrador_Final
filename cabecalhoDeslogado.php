@@ -20,22 +20,17 @@
                     <a class="nav-link" href="TelaContratante.php">Contratantes</a>
                 </li>
 
-                <li class="nav-item ola-usuario">
-                    <div class="row d-flex flex-column">
-                        <p class="ola">Olá,</p>
-                        <button class="botaoUsuario" id="botaoUsuario">
-                            <p class="usuario" id="usuario">Usuário</p>
-                        </button>
+                <li class="nav-item ms-4 me-3">
+                    <div class="row d-flex justify-content-center justify-content-lg-start">
+                        <div class="col-2">
+                            <a href="Projeto/TelaLoginteste/index.php">
+                                <button class="botaoCadastrar px-3" id="botaoCadastrar">
+                                    Cadastro
+                                </button>
+                            </a>
 
-                        <div class="menuUsuario" id="menuUsuario">
-                            <p class="pt-3 px-0 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
-                            <p class="pt-1 px-0 btoPerfil btoMenuUsuario">Perfil</p>
-                            <p class="py-1 px-0 btoSair btoMenuUsuario">
-                                <a href="autenticar_sair.php" style="text-decoration: none;">
-                                    Sair
-                                </a>
-                            </p>
                         </div>
+
                     </div>
                 </li>
             </ul>
@@ -47,12 +42,3 @@
         </div>
     </div>
 </nav>
-
-<script src="js/jquery-3.6.4.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#botaoUsuario').click(function() {
-            $('#menuUsuario').toggle();
-        })
-    });
-</script>
