@@ -23,3 +23,27 @@
     border-radius: 100%;
     border: black 2px solid;
 }
+
+.cardtitle{
+    color: #800080  !important;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    border: 1px #800080 solid;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.cardData{
+    color: #800080  !important;
+    text-align: center;
+    padding: 5px;
+    border: 1px #800080 solid;
+    border-radius: 20px;
+}
+
+.cardStatus{
+    color: #800080  !important;
+    text-align: center;
+    padding: 5px;
+}

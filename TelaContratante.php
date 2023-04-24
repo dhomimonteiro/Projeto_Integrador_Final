@@ -33,7 +33,30 @@
         </div>
         <div class="row mt-5">
             <div class="col-sm-4">
-                fazer o filtro
+                <div class="card">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="TituloFiltro">Linguagem</h3>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <?php
+                        include_once('Projeto/TelaLoginteste/conexao.php');
+                        try {
+                            $sql = $conn->query("select id_linguagem, nome_linguagem from Linguagem");
+
+                            while ($linha = $sql->fetch()) {
+                                echo '<div class="col-sm-3 mb-2">' .
+                                    '<input type="checkbox" id="' . $linha[0] . '" name="" value="' . $linha[0] . '"' .
+                                    '<label for="html">' . $linha[1] . '</label>' .
+                                    '</div>';
+                            }
+                        } catch (PDOException $ex) {
+                            echo $ex->getMessage();
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-8">
                 <div class="row">
@@ -42,34 +65,37 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h5 class="card-title">Pagina em HTML e CSS</h5>
+                                        <h5 class="card-title cardtitle">Pagina em HTML e CSS</h5>
                                         <hr>
                                     </div>
-                                    <div class="col-sm-4">
-                                         <p>Criação: 25/09/1908</p>
+                                    <div class="col-sm-4 ">
+                                        <p class="cardData">Criação: 25/09/1908</p>
+                                        <hr>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <img src="img/image.jpeg" class="imgCard" alt="" srcset="">
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-8 mt-5">
                                         <p class="card-text">O projeto de desenvolvimento de sistemas é um esforço
                                             coordenado para criar software customizado para atender às necessidades
                                             específicas de uma organização ou empresa. O processo de desenvolvimento
                                             de sistemas pode ser dividido em várias fases, cada uma delas com suas
                                             próprias tarefas e objetivos específicos.</p>
+                                        
                                     </div>
                                 </div>
                                 <div class="row ">
-                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-5"></div>
+                                    <div class="col-sm-3">Linguagem: CSS</div>
                                     <div class="col-sm-4">
-                                            <a href="" class="btn btn-primary">Mandar Proposta</a>
+                                        <a href="" class="btn btn-primary">Mandar Proposta</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php include_once('TelaContratantePesquisarProjeto.php')?>
+                        <?php include_once('TelaContratantePesquisarProjeto.php') ?>
                     </div>
                 </div>
             </div>
