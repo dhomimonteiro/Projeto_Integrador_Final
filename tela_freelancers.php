@@ -163,11 +163,20 @@
                     panel.style.display = "block";
                 }
             });
-        }
+        };
 
-        $(".filtro").on('change',function(){
-            var value = $(this).val();
-            
+        var value = [];
+        if ($('.filtro').click(function(){
+            if ($(this).is(':checked')) {
+                value.push($(this).val());
+               /*  alert(value); */
+            }
+            if ($(this).is(':checked') == false) {
+                value.pop($(this).val());
+               /*  alert(value); */
+                
+            }
+
             $.ajax({
                 url: "tela_freelancer_fetch.php",
                 type:"POST",
@@ -182,7 +191,11 @@
                 $('#resultado').empty().html('Error' + errorMessage);
             }
             })
-        })
+        }));
+            
+            
+           
+        
     </script>
 </body>
 

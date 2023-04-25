@@ -1,12 +1,19 @@
 <?php
 include_once('Projeto/TelaLoginteste/conexao.php');
 
-if (isset($_POST["request"])) {
-    $request = $_POST["request"];
 
-    $query = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
-    freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
-    INNER JOIN Linguagem on freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem where linguagem.id_linguagem = $request;"); 
+if (isset($_POST["request"])) {
+    $request = " freelancerlinguagem.id_linguagem_freelancerLinguagem = ".$_POST["request"];
+    
+    $request = str_replace(","," or freelancerlinguagem.id_linguagem_freelancerLinguagem = ", $request);
+
+    $joaquim = "SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
+    freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem, freelancer.nome_freelancer from freelancerlinguagem
+    INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem
+    INNER JOIN Freelancer on freelancerlinguagem.id_freelancer_freelancerLinguagem = freelancer.id_freelancer
+    where $request";
+
+    $query = $conn->query($joaquim); 
     
     while($row1 = $query->fetch()){
         echo '                             
@@ -14,7 +21,7 @@ if (isset($_POST["request"])) {
     <div class="card-body">
         <div class="row">
             <div class="col-sm-9">
-                <h5 class="card-title">' . $nome . '</h5>
+                <h5 class="card-title">' . $row1[4] . '</h5>
                 <hr>
                 <div class="row">
 
@@ -38,7 +45,7 @@ if (isset($_POST["request"])) {
     try {
         $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
         freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
-        INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem where freelancerlinguagem.id_freelancer_freelancerLinguagem = $row[0];");
+        INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem where freelancerlinguagem.id_freelancer_freelancerLinguagem = $row1[1];");
     } catch (PDOException $ex) {
         echo $ex->getMessage();
     }
