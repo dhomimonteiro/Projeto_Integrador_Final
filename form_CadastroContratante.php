@@ -13,10 +13,11 @@
 </head>
 
 <body>
-    <?php include_once('Projeto/TelaLoginteste/conexao.php')?>
+    <?php include_once('Projeto/TelaLoginteste/conexao.php') ?>
     <div class="container">
         <div id="form">
-            <form action="" method="POST" onsubmit="return false">
+        <!-- <form action="" method="POST" enctype="multipart/form-data"> -->
+        <form action="" method="POST" onsubmit="return false" enctype="multipart/form-data">
                 <div class="row">
                     <h2 class="title">Cadastrar</h2>
                 </div>
@@ -38,11 +39,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label for="Login">Login</label>
-                    <div class="input">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="text" id="txtLogin" name="txtLogin" placeholder="Insira o Login">
+                    <div class="col-sm-6">
+                        <label for="Login">Login</label>
+                        <div class="input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="text" id="txtLogin" name="txtLogin" placeholder="Insira o Login">
+                        </div>
                     </div>
+                    <div class="col-sm-6">
+                        <label for="txtImg">Imagem</label><br>
+                        <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" />
+                        <img id="preImg" src="" height="200" alt="Image preview...">
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -110,7 +119,7 @@
                         <label for="Telefone1">Telefone 1</label>
                         <div class="input ">
                             <i class="fa-solid fa-phone"></i>
-                            <input type="text"  id="txtTelefone1" name="txtTelefone1" placeholder="Insira o Telefone 1">
+                            <input type="text" id="txtTelefone1" name="txtTelefone1" placeholder="Insira o Telefone 1">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -125,6 +134,7 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <div id="btn">
+                            <!-- <button id="btnCadastrar" class="btn form-control" formaction="form_CadastrarContratante.php">Cadastrar</button> -->
                             <button id="btnCadastrar" class="btn form-control" onclick="CadastrarContratante()">Cadastrar</button>
                         </div>
                     </div>
@@ -134,12 +144,44 @@
                             <button class="btn form-control" formaction="Projeto/TelaLoginteste/index.php">Sair</button>
                         </div>
                     </div>
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2">
+                        
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                    <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 
+
+    <script>
+        function previewFile(element) {
+
+            var preview = document.getElementById('preImg');
+            var file = document.getElementById('txtImg').files[0];
+
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                var caminho = reader.result;
+                var caminhoLimpo = reader.result;
+
+                preview.src = caminho;
+                $("#base64Code").val(caminho);
+
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
     <script src="form_CadastroContratante.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>

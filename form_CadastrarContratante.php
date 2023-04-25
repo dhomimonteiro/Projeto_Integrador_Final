@@ -7,6 +7,7 @@ include_once('Projeto/TelaLoginteste/conexao.php');
 if($_POST){
 
         $nome_contratante = $_POST['txtNome'];
+        $img_contratante = $_POST['txtImg'];
         $CNPJ_contratante = $_POST['txtCNPJ'];
         $login_contratante = $_POST['txtLogin'];
         $senha_contratante = $_POST['txtSenha'];
@@ -24,16 +25,17 @@ if($_POST){
     try{
             $sql = $conn->prepare(
             "insert into Contratante
-                (nome_contratante, cnpj_contratante, telefone1_contratante, telefone2_contratante, logradouro_contratante, numero_contratante,
+                (nome_contratante, img_contratante, cnpj_contratante, telefone1_contratante, telefone2_contratante, logradouro_contratante, numero_contratante,
                 bairro_contratante, cidade_contratante, uf_contratante, cep_contratante, login_contratante, senha_contratante, status_contratante,
                 obs_contratante)
                 values
-                (:nome_contratante, :cnpj_contratante, :telefone1_contratante, :telefone2_contratante, :logradouro_contratante, :numero_contratante,
+                (:nome_contratante, :img_contratante, :cnpj_contratante, :telefone1_contratante, :telefone2_contratante, :logradouro_contratante, :numero_contratante,
                 :bairro_contratante, :cidade_contratante, :uf_contratante, :cep_contratante, :login_contratante, :senha_contratante, :status_contratante,
                 :obs_contratante)");
 
                 $sql->execute(array(
                     ':nome_contratante'=>$nome_contratante,
+                    ':img_contratante'=>$img_contratante,
                     ':cnpj_contratante'=>$CNPJ_contratante,
                     ':telefone1_contratante'=>$telefone1_contratante,
                     ':telefone2_contratante'=>$telefone2_contratante,
