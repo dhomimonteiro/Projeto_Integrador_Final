@@ -135,7 +135,7 @@
             </div>
             <div class="col sm-6 freelancers">
                 
-                <?php include_once('tela_freelancers_pesquisar.php');?>
+                <?php include('tela_freelancers_pesquisar.php');?>
             </div>
 
         </div>
@@ -182,13 +182,13 @@
                 type:"POST",
                 data: "request=" + value,
                 beforeSend:function(){
-                    alert("Procurando bzzzz");
+                    $(".freelancers").html("Procurando");
                 },
                 success:function(data){
                     $(".freelancers").html(data);
                 },
                 error: function(jqXhr, textStatus, errorMessage) {
-                $('#resultado').empty().html('Error' + errorMessage);
+                    $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
             }
             })
         }));

@@ -26,8 +26,18 @@ while ($row = $sql->fetch()) {
 
                 </div>
             </div>
-            <div class="col-sm-3 d-flex flex-row justify-content-center">
-                <div class="foto-freelancer bg-dark mt-3">
+            <div class="col-sm-3 d-flex flex-column align-items-center">
+                <div class="avaliacao d-inline">
+                    <p class="text-center small">
+                        Avaliação <br>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-stroke"></i>
+                    </p>
+                </div>
+                <div class="foto-freelancer bg-dark mt-1">
                     <img src="" alt="">
                 </div>
             </div>
