@@ -32,7 +32,7 @@
             color: #e6e6e6;
             padding: 2px;
             height: 35px;
-            width: 400px;
+/*           width: 400px; */
             line-height: 35px;
         }
 
@@ -42,7 +42,7 @@
         }
 
         .panel {
-            width: 350px;
+/*          width: 350px; */
             padding: 0 18px;
             background-color: #fff;
             display: none;
@@ -83,7 +83,7 @@
         <div class="row mt-2">
             <div class="col-sm-2 col-lg-4 mt-3">
                 <div class="filtro-menu sticky-top">
-                    <button class="accordion titulo-menu">
+                    <button class="accordion titulo-menu w-100">
                         <h5>Área</h5>
                     </button>
                     <div class="panel menu-filtros px align-self-center text-center">
@@ -105,7 +105,7 @@
                     <div class="menu-filtros px-2 align-self-center text-center">
 
                     </div>
-                    <button class="accordion titulo-menu">
+                    <button class="accordion titulo-menu w-100">
                         <h5>Linguagem</h5>
                     </button>
                     <div class="menu-filtros panel px-3 pt-2">

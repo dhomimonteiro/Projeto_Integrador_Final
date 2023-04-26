@@ -7,6 +7,6 @@ if($_SESSION && isset($_SESSION['idUsuario']) && isset($_SESSION['nomeUsuario'])
     $loginUsuario = $_SESSION['loginUsuario'];
 }
 else{
-    header('Location:index.php');
+    header('Location:Projeto/TelaLoginteste/index.php');
 }
 ?>

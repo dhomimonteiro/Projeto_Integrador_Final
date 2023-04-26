@@ -44,10 +44,10 @@
 <div class="menuUsuario" id="menuUsuario">
     <div class="container-fluid">
         <div class="row d-flex justify-content-end">
-            <div class="col-sm-2 menuUsuarioMenu">
-                <p class="pt-2 ps-2 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
-                <p class="pt-1 ps-2 btoPerfil btoMenuUsuario">
-                    <a href="perfil_contratante.php" style="text-decoration: none;">
+            <div class="col-sm-2 menuUsuarioMenu" style="font-size: 18px">
+                <!-- <p class="pt-2 ps-2 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p> -->
+                <p class="pt-2 ps-2 btoPerfil btoMenuUsuario">
+                    <a href="perfil_autenticar.php" style="text-decoration: none;">
                         Perfil
                     </a>
                 </p>

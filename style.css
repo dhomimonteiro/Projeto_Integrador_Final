@@ -71,7 +71,7 @@
     background-color: var(--cinza-claro);
     position: absolute;
     z-index: 50;
-    width: 100px;
+    
 }
 .menuUsuario a {
     color:rgb(38, 27, 53);

@@ -29,11 +29,13 @@ if($_POST){
     if($sql->rowCount() == 1){
 
         session_start();
+       
         foreach($sql as $linha)
                 {
                     $_SESSION['idUsuario'] = $linha[0];
                     $_SESSION['nomeUsuario'] = $linha[1];
                     $_SESSION['loginUsuario'] = $linha[11];
+                    $_SESSION['tipoUsuario'] = 'contratante';
                 }
                 header('Location:/Projeto_Integrador_Final/home.php');
             }
@@ -45,13 +47,15 @@ if($_POST){
                 if($sql->rowCount() == 1)
                 {
                 session_start();
+                
                 foreach($sql as $linha)
                         {
                             $_SESSION['idUsuario'] = $linha[0];
                             $_SESSION['nomeUsuario'] = $linha[1];
                             $_SESSION['loginUsuario'] = $linha[17];
+                            $_SESSION['tipoUsuario'] = 'freelancer';
                         }
-                        header('Location:/Projeto_Integrador_Final/home.php');
+                        header('Location:/Projeto_Integrador_Final/home_freelancer.php');
                 }
                 else
                 {

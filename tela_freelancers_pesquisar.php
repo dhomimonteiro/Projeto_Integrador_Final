@@ -59,7 +59,7 @@ while ($row = $sql->fetch()) {
     echo            '</div>
             </div>
             <div class="col-sm-3 d-flex flex-row justify-content-center">
-                <button class="btn btn-primary">Contratar</button>
+                <a class="btn btn-primary" href="tela_freelancer_autenticar.php">Contratar</a>
             </div>
         </div>
     </div>
