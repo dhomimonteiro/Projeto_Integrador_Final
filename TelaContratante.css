@@ -47,3 +47,18 @@
     text-align: center;
     padding: 5px;
 }
+
+.TituloFiltro{
+    text-align: center;
+    background-color: #800080;
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: white;
+}
+
+.cardfiltro{
+    border-top-right-radius: 5px !important;
+    border-top-left-radius: 5px !important;
+    padding: 1px;
+}

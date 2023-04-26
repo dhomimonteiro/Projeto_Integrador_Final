@@ -30,7 +30,11 @@
 
                         <div class="menuUsuario" id="menuUsuario">
                             <p class="pt-3 px-0 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
-                            <p class="pt-1 px-0 btoPerfil btoMenuUsuario">Perfil</p>
+                            <p class="pt-1 px-0 btoPerfil btoMenuUsuario">
+                                <a href="perfil_contratante.php" style="text-decoration: none;">
+                                    Perfil
+                                </a>
+                            </p>
                             <p class="py-1 px-0 btoSair btoMenuUsuario">
                                 <a href="autenticar_sair.php" style="text-decoration: none;">
                                     Sair

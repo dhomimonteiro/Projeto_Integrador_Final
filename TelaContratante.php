@@ -33,7 +33,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-sm-4">
-                <div class="card">
+                <div class="card cardfiltro">
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 class="TituloFiltro">Linguagem</h3>
