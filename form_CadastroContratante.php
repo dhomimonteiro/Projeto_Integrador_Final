@@ -49,7 +49,7 @@
                     <div class="col-sm-6">
                         <label for="txtImg">Imagem</label><br>
                         <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" />
-                        <img id="preImg" src="" height="200" alt="Image preview...">
+                        <img id="preImg" src="" style="display:none" height="200" alt="Image preview...">
                     </div>
 
                 </div>
@@ -141,7 +141,7 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <div id="btnSair">
-                            <button class="btn form-control" formaction="Projeto/TelaLoginteste/index.php">Sair</button>
+                            <button class="btn form-control" id="btnSair">Sair</button>
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -150,7 +150,7 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-sm-12">
-                    <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
+                        <textarea name="base64Code" class="form-control" style="display:none" id="base64Code" rows="5"></textarea>
                     </div>
                 </div>
             </form>

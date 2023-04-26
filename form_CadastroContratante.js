@@ -1,62 +1,62 @@
 
 function CadastrarContratante(){
 
-    // if($('#txtNome').val() == ''){
-    //     alert ("Insira um nome");
-    //     return;
-    // }
-    // if($('#txtCNPJ').val() == ''){
-    //     alert("Insira o CNPJ");
-    //     return;
-    // }
-    // if($('#txtLogin').val() == ''){
-    //     alert("Insira o login");
-    //     return;
-    // }
-    // if($('#txtSenha').val() == ''){
-    //     alert("Insira o senha");
-    //     return;
-    // }
-    // if($('#txtConfirmarSenha').val() == ''){
-    //     alert(" confirmar senha");
-    //     return;
-    // }
-    // if($('#txtSenha').val() != $('#txtConfirmarSenha').val()){
-    //     alert('Senhas diferentes');
-    //     return;
-    // }
-    // if($('#txtLogradouro').val() == ''){
-    //     alert("Insira o logradouro");
-    //     return;
-    // }
-    // if($('#txtNumero').val() == ''){
-    //     alert("Insira o numero");
-    //     return;
-    // }
-    // if($('#txtCidade').val() == ''){
-    //     alert("Insira a Cidade");
-    //     return;
-    // }
-    // if($('#txtBairro').val() == ''){
-    //     alert("Insira o bairro");
-    //     return;
-    // }
-    // if($('#txtUF').val() == ''){
-    //     alert("Insira a UF");
-    //     return;
-    // }
-    // if($('#txtCEP').val() == ''){
-    //     alert("Insira o CEP");
-    //     return;
-    // }
-    // if($('#txtTelefone1').val() == ''){
-    //     alert("Insira o telefone 1");
-    //     return;
-    // }
-    // if($('#txtTelefone2').val() == ''){
-    //     alert("Insira o telefone 2");
-    //     return;
-    // }
+    if($('#txtNome').val() == ''){
+        alert ("Insira um nome");
+        return;
+    }
+    if($('#txtCNPJ').val() == ''){
+        alert("Insira o CNPJ");
+        return;
+    }
+    if($('#txtLogin').val() == ''){
+        alert("Insira o login");
+        return;
+    }
+    if($('#txtSenha').val() == ''){
+        alert("Insira o senha");
+        return;
+    }
+    if($('#txtConfirmarSenha').val() == ''){
+        alert(" confirmar senha");
+        return;
+    }
+    if($('#txtSenha').val() != $('#txtConfirmarSenha').val()){
+        alert('Senhas diferentes');
+        return;
+    }
+    if($('#txtLogradouro').val() == ''){
+        alert("Insira o logradouro");
+        return;
+    }
+    if($('#txtNumero').val() == ''){
+        alert("Insira o numero");
+        return;
+    }
+    if($('#txtCidade').val() == ''){
+        alert("Insira a Cidade");
+        return;
+    }
+    if($('#txtBairro').val() == ''){
+        alert("Insira o bairro");
+        return;
+    }
+    if($('#txtUF').val() == ''){
+        alert("Insira a UF");
+        return;
+    }
+    if($('#txtCEP').val() == ''){
+        alert("Insira o CEP");
+        return;
+    }
+    if($('#txtTelefone1').val() == ''){
+        alert("Insira o telefone 1");
+        return;
+    }
+    if($('#txtTelefone2').val() == ''){
+        alert("Insira o telefone 2");
+        return;
+    }
     
         console.log('apertei no cadastrar');
 
@@ -113,9 +113,8 @@ function CadastrarContratante(){
         })
     
     }
-    
-    function SairLogin(){
-        header('Location:/Projeto_Integrador_Final/Projeto/TelaLoginTeste/index.php');
-    }
 
+    $('#btnSair').click(function(){ 
+        header('Location:/Projeto_Integrador_Final/Projeto/TelaLoginTeste/index.php');
+    });
    
