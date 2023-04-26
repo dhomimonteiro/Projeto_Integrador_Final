@@ -85,6 +85,7 @@ function cadastrarFreelancer() {
     }
     
     let nome_freelancer = $('#txtNome').val();
+    let img_freelancer = $('#base64Code').val();
     let cpf_freelancer = $('#txtCPF').val();
     let rg_freelancer = $('#txtRG').val();
     let celular1_freelancer = $('#txtCelular1').val();
@@ -111,6 +112,7 @@ function cadastrarFreelancer() {
         type: 'post',
         data: {
             txtNome: nome_freelancer,
+            txtImg: img_freelancer,
             txtCPF: cpf_freelancer,
             txtRG: rg_freelancer,
             txtCelular1: celular1_freelancer, 

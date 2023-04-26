@@ -13,7 +13,14 @@
         <div class="col-lg-2 col-sm-0"></div>
         <div class="col-lg-8 col-md-12">
             <p>Itens com <span class="importante">*</span> são obrigatórios.</p>
-            <form action="" class="form-control"  method="post" onsubmit="return false">
+            <form action="" class="form-control" method="post" onsubmit="return false">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="txtImg">Imagem</label><br>
+                        <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" />
+                        <img id="preImg" src="" height="200" alt="Image preview...">
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12 mt-2">
                         <label for="txtNome" class="mt-2">Nome <span class="importante">*</span></label>
@@ -121,6 +128,11 @@
                         <button class="btn btn-success" id="btoCadastrar" name="btoCadastrar" onclick="cadastrarFreelancer()">Cadastrar</button>
                     </div>
                 </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
+                    </div>
+                </div>
 
             </form>
         </div>
@@ -133,6 +145,31 @@
 include_once('rodape.php')
 ?>
 
+<script>
+    function previewFile(element) {
+
+        var preview = document.getElementById('preImg');
+        var file = document.getElementById('txtImg').files[0];
+
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            var caminho = reader.result;
+            var caminhoLimpo = reader.result;
+
+            preview.src = caminho;
+            $("#base64Code").val(caminho);
+
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+</script>
+<script src="form_CadastroFreelancer.js"></script>
 <script src="freelancer_cadastrar.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
 <script type="text/javascript">
@@ -250,7 +287,7 @@ include_once('rodape.php')
             mask(this, maskNasc);
         }
         //-------------
-        
+
     }
 
     $(document).ready(function() {

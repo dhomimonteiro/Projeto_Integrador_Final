@@ -3,6 +3,7 @@
 
     if ($_POST) {
         $nome_freelancer = $_POST['txtNome'];
+        $img_freelancer = $_POST['txtImg'];
         $cpf_freelancer = $_POST['txtCPF'];
         $rg_freelancer = $_POST['txtRG'];
         $celular1_freelancer = $_POST['txtCelular1'];
@@ -27,13 +28,14 @@
         try {
             $sql = $conn->prepare(
                 "insert into freelancer
-                (nome_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer, numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer, agencia_freelancer, contaCorrente_freelancer, login_freelancer, email_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
+                (nome_freelancer, img_freelancer,cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer, numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer, agencia_freelancer, contaCorrente_freelancer, login_freelancer, email_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
                 values
-                (:nome_freelancer, :cpf_freelancer, :rg_freelancer, :celular1_freelancer, :celular2_freelancer, :telefone_freelancer, :logradouro_freelancer, :numero_freelancer, :bairro_freelancer, :cidade_freelancer, :uf_freelancer, :cep_freelancer, STR_TO_DATE(:dtNascimento_freelancer,'%d-%m-%Y'), :banco_freelancer, :agencia_freelancer, :contaCorrente_freelancer, :login_freelancer, :email_freelancer, :senha_freelancer, :status_freelancer, :obs_freelancer);"
+                (:nome_freelancer,:img_freelancer, :cpf_freelancer, :rg_freelancer, :celular1_freelancer, :celular2_freelancer, :telefone_freelancer, :logradouro_freelancer, :numero_freelancer, :bairro_freelancer, :cidade_freelancer, :uf_freelancer, :cep_freelancer, STR_TO_DATE(:dtNascimento_freelancer,'%d-%m-%Y'), :banco_freelancer, :agencia_freelancer, :contaCorrente_freelancer, :login_freelancer, :email_freelancer, :senha_freelancer, :status_freelancer, :obs_freelancer);"
             );
 
             $sql->execute(array(
                 ':nome_freelancer'=>$nome_freelancer,
+                ':img_freelancer'=>$img_freelancer,
                 ':cpf_freelancer'=>$cpf_freelancer,
                 ':rg_freelancer'=>$rg_freelancer,
                 ':celular1_freelancer'=>$celular1_freelancer,

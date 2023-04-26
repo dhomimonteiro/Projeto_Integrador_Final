@@ -40,7 +40,7 @@
 </head>
 
 <body>
-    <?php include_once('cabecalho.php'); ?>
+    <?php include_once('cabecalho_autenticar.php'); ?>
     <main class="main">
         <div class="container">
             <div class="row mt-4">

@@ -1,4 +1,6 @@
-<?php include_once('autenticar.php'); ?>
+<?php 
+//include_once('autenticar.php'); 
+?> 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="home.php">
