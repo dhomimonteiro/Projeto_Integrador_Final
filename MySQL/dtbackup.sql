@@ -47,12 +47,16 @@ values
 	('JAVA', 'Ativo', ''),
 	('PHP', 'Ativo', ''),
 	('SQL', 'Ativo', ''),
-	('C#', 'Ativo', '');
+	('C#', 'Ativo', ''),
+    ('SASS', 'Ativo', ''),
+    ('Node.js', 'Ativo', ''),
+    ('Oracle', 'Ativo', '');
 
 create table Freelancer
 (
 	id_freelancer int not null auto_increment primary key,
 	nome_freelancer varchar(50) not null,
+    img_freelancer longblob null,
 	cpf_freelancer char(14) not null unique,
 	rg_freelancer varchar(25) not null unique,
 	celular1_freelancer char(14) not null,
@@ -73,6 +77,8 @@ create table Freelancer
 	status_freelancer varchar(20) not null ,
 	obs_freelancer varchar(300) null
 );
+alter table freelancer
+add column email_freelancer varchar(255) not null AFTER login_freelancer;
 
 insert into Freelancer
 	(nome_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer,
@@ -118,6 +124,12 @@ create table FreelancerLinguagem
 	constraint Fk_Id_Linguagem_FreelancerLinguagem foreign key(id_linguagem_freelancerLinguagem) references Linguagem(id_linguagem)
 );
 
+select freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
+freelancerlinguagem.id_linguagem_freelancerLinguagem, Linguagem.nome_linguagem, freelancer.nome_freelancer from freelancerlinguagem
+INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem
+INNER JOIN Freelancer on freelancerlinguagem.id_freelancer_freelancerLinguagem = freelancer.id_freelancer
+where freelancerlinguagem.id_linguagem_freelancerLinguagem = 5 or freelancerlinguagem.id_linguagem_freelancerLinguagem = 3;
+
 insert into FreelancerLinguagem
 	(id_freelancer_freelancerLinguagem, id_linguagem_freelancerLinguagem, status_freelancerLinguagem, obs_freelancerLinguagem)
 values
@@ -157,6 +169,7 @@ create table Projeto
 	id_freelancer_projeto int not null ,
     id_linguagem_projeto int not null ,
 	nome_projeto varchar(50) not null ,
+    img_freelancer longblob null,
 	dtCriacao_projeto timestamp not null,
 	versao_projeto varchar(20) not null,
 	status_projeto varchar(20) not null,
