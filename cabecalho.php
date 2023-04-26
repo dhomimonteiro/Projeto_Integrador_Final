@@ -28,19 +28,7 @@
                             <p class="usuario" id="usuario"><?= $nomeUsuario ?></p>
                         </button>
 
-                        <div class="menuUsuario" id="menuUsuario">
-                            <p class="pt-3 px-0 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
-                            <p class="pt-1 px-0 btoPerfil btoMenuUsuario">
-                                <a href="perfil_contratante.php" style="text-decoration: none;">
-                                    Perfil
-                                </a>
-                            </p>
-                            <p class="py-1 px-0 btoSair btoMenuUsuario">
-                                <a href="autenticar_sair.php" style="text-decoration: none;">
-                                    Sair
-                                </a>
-                            </p>
-                        </div>
+
                     </div>
                 </li>
             </ul>
@@ -52,6 +40,26 @@
         </div>
     </div>
 </nav>
+
+<div class="menuUsuario" id="menuUsuario">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-end">
+            <div class="col-sm-2 menuUsuarioMenu">
+                <p class="pt-2 ps-2 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p>
+                <p class="pt-1 ps-2 btoPerfil btoMenuUsuario">
+                    <a href="perfil_contratante.php" style="text-decoration: none;">
+                        Perfil
+                    </a>
+                </p>
+                <p class="py-1 ps-2 btoSair btoMenuUsuario">
+                    <a href="autenticar_sair.php" style="text-decoration: none;">
+                        Sair
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/jquery-3.6.4.js"></script>
 <script>

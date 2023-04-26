@@ -64,15 +64,15 @@
 
 .menuUsuario {
     display: none;
-    position: absolute;
-    top: 85px;
-    right: 5px;
-    width: 150px;
-    background-color: var(--cinza-claro);
-    border-radius: 5%;
-    color: var(--roxo-escuro);
 }
 
+.menuUsuarioMenu {
+    color: var(--roxo-escuro);
+    background-color: var(--cinza-claro);
+    position: absolute;
+    z-index: 50;
+    width: 100px;
+}
 .menuUsuario a {
     color:rgb(38, 27, 53);
 }

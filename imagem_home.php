@@ -1,3 +1,9 @@
+<style>
+    .btnCadastrar a:hover{
+        color: black;
+    }
+</style>
+
 <div class="fundo-img">
     <div class="img_home">
         <div class="container">
@@ -10,8 +16,10 @@
                         </p>
                         <div class="botoesCTA mt-4">
                             <form action="">
-                                <button class="btn btn-warning btnContratar me-5 " formaction="../Projeto_Integrador_Final/tela_freelancers.php">Contrate um freelancer</button>
-                                <button class="btn btn-outline-warning btnCadastrar">Torne-se um freelancer</button>
+                                <button class="btn btn-warning btnContratar me-5" formaction="../Projeto_Integrador_Final/tela_freelancers.php">Contrate um freelancer</button>
+                               
+                                    <a href="Projeto/TelaLoginteste/index.php" class="btn btn-outline-warning btnCadastrar">Torne-se um freelancer</a>    
+                               
                             </form>
                         </div>
                     </div>
