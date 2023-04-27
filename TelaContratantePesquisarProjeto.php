@@ -2,7 +2,7 @@
     include_once('Projeto/TelaLoginteste/conexao.php');
 
 try {
-    $sql = $conn->query("select date_format(dtCriacao_projeto,'%d/%m/%Y'),nome_projeto,status_projeto,obs_projeto,id_linguagem_projeto ,id_projeto
+    $sql = $conn->query("select date_format(dtCriacao_projeto,'%d/%m/%Y'),nome_projeto,status_projeto,obs_projeto,id_linguagem_projeto ,id_projeto, img_projeto
     from Projeto");
 
 
@@ -14,6 +14,7 @@ try {
         $status = $linha[2];
         $id = $linha[4];
         $idprojeto = $linha[5];
+        $img = $linha[6];
 
         echo
         '<div class="row">'.
@@ -36,7 +37,7 @@ try {
                         '</div>'.
                         '<div class="row">'.
                             '<div class="col-sm-4">'.
-                                '<img src="img/image.jpeg" class="imgCard" alt="" srcset="">'.
+                                '<img src="'.$img.'" class="imgCard" alt="" srcset="">'.
                             '</div>'.
                             '<div class="col-sm-8 mt-5">'.
                                 '<p class="card-text">'.$obs.'</p>'.

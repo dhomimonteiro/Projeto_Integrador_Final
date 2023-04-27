@@ -1,5 +1,5 @@
 <?php 
-//include_once('autenticar.php'); 
+// include_once('autenticar.php'); 
 ?> 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">

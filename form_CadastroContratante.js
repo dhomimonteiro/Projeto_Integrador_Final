@@ -105,7 +105,7 @@ function CadastrarContratante(){
             success: function(data, status, xhr){
                 alert(data)
                 $( "#resultado" )
-                // window.location.replace('/Projeto_Integrador_Final/Projeto/TelaLoginTeste/index.php');
+                window.location.replace('/Projeto_Integrador_Final/Projeto/TelaLoginTeste/index.php');
             },
             error: function (jqXhr, textStatus, errorMessage) {
                 $('#resultado').empty().html('Error' + errorMessage);

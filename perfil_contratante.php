@@ -107,7 +107,7 @@
 
 
 <body>
-    <?php include_once('cabecalho.php'); ?>
+    <?php include_once('cabecalho_autenticar.php'); ?>
     <div class="cartao">
         <div class="container-fluid">
             <div class="row">
@@ -190,17 +190,17 @@
                                         <div class="col-sm-1">
                                             <!-- motel -->
                                             <button onclick="document.getElementById('id01').style.display='block'" id="modal" class="w3-button w3-circle w3-purple mt-3">+</button>
+                                            <form action="" method="POST" onsubmit="return false" enctype="multipart/form-data">
+                                                <!-- The Modal -->
+                                                <div id="id01" class="w3-modal modal">
+                                                    <div class="w3-modal-content w3-animate-top">
+                                                        <header class="w3-container w3-purple">
+                                                            <span onclick="document.getElementById('id01').style.display='none'" id="modalsair" class="w3-button w3-display-topright">&times;</span>
+                                                            <h2>Criar novo Projeto</h2>
+                                                        </header>
 
-                                            <!-- The Modal -->
-                                            <div id="id01" class="w3-modal modal">
-                                                <div class="w3-modal-content w3-animate-top">
-                                                    <header class="w3-container w3-purple">
-                                                        <span onclick="document.getElementById('id01').style.display='none'" id="modalsair" class="w3-button w3-display-topright">&times;</span>
-                                                        <h2>Criar novo Projeto</h2>
-                                                    </header>
+                                                        <div class="w3-container">
 
-                                                    <div class="w3-container">
-                                                        <form action="" method="post">
                                                             <div class="container">
                                                                 <div class="row mt-3">
                                                                     <div class="col-sm-8">
@@ -213,7 +213,7 @@
                                                                     <div class="col-sm-4">
                                                                         <label for="Nome">Linguagem</label>
                                                                         <div class="input">
-                                                                            <select name="" id="" class="select" style="border: none; outline: none;">
+                                                                            <select name="txtLinguagem" id="txtLinguagem" class="select" style="border: none; outline: none;">
                                                                                 <option value="">--Selecione uma linguagem--</option>
                                                                                 <?php
                                                                                 include_once('TelaPesquisarProjeto.php');
@@ -233,32 +233,36 @@
                                                                 <div class="row">
                                                                     <div class="col-sm-6">
                                                                         <label for="txtImg">Imagem</label>
-                                                                            <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" style="border: none; outline: none;" />
+                                                                        <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" style="border: none; outline: none;" />
+                                                                        
                                                                     </div>
                                                                     <div class="col-sm-6">
-                                                                    <img id="preImg" src="" style="display:none" height="10" alt="Image preview...">
+                                                                        <img id="preImg" src="" style="display:none" height="10" alt="Image preview...">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12">
-                                                                <textarea name="base64Code" class="form-control" style="display:none" id="base64Code" rows="5"></textarea>
-                                                                </div>
-                                                        </form>
-                                                    </div> 
-                                                    <footer class="w3-container w3-purple mt-3">
-                                                            <div class="row p-3">
-                                                                <div class="col-sm-10"></div>
-                                                                <div class="col-sm-2">
-                                                                <button class="w3-button w3-yellow form-control">Criar</button>
+                                                                    <textarea name="base64Code" class="form-control" style="display:none" id="base64Code" rows="5"></textarea>
+                                                                    <input type="text" name="txtVersao" id="txtVersao" style="display:none" value="V.1" >
+                                                                    <input type="text" name="txtStatus" id="txtStatus" style="display:none" value="Ativado" >
                                                                 </div>
                                                             </div>
-                                                    </footer>
+                                                            <footer class="w3-container w3-purple mt-3">
+                                                                <div class="row p-3">
+                                                                    <div class="col-sm-10"></div>
+                                                                    <div class="col-sm-2">
+                                                                        <button id="btnCriarProjeto" class="w3-button w3-yellow form-control" onclick="criarProjeto()">Criar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </footer>
+                                                        </div>
+                                                    </div>
+                                                    <!-- motel -->
+                                                    </form>
                                                 </div>
-                                            </div>
-                                            <!-- motel -->
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                    
+                                        <div class="row">
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -267,32 +271,36 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
+<script src="perfil_contratante.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-3.6.4.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script>
-function previewFile(element) {
+    function previewFile(element) {
 
-var preview = document.getElementById('preImg');
-var file = document.getElementById('txtImg').files[0];
+        var preview = document.getElementById('preImg');
+        var file = document.getElementById('txtImg').files[0];
 
-var reader = new FileReader();
+        var reader = new FileReader();
 
-reader.onloadend = function() {
-    var caminho = reader.result;
-    var caminhoLimpo = reader.result;
+        reader.onloadend = function() {
+            var caminho = reader.result;
+            var caminhoLimpo = reader.result;
 
-    preview.src = caminho;
-    $("#base64Code").val(caminho);
+            preview.src = caminho;
+            $("#base64Code").val(caminho);
 
-}
+        }
 
-if (file) {
-    reader.readAsDataURL(file);
-} else {
-    preview.src = "";
-}
-}
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
 </script>
 
 </html>

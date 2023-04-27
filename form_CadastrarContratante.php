@@ -22,6 +22,7 @@ if($_POST){
         $status_contratante = 'ativo';
         $obs_contratante = '';
 
+        
     try{
             $sql = $conn->prepare(
             "insert into Contratante

@@ -18,7 +18,7 @@
 <body>
     
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
-    <?php include_once('cabecalhoDeslogado.php'); ?>
+    <?php include_once('cabecalho_autenticar.php'); ?>
     <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
     <?php include_once('imagem_home.php'); ?>
 
