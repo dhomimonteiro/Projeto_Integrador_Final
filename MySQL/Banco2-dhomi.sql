@@ -55,6 +55,7 @@ create table Freelancer
 (
 	id_freelancer int not null auto_increment primary key,
 	nome_freelancer varchar(50) not null,
+    img_freelancer longblob null,
 	cpf_freelancer char(14) not null unique,
 	rg_freelancer varchar(25) not null unique,
 	celular1_freelancer char(14) not null,
@@ -71,10 +72,16 @@ create table Freelancer
 	agencia_freelancer varchar(5) not null,
 	contaCorrente_freelancer varchar(20) not null ,
 	login_freelancer varchar(50) not null unique,
+    email_freelancer varchar(255) not null unique,
 	senha_freelancer varchar(50) not null ,
 	status_freelancer varchar(20) not null ,
 	obs_freelancer varchar(300) null
 );
+
+ALTER TABLE Freelancer
+ADD COLUMN email_freelancer varchar(255) not null AFTER login_freelancer;
+
+select * from freelancer;
 
 select Freelancer.nome_freelancer,Freelancer.obs_freelancer,FreelancerLinguagem.id_freelancerLinguagem, FreelancerLinguagem.id_freelancer_freelancerLinguagem, 
 FreelancerLinguagem.id_linguagem_freelancerLinguagem from FreelancerLinguagem
@@ -129,6 +136,8 @@ create table FreelancerLinguagem
 	constraint Fk_Id_Linguagem_FreelancerLinguagem foreign key(id_linguagem_freelancerLinguagem) references Linguagem(id_linguagem)
 );
 
+drop table freelancerLinguagem;
+
 select freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
 freelancerlinguagem.id_linguagem_freelancerLinguagem, Linguagem.nome_linguagem, freelancer.nome_freelancer from freelancerlinguagem
 INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem
@@ -140,7 +149,9 @@ select * from freelancerlinguagem;
 insert into FreelancerLinguagem
 	(id_freelancer_freelancerLinguagem, id_linguagem_freelancerLinguagem, status_freelancerLinguagem, obs_freelancerLinguagem)
 values
-	(1, 6, 'Ativo', '');
+	(4, 23,'Ativo', ''),
+	(4, 3, 'Ativo', ''),
+    (4, 22, 'Ativo', '');
 
 select * from linguagem;
 
@@ -166,25 +177,33 @@ create table Contrato
 	constraint FK_Id_tipoPagamento_contrato foreign key (id_tipoPagamento_contrato) references TipoPagamento(id_tipoPagamento) 
 );
 
+drop table Contrato;
+
 create table Projeto
 (
 	id_projeto int not null auto_increment primary key,
-	id_freelancer_projeto int not null ,
+	id_freelancer_projeto int null,
+    id_contratante_projeto int not null,
+    id_linguagem_projeto int not null,
 	nome_projeto varchar(50) not null ,
 	dtCriacao_projeto timestamp not null,
 	versao_projeto varchar(20) not null,
 	status_projeto varchar(20) not null,
 	obs_projeto varchar(300) null,
 
-	constraint Fk_Id_Freelancer_Projeto foreign key(id_freelancer_projeto) references Freelancer(id_freelancer)
+	constraint Fk_Id_Freelancer_Projeto foreign key(id_freelancer_projeto) references Freelancer(id_freelancer),
+	constraint Fk_Id_Contratante_Projeto foreign key (id_contratante_projeto) references Contratante (id_contratante),
+    constraint Fk_Id_Linguagem_Projeto foreign key (id_linguagem_projeto) references Linguagem (id_linguagem)
 );
-/*PRECISA ADICIONAR O CONTRATANTE E AS LINGUAGENS AQUI Ó*/
+
 insert into projeto
-	(id_freelancer_projeto, nome_projeto, versao_projeto, status_projeto, obs_projeto)
+	(id_contratante_projeto, id_linguagem_projeto,nome_projeto, versao_projeto, status_projeto, obs_projeto)
 values
-	(1, 'Página web', '1.0', 'Ativo', '');
+	(1, 1,'Página web', '1.0', 'Ativo', '');
     
 select * from projeto;
+
+drop table Projeto;
 
 create table Historico
 (
@@ -200,6 +219,8 @@ create table Historico
 	constraint Fk_Id_Freelancer_Historico foreign key(id_freelancer_historico) references Freelancer(id_freelancer),
 	constraint Fk_Id_Projeto_Historico foreign key(id_projeto_historico) references Projeto(id_projeto)
 );
+
+drop table historico;
 
 create table Funcionarios 
 (
