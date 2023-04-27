@@ -36,9 +36,7 @@
 
     <section class="mb-4">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae sapiente cum sunt cupiditate odio corrupti laboriosam deleniti a nesciunt aut dolorum ea earum culpa reprehenderit, perferendis illo alias facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi pariatur, quasi unde ex asperiores quis, quibusdam ab porro ea eius perferendis exercitationem rem deserunt molestiae iusto eum saepe. Provident, deleniti.
       </p>
     </section>
 

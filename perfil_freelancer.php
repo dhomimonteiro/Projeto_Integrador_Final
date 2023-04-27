@@ -111,6 +111,8 @@
         $sql = $conn->query("SELECT * from Freelancer where id_freelancer = $idUsuario");
 
         while ($row = $sql->fetch()) {
+            $nome = $row[1];
+            $img = $row[2];
             echo '
     <div class="cartao">
     <div class="container-fluid">
@@ -119,7 +121,7 @@
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
                         <div class="img mt-4">
-                            <img src="" alt="">
+                            <img src="'.$img.'">
                         </div>
                         <div class="conteudo-texto d-flex justify-content-evenly
                     ">
@@ -130,11 +132,9 @@
 
                             </div>
                             <div class="nome d-inline mx-5 w-25">
-                                <p class="text-center" style="font-weight: bold; font-size:30px;">'.$row[1].'</p>
+                                <p class="text-center" style="font-weight: bold; font-size:30px;" id="txtNome">'.$row[1].'</p>
                             </div>
                             <div class="avaliacao d-inline">
-
-
                                 <p class="text-center small">
                                     Avaliação <br>
                                     <i class="fas fa-star"></i>
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="img-empresa">
-                                        <img src="img/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg" alt="">
+                                        <img src="" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +196,6 @@
                             <h1 class="pt-3 ps-3">Portfólio</h1>
                         </div>
                         <div class="row">
-
                         </div>
                     </div>
                 </div>
@@ -212,7 +211,33 @@
         echo $ex->getMessage();
     }
     ?>
-    
+    <?php include_once('rodape.php');?>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
+<script>
+//     function PesquisarFreelancer() {
+//         let id_freelancer = $idUsuario;
+//         let action = 'perfil_freelancer_pesquisar.php';
+        
+//         $.ajax({
+//             url: action,
+//             type: 'post',
+//             data: {
+//                 id_freelancer
+//             },
+//             beforeSend: function() {
+//                 alert('carregando página');
+//             },
+//             success: function(data, status, xhr){
+//                 $('#txtNome').text($('#nomeFreelancer').text());
+//                 $('#imgPesquisa').text($('#imgFreelancer').text());
+
+//             },
+//             error: function(jqXhr, textStatus, errorMessage) {
+//                 alert('deu certo n');
+//             }
+//         })
+// }
+</script>
 </body>
+

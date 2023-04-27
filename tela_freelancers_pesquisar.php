@@ -10,6 +10,7 @@ try {
 
 while ($row = $sql->fetch()) {
     $nome = $row[1];
+    $img = $row[2];
     echo '                             
     <div class="card mt-3">
     <div class="card-body">
@@ -37,11 +38,10 @@ while ($row = $sql->fetch()) {
                         <i class="fas fa-star-half-stroke"></i>
                     </p>
                 </div>
-                <div class="foto-freelancer bg-dark mt-1">
-                    <img src="" alt="">
+                <div class="foto-freelancer img mt-1" style="height:100px;">
+                    <img src="'.$row[2].'" alt="" style="height:100%; width=100%; border-radius:50%">
                 </div>
             </div>
-
         </div>
         <div class="row mt-3">
             <div class="col-sm-9">

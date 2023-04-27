@@ -1,6 +1,6 @@
 <?php
     include_once('Projeto/TelaLoginteste/conexao.php');
-
+    
     if ($_POST) {
         $nome_freelancer = $_POST['txtNome'];
         $img_freelancer = $_POST['txtImg'];
@@ -25,12 +25,13 @@
         $status_freelancer = 'Ativo';
         $obs_freelancer = '';
 
+    
         try {
             $sql = $conn->prepare(
                 "insert into freelancer
-                (nome_freelancer, img_freelancer,cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer, numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer, agencia_freelancer, contaCorrente_freelancer, login_freelancer, email_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
+                (nome_freelancer, img_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer, numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer, agencia_freelancer, contaCorrente_freelancer, login_freelancer, email_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
                 values
-                (:nome_freelancer,:img_freelancer, :cpf_freelancer, :rg_freelancer, :celular1_freelancer, :celular2_freelancer, :telefone_freelancer, :logradouro_freelancer, :numero_freelancer, :bairro_freelancer, :cidade_freelancer, :uf_freelancer, :cep_freelancer, STR_TO_DATE(:dtNascimento_freelancer,'%d-%m-%Y'), :banco_freelancer, :agencia_freelancer, :contaCorrente_freelancer, :login_freelancer, :email_freelancer, :senha_freelancer, :status_freelancer, :obs_freelancer);"
+                (:nome_freelancer, :img_freelancer, :cpf_freelancer, :rg_freelancer, :celular1_freelancer, :celular2_freelancer, :telefone_freelancer, :logradouro_freelancer, :numero_freelancer, :bairro_freelancer, :cidade_freelancer, :uf_freelancer, :cep_freelancer, STR_TO_DATE(:dtNascimento_freelancer,'%d-%m-%Y'), :banco_freelancer, :agencia_freelancer, :contaCorrente_freelancer, :login_freelancer, :email_freelancer, :senha_freelancer, :status_freelancer, :obs_freelancer);"
             );
 
             $sql->execute(array(
@@ -59,12 +60,11 @@
             ));
 
             if ($sql->rowCount() > 0) {
-                echo "<p>Dados cadastrados com sucesso</p>";
-                echo "<p id='idGerado'>" . $conn->lastInsertId()."</p>";
+                echo 'Dados cadastrados com sucesso';
             }
 
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
     }
-?>
+// ?>

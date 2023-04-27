@@ -8,8 +8,8 @@ try {
 }
 
 while ($row = $sql->fetch()) {
-    $nome_projeto = $row[2];
-    $data = $row[3];
+    $nome_projeto = $row[4];
+    $data = $row[5];
 
    echo '
    <div class="card mt-3">
