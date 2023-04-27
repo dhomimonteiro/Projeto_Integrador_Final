@@ -166,14 +166,14 @@ create table Contrato
 create table Projeto
 (
 	id_projeto int not null auto_increment primary key,
-	id_freelancer_projeto int not null ,
+	id_freelancer_projeto int null ,
     id_linguagem_projeto int not null ,
 	nome_projeto varchar(50) not null ,
-    img_freelancer longblob null,
+    img_projeto longblob null,
 	dtCriacao_projeto timestamp not null,
-	versao_projeto varchar(20) not null,
-	status_projeto varchar(20) not null,
-	obs_projeto varchar(300) null,
+	versao_projeto varchar(20) null,
+	status_projeto varchar(20) null,
+	obs_projeto varchar(300) not null,
     
 	constraint Fk_Id_Freelancer_Projeto foreign key(id_freelancer_projeto) references Freelancer(id_freelancer),
     constraint Fk_Id_linguagem_projeto foreign key(id_linguagem_projeto) references Linguagem(id_linguagem)
@@ -182,20 +182,9 @@ drop table projeto;
 select * from Linguagem;
 select * from projeto;
 insert into projeto
-	(id_freelancer_projeto, nome_projeto, versao_projeto, status_projeto, obs_projeto,id_linguagem_projeto)
+(id_linguagem_projeto, nome_projeto, img_projeto, versao_projeto, status_projeto, obs_projeto)
 values
-	(1, 'Página 1', '1.0', 'Ativo', '','1'),
-    (1, 'Página 2', '1.0', 'Ativo', '','1'),
-    (1, 'Página 3', '1.0', 'Ativo', '','1'),
-    (1, 'Página 4', '1.0', 'Ativo', '','5'),
-    (1, 'Página 5', '1.0', 'Ativo', '','6'),
-    (1, 'Página 6', '1.0', 'Ativo', '','5'),
-    (1, 'Página 7', '1.0', 'Ativo', '','2'),
-    (1, 'Página 8', '1.0', 'Ativo', '','1'),
-    (1, 'Página 9', '1.0', 'Ativo', '','3'),
-    (1, 'Página 10', '1.0', 'Ativo', '','2'),
-    (1, 'Página 11', '1.0', 'Ativo', '','7');
-    
+('1','teste0','','V1','desativado','teste')
 select projeto.id_linguagem_projeto, Linguagem.id_linguagem , Linguagem.nome_linguagem
                                 from Linguagem
                                 inner join projeto
