@@ -81,7 +81,7 @@ create table Freelancer
 ALTER TABLE Freelancer
 ADD COLUMN email_freelancer varchar(255) not null AFTER login_freelancer;
 
-select * from freelancer;
+select * from linguagem;
 
 select Freelancer.nome_freelancer,Freelancer.obs_freelancer,FreelancerLinguagem.id_freelancerLinguagem, FreelancerLinguagem.id_freelancer_freelancerLinguagem, 
 FreelancerLinguagem.id_linguagem_freelancerLinguagem from FreelancerLinguagem
