@@ -15,6 +15,7 @@ $('#btnCriarProjeto').click(function(){
 
         let nome_porjeto = $('#txtNome').val();
         let Linguagem_porjeto = $('#txtLinguagem').val();
+        let IdContratante = $('#txtIDcontratante').val();
         let descricao_porjeto = $('#txtDescricao').val();
         let Img_porjeto = $('#base64Code').val();
         let versao_projeto = $('#txtVersao').val();
@@ -27,6 +28,7 @@ $('#btnCriarProjeto').click(function(){
             data: {
                 txtNome: nome_porjeto,
                 txtLinguagem: Linguagem_porjeto,
+                txtIDcontratante: IdContratante,
                 txtDescricao: descricao_porjeto,
                 txtImg: Img_porjeto,
                 txtVersao: versao_projeto,

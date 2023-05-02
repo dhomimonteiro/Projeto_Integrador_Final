@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="form_CadastroContratante.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Document</title>
 </head>
@@ -101,6 +102,10 @@
     .modal {
         z-index: 100;
     }
+    .Cards{
+        max-width: 400px;
+        max-height: 500px;
+    }
 </style>
 <title>Document</title>
 </head>
@@ -108,6 +113,7 @@
 
 <body>
     <?php include_once('cabecalho_autenticar.php'); ?>
+    <?php include_once('perfil_contratantePesquisar.php'); ?>
     <div class="cartao">
         <div class="container-fluid">
             <div class="row">
@@ -115,17 +121,18 @@
                     <div class="d-flex justify-content-center ">
                         <div class="cartao-conteudo">
                             <div class="img mt-4">
-                                <img src="img/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg" alt="">
+                                <img src="<?= $img ?>" alt="">
                             </div>
                             <div class="conteudo-texto d-flex justify-content-evenly
                         ">
                                 <div class="contratacoes d-inline">
-                                    <p class="small text-center">contratos: <br> <span style="font-weight: bold;"> 100</span>
+                                    <p class="small text-center">contratos: <br> <span style="font-weight: bold;"> <?= $ID ?></span>
                                     </p>
                                 </div>
                                 <div class="nome d-inline mx-5 w-25">
-                                    <p class="text-center" style="font-weight: bold; font-size:25px;">XING-LING CORPORAÇÕES</p>
+                                    <p class="text-center mt-2" style="font-weight: bold; font-size:25px;"><?= $nomeUsuario ?>  <a href="home.php"><i class="fa-sharp fa-solid fa-pencil"></i></a></p>
                                 </div>
+                                
                                 <div class="avaliacao d-inline">
                                     <p class="text-center small">
                                         Avaliação <br>
@@ -138,7 +145,13 @@
                                 </div>
                             </div>
                             <div class="descricao px-3 w-75 mt-3">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad saepe a sed quod porro in velit molestiae similique sit necessitatibus id, ab, nam fugit suscipit aspernatur iusto dicta perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non vel dolores, officia tempora debitis deserunt. Consectetur fugiat eos, corrupti voluptatem debitis commodi blanditiis vel voluptate officia, reiciendis aut soluta.
+                                <p>
+                                    <?php 
+                                    if ($obs != "")
+                                        echo $obs;
+                                    else
+                                    echo 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae doloremque vel itaque sed? Dicta quibusdam quisquam placeat? Quidem optio veniam eius. Eius eaque natus facere similique accusamus officiis dignissimos iure?'
+                                    ?>
                                 </p>
                             </div>
                         </div>
@@ -148,36 +161,7 @@
             <div class="container">
                 <div class="row mt-5 ml-4 margin2">
                     <div class="col-sm-4">
-                        <div class="card">
-                            <div class="seu-projeto">
-                                <h1 style="text-align: center; ">Ultimo projeto</h1>
-                                <hr>
-                                <div class="card-title">
-                                    <h2 class="ms-4 mt-4">Nome do projeto</h2>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="img-empresa">
-                                                <img src="img/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p class="descricao-seu-projeto">
-                                                *Descrição do projeto* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id impedit accusantium perspiciatis facere aut assumenda commodi asperiores repellendus, magnam blanditiis pariatur, et quasi earum atque animi omnis laboriosam nam aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit porro saepe molestias impedit assumenda quae natus alias. Voluptatum, cupiditate quaerat. Consequatur vero mollitia in, officia quisquam debitis sequi corrupti asperiores.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-4 status">
-                                            <p class="text-center">STATUS</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include_once('perfil_contratantePesquisarUltimoProjeto.php') ?>
                     </div>
                     <div class="col-sm-8">
                         <div class="col-sm-12">
@@ -234,7 +218,7 @@
                                                                     <div class="col-sm-6">
                                                                         <label for="txtImg">Imagem</label>
                                                                         <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" style="border: none; outline: none;" />
-                                                                        
+
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <img id="preImg" src="" style="display:none" height="10" alt="Image preview...">
@@ -242,8 +226,9 @@
                                                                 </div>
                                                                 <div class="col-sm-12">
                                                                     <textarea name="base64Code" class="form-control" style="display:none" id="base64Code" rows="5"></textarea>
-                                                                    <input type="text" name="txtVersao" id="txtVersao" style="display:none" value="V.1" >
-                                                                    <input type="text" name="txtStatus" id="txtStatus" style="display:none" value="Ativado" >
+                                                                    <input type="text" name="txtVersao" id="txtVersao" style="display:none" value="V.1">
+                                                                    <input type="text" name="txtStatus" id="txtStatus" style="display:none" value="Ativado">
+                                                                    <input type="text" name="txtIDcontratante" id="txtIDcontratante" style="display:none" value="<?= $idUsuario ?>">
                                                                 </div>
                                                             </div>
                                                             <footer class="w3-container w3-purple mt-3">
@@ -257,12 +242,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- motel -->
-                                                    </form>
-                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="row">
-
-                                        </div>
+                                    </div>
+                                    <div class="row p-4">
+                                        <?php include_once('perfil_contratantePesquisarProjeto.php')?>
                                     </div>
                                 </div>
                             </div>
@@ -271,6 +255,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 <script src="perfil_contratante.js"></script>

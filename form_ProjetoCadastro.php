@@ -9,14 +9,16 @@ if ($_POST) {
     $Img_projeto = $_POST['txtImg'];
     $versao = $_POST['txtVersao'];
     $status = $_POST['txtStatus'];
+    $id = $_POST['txtIDcontratante'];
 
     try {
         $sql = $conn->prepare("insert into projeto
-        (id_linguagem_projeto, nome_projeto, img_projeto, versao_projeto, status_projeto, obs_projeto)
+        (id_contratante_projeto,id_linguagem_projeto, nome_projeto, img_projeto, versao_projeto, status_projeto, obs_projeto)
         values
-        (:id_linguagem_projeto,:nome_projeto,:img_projeto,:versao_projeto,:status_projeto,:obs_projeto)");
+        (:id_contratante_projeto,:id_linguagem_projeto,:nome_projeto,:img_projeto,:versao_projeto,:status_projeto,:obs_projeto)");
 
         $sql->execute(array(
+            ':id_contratante_projeto' => $id,
             ':id_linguagem_projeto' => $Linguagem_projeto,
             ':nome_projeto' => $nome_projeto,
             ':img_projeto' => $Img_projeto,
