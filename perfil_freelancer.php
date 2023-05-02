@@ -117,6 +117,7 @@
     <div class="cartao">
     <div class="container-fluid">
         <div class="row ">
+        <i class="fas fa-regular fa-pen-to-square" style="color:white; z-index:10"></i>
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
@@ -132,7 +133,7 @@
 
                             </div>
                             <div class="nome d-inline mx-5 w-25">
-                                <p class="text-center" style="font-weight: bold; font-size:30px;" id="txtNome">'.$row[1].'</p>
+                                <p class="text-center" style="font-weight: bold; font-size:30px;" id="txtNome" name="txtNome">'.$row[1].'</p>
                             </div>
                             <div class="avaliacao d-inline">
                                 <p class="text-center small">
@@ -143,8 +144,6 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </p>
-
-
                             </div>
                         </div>
                         <div class="descricao px-3 w-75 mt-3">
@@ -178,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-1 status">
+                                <div class="col-sm-1 col-md-2 status">
                                     <p class="text-center">STATUS</p>
                                 </div>
                             </div>
