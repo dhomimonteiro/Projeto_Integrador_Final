@@ -136,13 +136,12 @@ function cadastrarFreelancer() {
             $('#resultado').html("ENVIANDO...");
         },
         success: function(data, status, xhr) {
-            console.log('foi');
+            // console.log('foi');
             alert(data);
             window.location.replace('Projeto/TelaLoginteste/index.php');
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
-            $('#resultado').empty().html('Error' + errorMessage);
-            console.log('nao foi');
+            alert('Ops, algum problema ocorreu. Tente novamente mais tarde.')
         }
     })
 }

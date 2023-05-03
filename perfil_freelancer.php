@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <title>Perfil</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,8 +16,6 @@
             height: 100vh;
             background-color: #f2f2f2;
         }
-
-
         .img {
             height: 200px;
             width: 200px;
@@ -25,8 +23,6 @@
             padding: 3px;
             background-color: #7d2ae8;
         }
-
-
         .img img {
             height: 100%;
             width: 100%;
@@ -34,19 +30,13 @@
             border-radius: 50%;
             border: 3px solid #fff;
         }
-
-
         .img-empresa {
             height: 100px;
             width: 100px;
-
-
             border-radius: 50%;
             padding: 3px;
             background-color: #7d2ae8;
         }
-
-
         .img-empresa img {
             height: 100%;
             width: 100%;
@@ -54,15 +44,11 @@
             border-radius: 50%;
             border: 3px solid #fff;
         }
-
-
         .cartao {
             position: relative;
             width: 100%;
             background-color: #fff;
         }
-
-
         .cartao::before {
             content: "";
             position: absolute;
@@ -70,8 +56,6 @@
             width: 100%;
             background-color: var(--roxo-escuro);
         }
-
-
         .cartao-conteudo {
             position: relative;
             z-index: 10;
@@ -80,24 +64,29 @@
             flex-direction: column;
             align-items: center;
         }
-
-
         .conteudo-texto {
             width: 100%;
         }
-
-
         .avaliacao i {
             cursor: pointer;
         }
-
         .status p {
             background-color: #7d2ae8;
             color: white;
             border-radius: 20px;
         }
+        .fa-pen-to-square {
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .fa-pen-to-square:hover {
+            color: #7d2ae8;
+        }
+        .nome a {
+            color: var(--roxo-escuro);
+        }
     </style>
-    <title>Document</title>
+
 </head>
 
 
@@ -117,7 +106,7 @@
     <div class="cartao">
     <div class="container-fluid">
         <div class="row ">
-        <i class="fas fa-regular fa-pen-to-square" style="color:white; z-index:10"></i>
+        
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
@@ -133,7 +122,8 @@
 
                             </div>
                             <div class="nome d-inline mx-5 w-25">
-                                <p class="text-center" style="font-weight: bold; font-size:30px;" id="txtNome" name="txtNome">'.$row[1].'</p>
+                                <p class="text-center" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">'.$row[1].'</p>
+                                <a href="form_AlterarFreelancer.php"><i class="fas fa-regular fa-pen-to-square" style="z-index:10"></i></a>
                             </div>
                             <div class="avaliacao d-inline">
                                 <p class="text-center small">

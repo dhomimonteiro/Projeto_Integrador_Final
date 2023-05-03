@@ -1,149 +1,244 @@
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-sm-12 d-flex justify-content-center">
-            <h1>Cadastre-se a GetDev como Freelancer</h1>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Freelancer</title>
+    <link rel="stylesheet" href="form_CadastroFreelancer.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/dfcce2b32e.js" crossorigin="anonymous"></script>
+</head>
 
-    </div>
+<body>
 
-    <div class="row mt-2">
-        <div class="col-lg-2 col-sm-0"></div>
-        <div class="col-lg-8 col-md-12">
-            <p>Itens com <span class="importante">*</span> são obrigatórios.</p>
-            <form action="" class="form-control" method="post">
+    <div class="container">
+        <div id="form">
+            <form action="" class="" method="post" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <label for="txtImg">Imagem</label><br>
-                        <input name="txtImg" id="txtImg" type="file" class="form-control" onchange="previewFile(this)" />
-                        <img id="preImg" src="" height="200" alt="Image preview...">
+                    <div class="col-sm-12">
+                        <h2 class="title">Cadastre-se como Freelancer</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 mt-2">
-                        <label for="txtNome" class="mt-2">Nome <span class="importante">*</span></label>
-                        <input type="text" id="txtNome" name="txtNome" placeholder="Insira seu nome completo" class="form-control input">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 mt-2">
-                        <label for="txtNome" class="mt-2">E-mail <span class="importante">*</span></label>
-                        <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail" class="form-control input">
-                    </div>
-                    <div class="col-sm-6 mt-2">
-                        <label for="txtNome" class="mt-2">Login <span class="importante">*</span></label>
-                        <input type="text" id="txtLogin" name="txtLogin" placeholder="Insira seu login" class="form-control input">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 mt-2">
-                        <label for="txtNome" class="mt-2">Senha <span class="importante">*</span></label>
-                        <input type="text" id="txtSenha" name="txtSenha" placeholder="Insira sua senha" class="form-control input">
-                    </div>
-                    <div class="col-sm-6 mt-2">
-                        <label for="txtNome" class="mt-2">Confirmação de senha <span class="importante">*</span></label>
-                        <input type="text" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme a senha" class="form-control input">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">CPF <span class="importante">*</span></label>
-                        <input type="text" id="txtCPF" name="txtCPF" placeholder="Insira seu CPF" class="form-control input">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">RG <span class="importante">*</span></label>
-                        <input type="text" id="txtRG" name="txtRG" placeholder="Insira seu RG" class="form-control input">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Data de nascimento<span class="importante">*</span></label>
-                        <input type="text" id="txtNascimento" name="txtNascimento" placeholder="Insira sua data de nascimento" class="form-control input txtNascimento">
-                    </div>
-                </div>
-
-                <!--CONTATO-->
-                <div class="row">
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Celular 1 <span class="importante">*</span></label>
-                        <input type="text" id="txtCelular1" name="txtCelular1" placeholder="Insira seu número de celular" class="form-control input txtCelular1" maxlength="14">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Celular 2</label>
-                        <input type="text" id="txtCelular2" name="txtCelular2" placeholder="Insira seu número de celular" class="form-control input txtCelular2">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Telefone</label>
-                        <input type="text" id="txtTelefone" name="txtTelefone" placeholder="Insira seu número de celular" class="form-control input txtTelefone">
-                    </div>
-                </div>
-
-                <!-- LOCALIZAÇÃO -->
-                <div class="row">
-                    <div class="col-sm-2 mt-2">
-                        <label for="txtNome" class="mt-2">Rua <span class="importante">*</span></label>
-                        <input type="text" id="txtRua" name="txtRua" placeholder="Insira sua rua." class="form-control input">
-                    </div>
-                    <div class="col-sm-2 mt-2">
-                        <label for="txtNome" class="mt-2">Número <span class="importante">*</span></label>
-                        <input type="text" id="txtNumero" name="txtNumero" class="form-control input ">
-                    </div>
-                    <div class="col-sm-2 mt-2">
-                        <label for="txtCEP" class="mt-2">CEP <span class="importante">*</span></label>
-                        <input type="text" id="txtCEP" name="txtCEP" placeholder="Insira o CEP." class="form-control input txtCEP">
-                    </div>
-                    <div class="col-sm-2 mt-2">
-                        <label for="txtNome" class="mt-2">Bairro <span class="importante">*</span></label>
-                        <input type="text" id="txtBairro" name="txtBairro" placeholder="Insira o bairro." class="form-control input">
-                    </div>
-                    <div class="col-sm-3 mt-2">
-                        <label for="txtNome" class="mt-2">Cidade <span class="importante">*</span></label>
-                        <input type="text" id="txtCidade" name="txtCidade" placeholder="Insira a cidade." class="form-control input">
-                    </div>
-                    <div class="col-sm-1 mt-2">
-                        <label for="txtNome" class="mt-2">UF <span class="importante">*</span></label>
-                        <input type="text" id="txtUF" name="txtUF" class="form-control input">
-                    </div>
-                </div>
-
-                <!--INFORMAÇÃO BANCÁRIA-->
-                <div class="row">
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Banco <span class="importante">*</span></label>
-                        <input type="text" id="txtBanco" name="txtBanco" class="form-control input">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Agência Bancária <span class="importante">*</span></label>
-                        <input type="text" id="txtAgencia" name="txtAgencia" class="form-control input" maxlength="5">
-                    </div>
-                    <div class="col-sm-4 mt-2">
-                        <label for="txtNome" class="mt-2">Conta corrente <span class="importante">*</span></label>
-                        <input type="text" id="txtContaCorrente" name="txtContaCorrente" class="form-control input">
-                    </div>
-                </div>
-
-                <!-- BOTÕES -->
                 <div class="row mt-2">
-                    <div class="col-sm-12">
-                        <button class="btn btn-success" id="btoCadastrar" name="btoCadastrar" onclick="cadastrarFreelancer()">Cadastrar</a>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="txtImg">Imagem</label><br>
+                            <div class="input">
+                                <i class="fa-solid fa-image"></i>
+                                <input name="txtImg" id="txtImg" type="file" onchange="previewFile(this)" />
+                                <img id="preImg" src="" height="200" alt="Image preview...">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-sm-12">
-                        <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="Nome">Nome</label>
+                            <div class="input">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="txtNome" name="txtNome" placeholder="Insira seu nome completo">
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="txtEmail">E-mail</label>
+                            <div class="input">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <input type="email" id="txtEmail" name="txtEmail" placeholder="Insira seu e-mail">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="txtLogin">Login <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-at"></i>
+                                <input type="text" id="txtLogin" name="txtLogin" placeholder="Insira seu login">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="txtSenha">Senha <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="txtSenha" name="txtSenha" placeholder="Insira sua senha">
+                            </div>
 
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="txtNome">Confirmação de senha <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="txtConfirmarSenha" name="txtConfirmarSenha" placeholder="Confirme a senha">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="txtNome">CPF <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <input type="text" id="txtCPF" name="txtCPF" placeholder="Insira seu CPF">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">RG <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <input type="text" id="txtRG" name="txtRG" placeholder="Insira seu RG">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Data de nascimento<span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="text" id="txtNascimento" name="txtNascimento" placeholder="Insira sua data de nascimento" class="txtNascimento">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--CONTATO-->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="txtNome">Celular 1 <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" id="txtCelular1" name="txtCelular1" placeholder="Insira seu celular" maxlength="14">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Celular 2</label>
+                            <div class="input">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" id="txtCelular2" name="txtCelular2" placeholder="Insira seu celular" class="txtCelular2">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Telefone</label>
+                            <div class="input">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" id="txtTelefone" name="txtTelefone" placeholder="Insira seu telefone" class="txtTelefone">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- LOCALIZAÇÃO -->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="txtCEP">CEP <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-hashtag"></i>
+                                <input type="text" id="txtCEP" name="txtCEP" placeholder="Insira o CEP." class="txtCEP">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtNome">Número <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-sharp fa-solid fa-location-crosshairs"></i>
+                                <input type="text" id="txtNumero" name="txtNumero" style="width:60%" placeholder="Número">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="txtRua">Rua <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-street-view"></i>
+                                <input type="text" id="txtRua" name="txtRua" placeholder="Insira sua rua." class="">
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-sm-4">
+                            <label for="txtNome">Bairro <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" id="txtBairro" name="txtBairro" placeholder="Insira o bairro.">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Cidade <span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-sharp fa-solid fa-building"></i>
+                                <input type="text" id="txtCidade" name="txtCidade" placeholder="Insira a cidade.">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">UF<span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" id="txtUF" name="txtUF" placeholder="Seu estado">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--INFORMAÇÃO BANCÁRIA-->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="txtNome">Banco<span class="importante">*</span></label>
+                            <div class="input">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <input type="text" id="txtBanco" name="txtBanco" style="width:60%">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Agência Bancária <span class="importante">*</span></label>
+                            <div class="input">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                            <input type="text" id="txtAgencia" name="txtAgencia"  maxlength="5" style="width:60%">
+                            </div>
+                          
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="txtNome">Conta corrente <span class="importante">*</span></label>
+                            <div class="input">
+                            <i class="fa-solid fa-money-check-dollar"></i>
+                            <input type="text" id="txtContaCorrente" name="txtContaCorrente" style="width:70%">
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- BOTÕES -->
+                    <div class="row mt-2 d-flex flex-row align-items-center">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                            <div class="btn">
+                            <button class="btn form-control" id="btnCadastrar" name="btoCadastrar" onclick="cadastrarFreelancer()">Cadastrar</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                        <div id="btnSair">
+                            <button class="btn form-control" id="btnSair">Sair</button>
+                        </div>
+                        </div>
+                        <div class="col-sm-2">
+
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="display:none">
+                        <div class="col-sm-12">
+                            <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
+                        </div>
+                    </div>
             </form>
         </div>
-
     </div>
+</body>
 
-</div>
+</html>
 
-<?php
-include_once('rodape.php')
-?>
+
+
 
 <script src="js/jquery-3.6.4.js"></script>
 <script>
