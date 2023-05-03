@@ -64,20 +64,20 @@ try {
 
 <body>
     <div class="container" style="max-width:800px;">
-        <form action="" method="post" class="form-control px-4">
-            <input type="text" id="txtID" value="<?= $idUsuario ?>" style="display:none">
+        <form action="" method="post" class="form-control" onsubmit="return false">
+            <input type="text" id="txtID" name="txtID" value="<?=$idUsuario?>">
             <div class="row mt-3">
                 <h1>Alterar informações</h1>
             </div>
             <div class="row my-3">
                 <div class="col-sm-12 mt-2 d-flex justify-content-center">
-                    <img src="<?= $img ?>" alt="" style="height: 150px; width:150px; background-color: black; border-radius: 50%; object-fit: cover;" id="preImg">
+                    <img src="<?=$img?>" alt="" style="height: 150px; width:150px; background-color: black; border-radius: 50%; object-fit: cover;" id="preImg">
                 </div>
                 <div class="col-sm-12 mt-2 d-flex justify-content-center">
                     <input type="file" onchange="previewFile(this)" name="txtImg" id="txtImg">
                 </div>
             </div>
-            <div class="row mt-4" style="display:none;">
+            <div class="row mt-4" style="display:none">
                     <div class="col-sm-12">
                         <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
                     </div>
@@ -193,8 +193,8 @@ try {
             </div>
 
             <div class="row mt-3 mb-4">
-                <div class="col-sm-12 mt-3 d-flex justify-content-center align-items-center">
-                    <button class="btn btn-lg btn-primary" onclick="freelancerAlterar()">Salvar</button>
+                <div class="col-sm-12 mt-3 ">
+                    <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="freelancerAlterar()">Salvar</button>
                 </div>
             </div>
         </form>

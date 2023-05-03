@@ -1,7 +1,10 @@
 <?php
     include_once('Projeto/TelaLoginteste/conexao.php');
+    
 
     if ($_POST) {
+        
+        $id_freelancer = $_POST['txtID'];
         $nome_freelancer = $_POST['txtNome'];
         $img_freelancer = $_POST['txtImg'];
         $cpf_freelancer = $_POST['txtCPF'];
@@ -26,7 +29,7 @@
         $status_freelancer = 'Ativo';
         $obs_freelancer = '';
 
-        print_r($_POST);
+        // print_r($_POST);
 
         try {
             $sql = $conn->prepare(
@@ -47,44 +50,49 @@
                 dtNascimento_freelancer=:dtNascimento_freelancer,
                 banco_freelancer=:banco_freelancer,
                 agencia_freelancer=:agencia_freelancer,
-                contaCorrente_freelancer=:,
+                contaCorrente_freelancer=:contaCorrente_freelancer,
                 login_freelancer=:login_freelancer,
                 email_freelancer=:email_freelancer,
                 senha_freelancer=:senha_freelancer,
                 status_freelancer=:status_freelancer,
-                obs_freelancer=:obs_freelancer 
+                obs_freelancer=:obs_freelancer where id_freelancer =:id_freelancer
                 '
             );
-            $sql->execute(array(
-                'nome_freelancer'=>$nome_freelancer,
-                'img_freelancer'=>$img_freelancer,
-                'cpf_freelancer'=>$cpf_freelancer,
-                'rg_freelancer'=>$rg_freelancer,
-                'celular1_freelancer'=>$celular1_freelancer,
-                'celular2_freelancer'=>$celular2_freelancer,
-                'telefone_freelancer'=>$telefone_freelancer,
-                'logradouro_freelancer'=>$logradouro_freelancer,
-                'numero_freelancer'=>$numero_freelancer,
-                'bairro_freelancer'=>$bairro_freelancer,
-                'cidade_freelancer'=>$cidade_freelancer,
-                'uf_freelancer'=>$uf_freelancer,
-                'cep_freelancer'=>$cep_freelancer,
-                'dtNascimento_freelancer'=>$dataNasc_freelancer,
-                'banco_freelancer'=>$banco_freelancer,
-                'agencia_freelancer'=>$agencia_freelancer,
-                'contaCorrente_freelancer'=>$contaCorrente_freelancer,
-                'login_freelancer'=>$login_freelancer,
-                'email_freelancer'=>$email_freelancer,
-                'senha_freelancer'=>$senha_freelancer,
-                'status_freelancer'=>$status_freelancer,
-                'obs_freelancer'=>$obs_freelancer
-            ));
 
+            $sql->execute(array(
+                ':id_freelancer'=>$id_freelancer,
+                ':nome_freelancer'=>$nome_freelancer,
+                ':img_freelancer'=>$img_freelancer,
+                ':cpf_freelancer'=>$cpf_freelancer,
+                ':rg_freelancer'=>$rg_freelancer,
+                ':celular1_freelancer'=>$celular1_freelancer,
+                ':celular2_freelancer'=>$celular2_freelancer,
+                ':telefone_freelancer'=>$telefone_freelancer,
+                ':logradouro_freelancer'=>$logradouro_freelancer,
+                ':numero_freelancer'=>$numero_freelancer,
+                ':bairro_freelancer'=>$bairro_freelancer,
+                ':cidade_freelancer'=>$cidade_freelancer,
+                ':uf_freelancer'=>$uf_freelancer,
+                ':cep_freelancer'=>$cep_freelancer,
+                ':dtNascimento_freelancer'=>$dataNasc_freelancer,
+                ':banco_freelancer'=>$banco_freelancer,
+                ':agencia_freelancer'=>$agencia_freelancer,
+                ':contaCorrente_freelancer'=>$contaCorrente_freelancer,
+                ':login_freelancer'=>$login_freelancer,
+                ':email_freelancer'=>$email_freelancer,
+                ':senha_freelancer'=>$senha_freelancer,
+                ':status_freelancer'=>$status_freelancer,
+                ':obs_freelancer'=>$obs_freelancer
+            ));
+            
+            
             if ($sql->rowCount()==1) {
                 echo "<p>Dados alterados com sucesso</p>";
             }
         } catch (PDOException $ex) {
             $ex->getMessage();
         }
-    }
+    }else {
+        echo "<p>Deu certo não</p>";
+     }
 ?>

@@ -1,4 +1,5 @@
 function freelancerAlterar(){
+    let id_freelancer = $('#txtID').val();
     let nome_freelancer = $('#txtNome').val();
     let img_freelancer = $('#base64Code').val();
     let cpf_freelancer = $('#txtCPF').val();
@@ -26,6 +27,7 @@ function freelancerAlterar(){
         url: action,
         type: 'post',
         data: {
+            txtID: id_freelancer,
             txtNome: nome_freelancer,
             txtImg: img_freelancer,
             txtCPF: cpf_freelancer,
@@ -51,7 +53,7 @@ function freelancerAlterar(){
             $('#resultado').html("ENVIANDO...");
         },
         success: function(data, status, xhr) {
-            $('#resultado').html('Foi');
+            $('#resultado').html(data);
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
             $('#resultado').html(errorMessage, data);
