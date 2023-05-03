@@ -123,14 +123,13 @@
                             <div class="img mt-4">
                                 <img src="<?= $img ?>" alt="">
                             </div>
-                            <div class="conteudo-texto d-flex justify-content-evenly
-                        ">
+                            <div class="conteudo-texto d-flex justify-content-evenly">
                                 <div class="contratacoes d-inline">
                                     <p class="small text-center">contratos: <br> <span style="font-weight: bold;"> <?= $ID ?></span>
                                     </p>
                                 </div>
                                 <div class="nome d-inline mx-5 w-25">
-                                    <p class="text-center mt-2" style="font-weight: bold; font-size:25px;"><?= $nomeUsuario ?>  <a href="home.php"><i class="fa-sharp fa-solid fa-pencil"></i></a></p>
+                                    <p class="text-center mt-2" style="font-weight: bold; font-size:25px;"><?= $nomeUsuario ?>  <a href="perfil_ContratanteAlterar.php"><i class="fa-sharp fa-solid fa-pencil"></i></a></p>
                                 </div>
                                 
                                 <div class="avaliacao d-inline">

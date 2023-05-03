@@ -13,7 +13,7 @@ if($_SESSION && isset($_SESSION['idUsuario']) && isset($_SESSION['nomeUsuario'])
     }
     
     if ($tipoUsuario == 'contratante'){
-        header('Location: home.php');
+        header('Location: perfil_contratante.php');
     }
 
 }
