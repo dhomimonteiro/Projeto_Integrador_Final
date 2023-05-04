@@ -21,7 +21,7 @@
             width: 200px;
             border-radius: 50%;
             padding: 3px;
-            background-color: #7d2ae8;
+            background-color: var(--roxo-escuro);
         }
         .img img {
             height: 100%;
@@ -82,6 +82,19 @@
         .fa-pen-to-square:hover {
             color: #7d2ae8;
         }
+        .fa-plus{
+            height: 20px;
+            width: 20px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--roxo-escuro);
+        }
+        .fa-plus:hover{
+            background-color: #ccc;
+        }
         .nome a {
             color: var(--roxo-escuro);
         }
@@ -121,7 +134,7 @@
 
 
                             </div>
-                            <div class="nome d-inline mx-5 w-25">
+                            <div class="nome d-inline mx-5 w-25 d-flex justify-content-center">
                                 <p class="text-center" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">'.$row[1].'</p>
                                 <a href="form_AlterarFreelancer.php"><i class="fas fa-regular fa-pen-to-square" style="z-index:10"></i></a>
                             </div>
@@ -140,22 +153,38 @@
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad saepe a sed quod porro in velit molestiae similique sit necessitatibus id, ab, nam fugit suscipit aspernatur iusto dicta perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non vel dolores, officia tempora debitis deserunt. Consectetur fugiat eos, corrupti voluptatem debitis commodi blanditiis vel voluptate officia, reiciendis aut soluta.
                             </p>
                         </div>
+                        
+                        <div>';
+                        
+                            try {
+                                $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
+                                freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
+                                INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem where freelancerlinguagem.id_freelancer_freelancerLinguagem = $row[0];");
+                            } catch (PDOException $ex) {
+                                echo $ex->getMessage();
+                            }
+                            while ($linha = $sql2->fetch()){
+                                echo '<p style="background-color: #1e102e; color:#e6e6e6;" class="d-inline mx-2 px-2">'.$linha[3].'</p>';
+                            }
+                    echo '<a href="form_AlterarFreelancer.php#dados-linguagem"><i class="fa-solid fa-plus"></i></a>
+                   
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col-sm-12">
+        <div class="col-sm-1"></div>
+            <div class="col-sm-10">
                 <div class="seu-projeto">
-                    <h1>Seu projeto</h1>
+                    <h3>Seu projeto</h3>
                     <div class="card">
                         <div class="card-title">
-                            <h2 class="ms-4 mt-4">Nome do projeto</h2>
+                            <h4 class="ms-4 mt-4">Nome do projeto</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <h3 class="nome-empresa">Nome-empresa</h3>
+                                    <h5 class="nome-empresa">Nome-empresa</h5>
                                     <p class="descricao-seu-projeto">
                                         *Descrição do projeto* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id impedit accusantium perspiciatis facere aut assumenda commodi asperiores repellendus, magnam blanditiis pariatur, et quasi earum atque animi omnis laboriosam nam aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit porro saepe molestias impedit assumenda quae natus alias. Voluptatum, cupiditate quaerat. Consequatur vero mollitia in, officia quisquam debitis sequi corrupti asperiores.
                                     </p>
@@ -174,26 +203,68 @@
                         </div>
                     </div>
                 </div>
+                <hr class="mt-4">
             </div>
         </div>
-        <hr>
+        
         <div class="row pb-4">
-            <div class="col-sm-12 mt-3">
+        <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10 col-lg-7 mt-3">
                 <div class="card">
                     <div class="portfolio">
                         <div class="row">
-                            <h1 class="pt-3 ps-3">Portfólio</h1>
+                            <h2 class="pt-3 ps-3">Portfólio</h2>
                         </div>
                         <div class="row">
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-1 col-md-1 d-lg-none"></div>
+            <div class="col-sm-1 col-md-1 d-lg-none"></div>
+            <div class="col-sm-10 col-md-10 col-lg-3 mt-3">
+                <div class="card">
+                    <div class="portfolio">
+                        <div class="row">
+                            <div class="col-sm-12 d-flex justify-content-center">
+                                <h2 class="pt-3 ps-3">Feedback</h2>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center py-3">
+                            <div class="col-sm-11">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <p style="font-size:25px; height:50px; line-height: 50px;">Nome</p>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img style="background-color: #000; width:50px; height:50px; border-radius: 50%">
+                                            </div>
+                                        </div>   
+                                        <div class="row">
+                                            <div class="avaliacao d-inline">
+                                                <p class="small">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </p>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus repellat amet cumque? Provident voluptas quae dicta neque similique? Odio quisquam alias error! Nesciunt eum sint debitis id possimus voluptatibus placeat!</p>
+                                        </div>                                     
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </div>
     </div>
-</div>
-            
-            
+</div>      
             ';
         }
     } catch (PDOException $ex) {
@@ -201,6 +272,7 @@
     }
     ?>
     <?php include_once('rodape.php');?>
+
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
 <script>

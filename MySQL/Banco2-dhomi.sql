@@ -5,6 +5,7 @@ create table Contratante
 (
 	id_contratante int not null auto_increment primary key,
 	nome_contratante varchar(50) not null,
+    img_contratante longblob null,
 	cnpj_contratante char(18) not null unique,
 	telefone1_contratante char(14) not null,
 	telefone2_contratante char(14) null,
@@ -19,7 +20,7 @@ create table Contratante
 	status_contratante varchar(20) not null,
 	obs_contratante varchar(255) null
 );
-
+drop table Contratante
 insert into Contratante
 	(nome_contratante, cnpj_contratante, telefone1_contratante, telefone2_contratante, logradouro_contratante, numero_contratante,
 	bairro_contratante, cidade_contratante, uf_contratante, cep_contratante, login_contratante, senha_contratante, status_contratante,
@@ -79,9 +80,10 @@ create table Freelancer
 );
 
 ALTER TABLE Freelancer
-ADD COLUMN email_freelancer varchar(255) not null AFTER login_freelancer;
+ADD COLUMN descricao_freelancer varchar(255) not null AFTER senha_freelancer;
 
-select * from linguagem;
+select * from freelancer;
+select * from projeto;
 
 select Freelancer.nome_freelancer,Freelancer.obs_freelancer,FreelancerLinguagem.id_freelancerLinguagem, FreelancerLinguagem.id_freelancer_freelancerLinguagem, 
 FreelancerLinguagem.id_linguagem_freelancerLinguagem from FreelancerLinguagem
@@ -186,6 +188,7 @@ create table Projeto
     id_contratante_projeto int not null,
     id_linguagem_projeto int not null,
 	nome_projeto varchar(50) not null ,
+    img_projeto longblob null,
 	dtCriacao_projeto timestamp not null,
 	versao_projeto varchar(20) not null,
 	status_projeto varchar(20) not null,
@@ -195,7 +198,7 @@ create table Projeto
 	constraint Fk_Id_Contratante_Projeto foreign key (id_contratante_projeto) references Contratante (id_contratante),
     constraint Fk_Id_Linguagem_Projeto foreign key (id_linguagem_projeto) references Linguagem (id_linguagem)
 );
-
+drop table projeto;
 insert into projeto
 	(id_contratante_projeto, id_linguagem_projeto,nome_projeto, versao_projeto, status_projeto, obs_projeto)
 values
@@ -241,13 +244,20 @@ create table Funcionarios
 	obs_Funcionario varchar(255) null
 );
 
-create table Teste
+create table reviewFreelancer
 (
-	id_teste int not null auto_increment primary key,
-    nascimento_teste date not null
+	id_review int not null auto_increment primary key,
+    id_freelancerReview int not null,
+    id_contratanteReview int not null,
+    comentario_review varchar(255) not null,
+    status_review varchar(15) not null,
+    obs_reviews varchar(255) null,
+    
+    constraint Fk_Id_Freelancer_Review foreign key(id_freelancerReview) references Freelancer(id_freelancer),
+	constraint Fk_Id_Contratante_Review foreign key(id_contratanteReview) references Contratante(id_contratante)
 );
 
-select * from teste;
+select * from reviewFreelancer;
 
 insert into teste
 (nascimento_teste)

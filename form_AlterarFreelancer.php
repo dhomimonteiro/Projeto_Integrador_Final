@@ -8,6 +8,7 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form_AlterarFreelancer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -72,141 +73,213 @@
     }
     ?>
 
+
     <div class="container" style="max-width:800px;">
-        <form action="" method="post" class="form-control" onsubmit="return false">
-            <input style="display:none" type="text" id="txtID" name="txtID" value="<?= $idUsuario ?>">
-            <div class="row mt-3">
-                <h1>Alterar informações</h1>
+        <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="perfil-aba" data-bs-toggle="tab" href="#dados-perfil" role="tab" aria-controls="dados-perfil" aria-selected="true">Dados pessoais</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="linguagem-aba" data-bs-toggle="tab" href="#dados-linguagem" role="tab" aria-controls="dados-linguagem" aria-selected="false">Linguagens</a>
+            </li>
+
+        </ul>
+
+        <!---------------->
+        <!--ABA CONTEÚDO-->
+        <!---------------->
+        <div class="tab-content" id="ex1-content">
+            <!-------------->
+            <!--ABA PERFIL-->
+            <!-------------->
+            <div class="tab-pane fade show active" id="dados-perfil" role="tabpanel" aria-labelledby="perfil-aba">
+                <form action="" method="post" class="form-control" onsubmit="return false">
+                    <input style="display:none" type="text" id="txtID" name="txtID" value="<?= $idUsuario ?>">
+                    <div class="row mt-3">
+                        <h1>Alterar informações</h1>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-sm-12 mt-2 d-flex justify-content-center">
+                            <img src="<?= $img ?>" alt="" style="height: 150px; width:150px; background-color: black; border-radius: 50%; object-fit: cover;" id="preImg">
+                        </div>
+                        <div class="col-sm-12 mt-2 d-flex justify-content-center">
+                            <input type="file" onchange="previewFile(this)" name="txtImg" id="txtImg">
+                        </div>
+                    </div>
+                    <div class="row mt-4" style="display:none">
+                        <div class="col-sm-12">
+                            <textarea name="base64Code" class="form-control" id="base64Code" rows="5"><?= $img ?></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-12">
+                            <h2><i class="fa-solid fa-laptop"></i>
+                                Cadastro</h2>
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="txtLogin">Login</label>
+                            <input type="text" class="form-control txtLogin" id="txtLogin" name="txtLogin" value="<?= $login ?>">
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="txtEmail">E-mail</label>
+                            <input type="email" class="form-control txtEmail" id="txtEmail" name="txtEmail" value="<?= $email ?>">
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="txtSenha">Senha</label>
+                            <input type="text" class="form-control txtSenha" id="txtSenha" name="txtSenha" value="<?= $senha ?>">
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="txtSenha">Confirmar senha</label>
+                            <input type="text" class="form-control txtConfSenha" id="txtConfSenha" name="txtConfSenha" value="<?= $senha ?>">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-4 mt-3">
+                        <div class="col-sm-12 mt-3">
+                            <h2><i class="fa-solid fa-user"></i>
+                                Dados pessoais</h2>
+                        </div>
+                        <div class="col-sm-7 mt-2">
+                            <label for="txtNome">Nome</label>
+                            <input type="text" class="form-control txtNome" id="txtNome" name="txtNome" value="<?= $nome ?>">
+                        </div>
+                        <div class="col-sm-12"></div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtCPF">CPF</label>
+                            <input type="text" class="form-control txtCPF" id="txtCPF" name="txtCPF" value="<?= $cpf ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtRG">RG</label>
+                            <input type="text" class="form-control txtRG" id="txtRG" name="txtRG" value="<?= $rg ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtDataNasc">Data de nascimento</label>
+                            <input type="text" class="form-control txtDataNasc" id="txtDataNasc" name="txtDataNasc" value="<?= $dtNasc ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtCelular1">Celular 1</label>
+                            <input type="text" class="form-control txtCelular1" id="txtCelular1" name="txtCelular1" value="<?= $celular1 ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtCelular2">Celular 2</label>
+                            <input type="text" class="form-control txtCelular2" id="txtCelular2" name="txtCelular2" value="<?= $celular2 ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtTelefone">Telefone</label>
+                            <input type="text" class="form-control txtTelefone" id="txtTelefone" name="txtTelefone" value="<?= $telefone ?>">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-3 mb-4">
+                        <div class="col-sm-12 mt-2">
+                            <h2><i class="fa-solid fa-money-check"></i>
+                                Dados bancários</h2>
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtBanco">Banco</label>
+                            <input type="text" class="form-control txtBanco" id="txtBanco" name="txtBanco" value="<?= $banco ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtAgencia">Agência</label>
+                            <input type="text" class="form-control txtAgencia" id="txtAgencia" name="txtAgencia" value="<?= $agencia ?>">
+                        </div>
+                        <div class="col-sm-4 mt-2">
+                            <label for="txtContaCorrente">Conta corrente</label>
+                            <input type="text" class="form-control txtContaCorrente" id="txtContaCorrente" name="txtContaCorrente" value="<?= $contaCorrente ?>">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-3 mb-4">
+                        <div class="col-sm-12">
+                            <h2><i class="fa-solid fa-location-dot"></i>
+                                Localização</h2>
+                        </div>
+                        <div class="col-sm-2 mt-2">
+                            <label for="txtCEP">CEP</label>
+                            <input type="text" class="form-control txtCEP" id="txtCEP" name="txtCEP" value="<?= $cep ?>">
+                        </div>
+                        <div class="col-sm-2 mt-2">
+                            <label for="txtUF">UF</label>
+                            <input type="text" class="form-control txtUF" id="txtUF" name="txtUF" value="<?= $uf ?>">
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <label for="txtCidade">Cidade</label>
+                            <input type="text" class="form-control txtCidade" id="txtCidade" name="txtCidade" value="<?= $cidade ?>">
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <label for="txtBairro">Bairro</label>
+                            <input type="text" class="form-control txtBairro" id="txtBairro" name="txtBairro" value="<?= $bairro ?>">
+                        </div>
+                        <div class="col-sm-3 mt-2">
+                            <label for="txtBairro">Rua</label>
+                            <input type="text" class="form-control txtLogradouro" id="txtLogradouro" name="txtLogradouro" value="<?= $logradouro ?>">
+                        </div>
+                        <div class="col-sm-2 mt-2">
+                            <label for="txtNumero">Número</label>
+                            <input type="text" class="form-control txtNumero" id="txtNumero" name="txtNumero" value="<?= $numero ?>">
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 mb-4">
+                        <div class="col-sm-12 mt-3 ">
+                            <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="freelancerAlterar()">Salvar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row my-3">
-                <div class="col-sm-12 mt-2 d-flex justify-content-center">
-                    <img src="<?= $img ?>" alt="" style="height: 150px; width:150px; background-color: black; border-radius: 50%; object-fit: cover;" id="preImg">
-                </div>
-                <div class="col-sm-12 mt-2 d-flex justify-content-center">
-                    <input type="file" onchange="previewFile(this)" name="txtImg" id="txtImg">
-                </div>
-            </div>
-            <div class="row mt-4" style="display:none">
-                <div class="col-sm-12">
-                    <textarea name="base64Code" class="form-control" id="base64Code" rows="5"><?= $img ?></textarea>
-                </div>
+            <!----------------->
+            <!--ABA LINGUAGEM-->
+            <!----------------->
+            <div class="tab-pane fade" id="dados-linguagem" role="tabpanel" aria-labelledby="linguagem-aba">
+                <form action="" method="post" class="form-control" onsubmit="return false">
+                    <input style="display:none" type="text" id="txtID" name="txtID" value="<?= $idUsuario ?>">
+                    <div class="row mt-3">
+                        <h1 class="text-center">Adicionar linguagens</h1>
+                    </div>
+                    <h3>Suas linguagens</h3>
+                    <div class="suas-linguagens">
+                        <?php
+                        try {
+                            $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
+                            freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
+                            INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem where freelancerlinguagem.id_freelancer_freelancerLinguagem = $idUsuario;");
+                        } catch (PDOException $ex) {
+                            echo $ex->getMessage();
+                        }
+                        while ($linha = $sql2->fetch()) {
+                            echo '<p style="background-color: #1e102e; color:#e6e6e6; border-radius:20px; padding-left: 7px; padding-right: 7px; padding-top: 5px;padding-bottom: 5px;" class="d-inline mx-2 px-4;">' . $linha[3] . '</p>';
+                        };
+                        ?>
+                    </div>
+                    <div class="adicionar-linguagem mt-3">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-5 d-inline-flex justify-content-end ">
+                                <h5>Adicionar nova linguagem:</h5>
+                            </div>
+                            <div class="col-sm-6 d-inline-flex justify-content-start">
+                                <select name="txtLinguagem" id="txtLinguagem" class="select">
+                                    <option value="">--Selecione uma linguagem--</option>
+                                    <?php
+                                    include_once('TelaPesquisarProjeto.php');
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-4">
+                        <div class="col-sm-12 mt-3 ">
+                            <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="linguagemAdicionar()">Salvar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
-            <div class="row mb-4">
-                <div class="col-sm-12">
-                    <h2><i class="fa-solid fa-laptop"></i>
-                        Cadastro</h2>
-                </div>
-                <div class="col-sm-6 mt-2">
-                    <label for="txtLogin">Login</label>
-                    <input type="text" class="form-control txtLogin" id="txtLogin" name="txtLogin" value="<?= $login ?>">
-                </div>
-                <div class="col-sm-6 mt-2">
-                    <label for="txtEmail">E-mail</label>
-                    <input type="email" class="form-control txtEmail" id="txtEmail" name="txtEmail" value="<?= $email ?>">
-                </div>
-                <div class="col-sm-6 mt-2">
-                    <label for="txtSenha">Senha</label>
-                    <input type="text" class="form-control txtSenha" id="txtSenha" name="txtSenha" value="<?= $senha ?>">
-                </div>
-                <div class="col-sm-6 mt-2">
-                    <label for="txtSenha">Confirmar senha</label>
-                    <input type="text" class="form-control txtConfSenha" id="txtConfSenha" name="txtConfSenha" value="<?= $senha ?>">
-                </div>
-            </div>
-            <hr>
-            <div class="row mb-4 mt-3">
-                <div class="col-sm-12 mt-3">
-                    <h2><i class="fa-solid fa-user"></i>
-                        Dados pessoais</h2>
-                </div>
-                <div class="col-sm-7 mt-2">
-                    <label for="txtNome">Nome</label>
-                    <input type="text" class="form-control txtNome" id="txtNome" name="txtNome" value="<?= $nome ?>">
-                </div>
-                <div class="col-sm-12"></div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtCPF">CPF</label>
-                    <input type="text" class="form-control txtCPF" id="txtCPF" name="txtCPF" value="<?= $cpf ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtRG">RG</label>
-                    <input type="text" class="form-control txtRG" id="txtRG" name="txtRG" value="<?= $rg ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtDataNasc">Data de nascimento</label>
-                    <input type="text" class="form-control txtDataNasc" id="txtDataNasc" name="txtDataNasc" value="<?= $dtNasc ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtCelular1">Celular 1</label>
-                    <input type="text" class="form-control txtCelular1" id="txtCelular1" name="txtCelular1" value="<?= $celular1 ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtCelular2">Celular 2</label>
-                    <input type="text" class="form-control txtCelular2" id="txtCelular2" name="txtCelular2" value="<?= $celular2 ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtTelefone">Telefone</label>
-                    <input type="text" class="form-control txtTelefone" id="txtTelefone" name="txtTelefone" value="<?= $telefone ?>">
-                </div>
-            </div>
-            <hr>
-            <div class="row mt-3 mb-4">
-                <div class="col-sm-12 mt-2">
-                    <h2><i class="fa-solid fa-money-check"></i>
-                        Dados bancários</h2>
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtBanco">Banco</label>
-                    <input type="text" class="form-control txtBanco" id="txtBanco" name="txtBanco" value="<?= $banco ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtAgencia">Agência</label>
-                    <input type="text" class="form-control txtAgencia" id="txtAgencia" name="txtAgencia" value="<?= $agencia ?>">
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <label for="txtContaCorrente">Conta corrente</label>
-                    <input type="text" class="form-control txtContaCorrente" id="txtContaCorrente" name="txtContaCorrente" value="<?= $contaCorrente ?>">
-                </div>
-            </div>
-            <hr>
-            <div class="row mt-3 mb-4">
-                <div class="col-sm-12">
-                    <h2><i class="fa-solid fa-location-dot"></i>
-                        Localização</h2>
-                </div>
-                <div class="col-sm-2 mt-2">
-                    <label for="txtCEP">CEP</label>
-                    <input type="text" class="form-control txtCEP" id="txtCEP" name="txtCEP" value="<?= $cep ?>">
-                </div>
-                <div class="col-sm-2 mt-2">
-                    <label for="txtUF">UF</label>
-                    <input type="text" class="form-control txtUF" id="txtUF" name="txtUF" value="<?= $uf ?>">
-                </div>
-                <div class="col-sm-3 mt-2">
-                    <label for="txtCidade">Cidade</label>
-                    <input type="text" class="form-control txtCidade" id="txtCidade" name="txtCidade" value="<?= $cidade ?>">
-                </div>
-                <div class="col-sm-3 mt-2">
-                    <label for="txtBairro">Bairro</label>
-                    <input type="text" class="form-control txtBairro" id="txtBairro" name="txtBairro" value="<?= $bairro ?>">
-                </div>
-                <div class="col-sm-3 mt-2">
-                    <label for="txtBairro">Rua</label>
-                    <input type="text" class="form-control txtLogradouro" id="txtLogradouro" name="txtLogradouro" value="<?= $logradouro ?>">
-                </div>
-                <div class="col-sm-2 mt-2">
-                    <label for="txtNumero">Número</label>
-                    <input type="text" class="form-control txtNumero" id="txtNumero" name="txtNumero" value="<?= $numero ?>">
-                </div>
-            </div>
+        </div>
 
-            <div class="row mt-3 mb-4">
-                <div class="col-sm-12 mt-3 ">
-                    <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="freelancerAlterar()">Salvar</button>
-                </div>
-            </div>
-        </form>
+
+
+
         <div id="resultado"></div>
     </div>
 

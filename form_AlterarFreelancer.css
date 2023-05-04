@@ -1,0 +1,21 @@
+:root {
+    --roxo-escuro: #1e102e;
+    --amarelo-texto: #ffc600;
+    --cinza-claro: #e6e6e6;
+}
+
+.suas-linguagens {
+    border: .5px solid #e6e6e6;
+    padding: 10px;
+}
+
+h5 {
+    display: inline-flex;
+}
+.adicionar-linguagem select {
+    border: none;
+    border: .5px solid var(--roxo-escuro);
+    border-radius: 30px;
+    outline: none;
+    padding-left: 5px;
+}
