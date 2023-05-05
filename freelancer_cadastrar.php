@@ -1,4 +1,5 @@
 <?php
+
     include_once('Projeto/TelaLoginteste/conexao.php');
     
     if ($_POST) {
@@ -28,7 +29,7 @@
     
         try {
             $sql = $conn->prepare(
-                "insert into freelancer
+                "insert into freelancert
                 (nome_freelancer, img_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer, numero_freelancer, bairro_freelancer, cidade_freelancer, uf_freelancer, cep_freelancer, dtNascimento_freelancer, banco_freelancer, agencia_freelancer, contaCorrente_freelancer, login_freelancer, email_freelancer, senha_freelancer, status_freelancer, obs_freelancer)
                 values
                 (:nome_freelancer, :img_freelancer, :cpf_freelancer, :rg_freelancer, :celular1_freelancer, :celular2_freelancer, :telefone_freelancer, :logradouro_freelancer, :numero_freelancer, :bairro_freelancer, :cidade_freelancer, :uf_freelancer, :cep_freelancer, STR_TO_DATE(:dtNascimento_freelancer,'%d-%m-%Y'), :banco_freelancer, :agencia_freelancer, :contaCorrente_freelancer, :login_freelancer, :email_freelancer, :senha_freelancer, :status_freelancer, :obs_freelancer);"

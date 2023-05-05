@@ -119,7 +119,6 @@
     <div class="cartao">
     <div class="container-fluid">
         <div class="row ">
-        
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
@@ -135,7 +134,8 @@
 
                             </div>
                             <div class="nome d-inline mx-5 w-25 d-flex justify-content-center">
-                                <p class="text-center" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">'.$row[1].'</p>
+                            <p style="display: none;" id="txtID" name="txtID">'.$row[0].'</p>
+                                <p class="text-center" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">'.$row[1].'</p> 
                                 <a href="form_AlterarFreelancer.php"><i class="fas fa-regular fa-pen-to-square" style="z-index:10"></i></a>
                             </div>
                             <div class="avaliacao d-inline">
@@ -222,46 +222,11 @@
             </div>
             <div class="col-sm-1 col-md-1 d-lg-none"></div>
             <div class="col-sm-1 col-md-1 d-lg-none"></div>
-            <div class="col-sm-10 col-md-10 col-lg-3 mt-3">
-                <div class="card">
-                    <div class="portfolio">
-                        <div class="row">
-                            <div class="col-sm-12 d-flex justify-content-center">
-                                <h2 class="pt-3 ps-3">Feedback</h2>
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-center py-3">
-                            <div class="col-sm-11">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-8">
-                                                <p style="font-size:25px; height:50px; line-height: 50px;">Nome</p>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img style="background-color: #000; width:50px; height:50px; border-radius: 50%">
-                                            </div>
-                                        </div>   
-                                        <div class="row">
-                                            <div class="avaliacao d-inline">
-                                                <p class="small">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </p>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus repellat amet cumque? Provident voluptas quae dicta neque similique? Odio quisquam alias error! Nesciunt eum sint debitis id possimus voluptatibus placeat!</p>
-                                        </div>                                     
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
+            <div class="col-sm-10 col-md-10 col-lg-3 mt-3">';
+
+            include_once('freelancer_feedback.php');
+
+            echo '</div>            
         </div>
     </div>
 </div>      
