@@ -20,7 +20,7 @@ create table Contratante
 	status_contratante varchar(20) not null,
 	obs_contratante varchar(255) null
 );
-drop table Contratante
+drop table Contratante;
 insert into Contratante
 	(nome_contratante, cnpj_contratante, telefone1_contratante, telefone2_contratante, logradouro_contratante, numero_contratante,
 	bairro_contratante, cidade_contratante, uf_contratante, cep_contratante, login_contratante, senha_contratante, status_contratante,
@@ -247,21 +247,43 @@ create table Funcionarios
 create table reviewFreelancer
 (
 	id_review int not null auto_increment primary key,
-    id_freelancerReview int not null,
-    id_contratanteReview int not null,
-    comentario_review varchar(255) not null,
-    status_review varchar(15) not null,
-    obs_reviews varchar(255) null,
+    id_freelancer_review int not null,
+    id_contratante_review int not null,
+    nota_review int not null,
+    comentario_review text not null,
+    data_review timestamp not null,
+    status_review varchar(20) not null,
+    obs_review varchar(255) null,
     
-    constraint Fk_Id_Freelancer_Review foreign key(id_freelancerReview) references Freelancer(id_freelancer),
-	constraint Fk_Id_Contratante_Review foreign key(id_contratanteReview) references Contratante(id_contratante)
+    constraint FK_Id_Freelancer_ReviewFreelancer foreign key (id_freelancer_review) references Freelancer (id_freelancer),
+    constraint FK_Id_Contratante_ReviewFreelancer foreign key (id_contratante_review) references Contratante (id_contratante)
 );
 
 select * from reviewFreelancer;
+select * from freelancer;
+select * from contratante;
+select reviewFreelancer.id_review, freelancer.nome_freelancer, contratante.nome_contratante, contratante.img_contratante, reviewFreelancer.nota_review, 
+reviewFreelancer.comentario_review from reviewFreelancer
+inner join Freelancer on reviewFreelancer.id_freelancer_review = freelancer.id_freelancer
+inner join Contratante on reviewFreelancer.id_contratante_review = contratante.id_contratante
+where id_freelancer = 1;
 
-insert into teste
-(nascimento_teste)
+insert into reviewFreelancer
+(id_freelancer_review, id_contratante_review,nota_review, comentario_review, status_review, obs_review)
 values
-(STR_TO_DATE('06-01-2019','%d-%m-%Y'));
+(1, 1, 4, 'Muito bom', 'Ativo', '');
 
-drop table teste;
+drop table reviewFreelancer;
+
+create table review_table
+(
+	review_id int not null auto_increment primary key,
+    user_name varchar(200) not null,
+    user_rating int not null,
+    user_review text not null,
+    cadastro_review timestamp not null
+);
+
+select * from review_table;
+
+drop table review_table;

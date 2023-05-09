@@ -206,11 +206,11 @@
 			url: "submit_rating.php",
 			method: "POST",
 			data: {
-			action: 'load_data'
+				action: 'load_data'
 			},
-			dataType:"JSON",
+			dataType: "JSON",
 			success: function(data) {
-				
+				alert(data)
 				$('#average_rating').text(data.average_rating);
 				$('#total_review').text(data.total_review);
 
@@ -297,6 +297,33 @@
 	}
 
 
-		load_rating_data();
-	
+	load_rating_data();
 </script>
+
+<!-- <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p style="font-size:25px; height:50px; line-height: 50px;" class="nomeContratante" id="nomeContratante"></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <img src="' . $linha[3] . '" style="background-color: #000; width:50px; height:50px; border-radius: 50%">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="avaliacao d-inline">
+                                        <p class="small">
+                                            <i class="fas fa-star main_star"></i>
+                                            <i class="fas fa-star main_star"></i>
+                                            <i class="fas fa-star main_star"></i>
+                                            <i class="fas fa-star main_star"></i>
+                                            <i class="fas fa-star main_star"></i>
+                                        </p>
+                                    </div>
+                                    <p class="comentarioFeedback" id="comentarioFeedback"></p>
+                                    <div class="form-group text-center mt-4">
+                                        <button type="button" class="btn btn-primary" id="add_review">Adicionar review</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
