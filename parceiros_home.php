@@ -62,13 +62,10 @@
         <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
         <img src="img/americanas-logo.png" alt="" class="logoParceiro">
         <img src="img/giraffas-logo.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
-        <img src="img/Nestlé_logo.svg.png" alt="" class="logoParceiro">
+        <img src="img/imglogo1.png" alt="" class="logoParceiro">
+        <img src="img/lg.png" alt="" class="logoParceiro">
+        <img src="img/samsung.png" alt="" class="logoParceiro">
+        <img src="img/youtube.png" alt="" class="logoParceiro">
     </div>
     <i id="right" class="fa-solid fa-angle-right"></i>
 </div>

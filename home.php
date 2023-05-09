@@ -34,11 +34,13 @@
         <div class="row sessaoLinguagens">
             <?php include_once('linguagens_home.php');?>
         </div>
+        <!--VOLTOU COM A MARGEM-->
+        <?php include_once('rodape.php'); ?>
     </div>
     
 
-    <!--FORA DE CONTAINER PQ TAVA COM MARGEM-->
-    <?php include_once('rodape.php'); ?>
+    
+    
 
 
 

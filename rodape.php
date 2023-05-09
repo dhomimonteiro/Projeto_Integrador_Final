@@ -1,7 +1,7 @@
 <footer class="text-center mt-5">
   <div class="container p-4">
     <!-- REDES SOCIAIS-->
-    <section class="mb-4">
+    <section class="mb-4" >
       <!-- Facebook -->
       <a class="btn btn-outline-warning btn-floating m-1" href="#!" role="button"
         ><i class="fab fa-facebook-f"></i
@@ -34,17 +34,16 @@
     </section>
     <!-- Section: Social media -->
 
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam beatae sapiente cum sunt cupiditate odio corrupti laboriosam deleniti a nesciunt aut dolorum ea earum culpa reprehenderit, perferendis illo alias facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi pariatur, quasi unde ex asperiores quis, quibusdam ab porro ea eius perferendis exercitationem rem deserunt molestiae iusto eum saepe. Provident, deleniti.
-      </p>
+    <section class="" >
+      <p style="margin-top: 30px;">
+      "Nós fornecemos soluções personalizadas para atender às suas necessidades de negócios. Entre em contato conosco hoje para saber como podemos ajudar a impulsionar seus projetos com os melhores talentos de freelancers disponíveis no mercado."      </p>
     </section>
 
     <!-- Section: Form -->
     <section class="">
       <form action="">
         <!--Grid row-->
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center mb-3 mt-3">
           <!--Grid column-->
           <div class="col-6 d-flex flex-row justify-content-end">
             <p class="pt-2 chamadaCadastro">
@@ -56,7 +55,7 @@
           <!--Grid column-->
           <div class="col-md-6 col-sm-12 mb-sm-3 d-flex flex-row justify-content-md-start justify-content-center">
             <!-- BOTÃO CADASTRAR -->
-            <button class="btn btn-warning">CADASTRE-SE</button>
+            <a href="Projeto/TelaLoginteste/index.php" class="btn btn-warning">Cadastre-se</a>
           </div>
           <!--Grid column-->
 
@@ -65,30 +64,17 @@
         <!--Grid row-->
       </form>
     </section>
-
-    
-
-
     <!-- Section: Links -->
     <section class="">
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase link">Links</h5>
-
-          <ul class="list-unstyled mb-0">
+          <h5 class="text-uppercase link" style="text-align: left;">Sobre a Empresa</h5>
+          <ul class="list-unstyled mb-0" >
             <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <p style="text-align: left;">
+              Conectamos empresas e empreendedores com os melhores freelancers do mercado. Com soluções personalizadas e habilidades especializadas, nossos freelancers ajudam a impulsionar seu negócio. Entre em contato para saber mais              </p>
             </li>
           </ul>
         </div>
@@ -96,20 +82,20 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase link">Links</h5>
+          <h5 class="text-uppercase link" style="text-align: left;">Recursos</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0" style="text-align: left;">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">Central de ajuda</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">Como funciona</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">Planos de benefícios</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">Imprensa</a>
             </li>
           </ul>
         </div>
@@ -117,20 +103,20 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase link">Links</h5>
+          <h5 class="text-uppercase link" style="text-align: left;">Encontre trabalho</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0" style="text-align: left;">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">Desenvolvimento Web</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">Font-end</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">Back-end</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">Full-stack</a>
             </li>
           </ul>
         </div>
@@ -138,20 +124,20 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase link">Links</h5>
+          <h5 class="text-uppercase link" style="text-align: left;">Freelancers</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0" style="text-align: left;">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">Freelancers Brasil</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">Freelancers Colômbia</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">Freelancers Argentina</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">Freelancers Paraguai</a>
             </li>
           </ul>
         </div>
