@@ -32,7 +32,7 @@
             color: #e6e6e6;
             padding: 2px;
             height: 35px;
-/*           width: 400px; */
+            /*           width: 400px; */
             line-height: 35px;
         }
 
@@ -42,30 +42,25 @@
         }
 
         .panel {
-/*          width: 350px; */
+            /*          width: 350px; */
             padding: 0 18px;
             background-color: #fff;
             display: none;
             overflow: hidden;
         }
 
-        .foto-freelancer {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-        }
 
-        .img-freelancer {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
 
+        .filtro-menu button {
+            outline: none;
+            border: none;
+            background-color: var(--roxo-escuro);
         }
     </style>
 </head>
 
 <body>
-    <?php 
+    <?php
     include_once('cabecalho_autenticar.php');
     ?>
 
@@ -85,20 +80,27 @@
         <div class="row mt-2">
             <div class="col-sm-2 col-lg-4 mt-3">
                 <div class="filtro-menu sticky-top">
+
+                    <h5>Pesquise por nome</h5>
+                    <div class=" menu-filtros px align-self-center text-center">
+                        <input type="text" name="pesquisaNome" id="pesquisaNome" class="form-control mb-2">
+                    </div>
+
+
                     <button class="accordion titulo-menu w-100">
                         <h5>Área</h5>
                     </button>
                     <div class="panel menu-filtros px align-self-center text-center">
                         <p class="small d-inline-block">
-                            <input type="radio" name="área">
+                            <input type="checkbox" name="area" class="area" value="Front-end">
                             Front-end
                         </p>
                         <p class="small d-inline-block">
-                            <input type="radio" name="área">
+                            <input type="checkbox" name="area" class="area" value="Back-end">
                             Back-end
                         </p>
                         <p class="small d-inline-block">
-                            <input type="radio" name="área">
+                            <input type="checkbox" name="area" class="area" value="Fullstack">
                             Fullstack
                         </p>
 
@@ -129,15 +131,33 @@
                                     </p>
                             ';
                             }
-                            ?> 
+                            ?>
 
                         </div>
+                    </div>
+                    <button class="accordion titulo-menu w-100">
+                        <h5>Nota</h5>
+                    </button>
+                    <div class="panel menu-filtros px align-self-center text-center">
+                        <p class="small d-inline-block">
+                            <input type="radio" name="área">
+                            Front-end
+                        </p>
+                        <p class="small d-inline-block">
+                            <input type="radio" name="área">
+                            Back-end
+                        </p>
+                        <p class="small d-inline-block">
+                            <input type="radio" name="área">
+                            Fullstack
+                        </p>
+
                     </div>
                 </div>
             </div>
             <div class="col sm-6 freelancers">
-                
-                <?php include('tela_freelancers_pesquisar.php');?>
+
+                <?php include('tela_freelancers_pesquisar.php'); ?>
             </div>
 
         </div>
@@ -168,37 +188,83 @@
         };
 
         var value = [];
-        if ($('.filtro').click(function(){
-            if ($(this).is(':checked')) {
-                value.push($(this).val());
-               /*  alert(value); */
-            }
-            if ($(this).is(':checked') == false) {
-                value.pop($(this).val());
-               /*  alert(value); */
-                
-            }
+        if ($('.filtro').click(function() {
+                if ($(this).is(':checked')) {
+                    value.push($(this).val());
+                    /*  alert(value); */
+                }
+                if ($(this).is(':checked') == false) {
+                    value.pop($(this).val());
+                    /*  alert(value); */
+
+                }
+
+                $.ajax({
+                    url: "tela_freelancer_fetch.php",
+                    type: "POST",
+                    data: "request=" + value,
+                    beforeSend: function() {
+                        $(".freelancers").html("Procurando");
+                    },
+                    success: function(data) {
+                        $(".freelancers").html(data);
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
+                    }
+                })
+            }));
+
+        var area = "";
+        if ($('.area').click(function() {
+                var $box = $(this);
+                if ($box.is(":checked")) {
+                    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                    $(group).prop("checked", false);
+                    $box.prop("checked", true);
+                    var area = $(this).val();
+                } else {
+                    $box.prop("checked", false);
+                    var area = "";
+                }
+
+                $.ajax({
+                    url: "tela_freelancer_fetch.php",
+                    type: "POST",
+                    data: "area= " + area,
+                    beforeSend: function() {
+                        $(".freelancers").html("Procurando");
+                    },
+                    success: function(data) {
+                        $(".freelancers").html(data);
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
+                    }
+                })
+            }));
+        
+        var texto = "";
+        $('#pesquisaNome').on('input', function(){
+            texto = $('#pesquisaNome').val();
 
             $.ajax({
-                url: "tela_freelancer_fetch.php",
-                type:"POST",
-                data: "request=" + value,
-                beforeSend:function(){
-                    $(".freelancers").html("Procurando");
-                },
-                success:function(data){
-                    $(".freelancers").html(data);
-                },
-                error: function(jqXhr, textStatus, errorMessage) {
-                    $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
-            }
-            })
-        }));
-            
-            
-           
-        
+                    url: "tela_freelancer_fetch.php",
+                    type: "POST",
+                    data: "texto= " + texto,
+                    beforeSend: function() {
+                        $(".freelancers").html("Procurando");
+                    },
+                    success: function(data) {
+                        $(".freelancers").html(data);
+                    },
+                    error: function(jqXhr, textStatus, errorMessage) {
+                        $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
+                    }
+                })
+        });
     </script>
+
 </body>
 
 </html>

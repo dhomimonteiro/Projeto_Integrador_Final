@@ -1,4 +1,10 @@
-
+<style>
+    .foto-freelancer {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+</style>
 <?php
 include_once('Projeto/TelaLoginteste/conexao.php');
 
@@ -11,6 +17,7 @@ try {
 while ($row = $sql->fetch()) {
     $nome = $row[1];
     $img = $row[2];
+    $bio = $row[19];
     echo '                             
     <div class="card mt-3">
     <div class="card-body">
@@ -21,7 +28,7 @@ while ($row = $sql->fetch()) {
                 <div class="row">
 
                     <div class="col-sm-12">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias sapiente quos iste velit, facilis esse explicabo, necessitatibus voluptatem ut earum similique reprehenderit laborum voluptas! Nesciunt est facere amet quidem quasi.</p>
+                        <p class="card-text">'.$bio.'</p>
                         
                     </div>
 
@@ -38,8 +45,8 @@ while ($row = $sql->fetch()) {
                         <i class="fas fa-star-half-stroke"></i>
                     </p>
                 </div>
-                <div class="foto-freelancer img mt-1" style="height:100px;">
-                    <img src="'.$row[2].'" alt="" style="height:100%; width=100%; border-radius:50%">
+                <div class="foto-freelancer mt-1" style="height:100px;width:100px;">
+                    <img src="'.$row[2].'" alt="" style="height:100%;width:100%; object-fit:cover;border-radius:50%">
                 </div>
             </div>
         </div>

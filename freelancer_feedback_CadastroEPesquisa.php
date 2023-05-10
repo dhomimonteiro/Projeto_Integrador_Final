@@ -51,7 +51,7 @@ if(isset($_POST["action"]))
     reviewFreelancer.comentario_review, reviewFreelancer.data_review from reviewFreelancer
     inner join Freelancer on reviewFreelancer.id_freelancer_review = freelancer.id_freelancer
     inner join Contratante on reviewFreelancer.id_contratante_review = contratante.id_contratante
-    where id_freelancer = 1 order by id_review desc limit 2');
+    where id_freelancer = 1 order by id_review desc');
 
     while($row = $sql->fetch())
     {

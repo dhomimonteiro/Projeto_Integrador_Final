@@ -40,8 +40,9 @@
             $agencia = $row[16];
             $contaCorrente = $row[17];
             $login = $row[18];
-            $email = $row[19];
-            $senha = $row[20];
+            $bio = $row[19];
+            $email = $row[20];
+            $senha = $row[21];
 
             echo "
         <div style='display: none'>
@@ -132,6 +133,10 @@
                         <div class="col-sm-6 mt-2">
                             <label for="txtSenha">Confirmar senha</label>
                             <input type="text" class="form-control txtConfSenha" id="txtConfSenha" name="txtConfSenha" value="<?= $senha ?>">
+                        </div>
+                        <div class="col-sm-12 mt-2">
+                            <label for="txtBio">Bio</label>
+                            <textarea class="form-control" name="txtBio" id="txtBio" rows="6"><?= $bio ?></textarea>
                         </div>
                     </div>
                     <hr>

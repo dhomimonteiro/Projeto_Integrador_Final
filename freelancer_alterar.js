@@ -18,6 +18,7 @@ function freelancerAlterar(){
     let agencia_freelancer = $('#txtAgencia').val();
     let contaCorrente_freelancer = $('#txtContaCorrente').val();
     let login_freelancer = $('#txtLogin').val();
+    let bio_freelancer = $('#txtBio').val();
     let email_freelancer = $('#txtEmail').val();
     let senha_freelancer = $('#txtSenha').val();
 
@@ -46,6 +47,7 @@ function freelancerAlterar(){
             txtAgencia: agencia_freelancer,
             txtContaCorrente: contaCorrente_freelancer,
             txtLogin: login_freelancer,
+            txtBio: bio_freelancer,
             txtEmail: email_freelancer,
             txtSenha: senha_freelancer
         },

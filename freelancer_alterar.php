@@ -19,11 +19,11 @@
         $uf_freelancer = $_POST['txtUF'];
         $cep_freelancer = $_POST['txtCEP'];
         $dataNasc_freelancer = $_POST['txtDataNasc'];
-        // $dtNascimento_freelancer = $_POST['txtDataNasc'];
         $banco_freelancer = $_POST['txtBanco'];
         $agencia_freelancer = $_POST['txtAgencia'];
         $contaCorrente_freelancer = $_POST['txtContaCorrente'];
         $login_freelancer = $_POST['txtLogin'];
+        $bio_freelancer = $_POST['txtBio'];
         $email_freelancer = $_POST['txtEmail'];
         $senha_freelancer = $_POST['txtSenha'];
         $status_freelancer = 'Ativo';
@@ -52,6 +52,7 @@
                 agencia_freelancer=:agencia_freelancer,
                 contaCorrente_freelancer=:contaCorrente_freelancer,
                 login_freelancer=:login_freelancer,
+                bio_freelancer=:bio_freelancer,
                 email_freelancer=:email_freelancer,
                 senha_freelancer=:senha_freelancer,
                 status_freelancer=:status_freelancer,
@@ -79,6 +80,7 @@
                 ':agencia_freelancer'=>$agencia_freelancer,
                 ':contaCorrente_freelancer'=>$contaCorrente_freelancer,
                 ':login_freelancer'=>$login_freelancer,
+                ':bio_freelancer'=>$bio_freelancer,
                 ':email_freelancer'=>$email_freelancer,
                 ':senha_freelancer'=>$senha_freelancer,
                 ':status_freelancer'=>$status_freelancer,

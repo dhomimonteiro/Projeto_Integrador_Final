@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<style>
+.ver-mais-feedback {
+    color: #452de3;
+    cursor: pointer;
+}
+</style>
 
 <form action="" method="post" onsubmit="return false">
-    <div class="card">
+    <div class="card" style="height:600px;overflow: scroll; overflow-x:hidden">
         <div class="row">
             <input type='text' class='txtIDLogado' id='txtIDLogado' name='txtIDLogado' value='<?= $idUsuario ?>' style="display: none" />
             <input type='text' class='form-control' id='txtIDFreelancer' name='txtIDFreelancer' value='<?= $row[0] ?>' style="display: none" />
@@ -16,38 +23,30 @@
                         <h2 class="pt-3 ps-3">Feedback</h2>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center py-3">
+                <div class="row d-flex justify-content-center">
                     <div class="col-sm-11">
                         <div id="review_content" class="review_content" >
                         </div>
+                        <!-- <p class="text-right ver-mais-feedback">Ver mais</p> -->
                     </div>
                 </div>
             </div>
             <div id="review_modal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Submit Review</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
                         <div class="modal-body">
-                            <h4 class="text-center mt-2 mb-4">
-                                <i class="fas fa-star star-light submit_star mr-1" id="submit_star_1" data-rating="1"></i>
-                                <i class="fas fa-star star-light submit_star mr-1" id="submit_star_2" data-rating="2"></i>
-                                <i class="fas fa-star star-light submit_star mr-1" id="submit_star_3" data-rating="3"></i>
-                                <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
-                                <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
-                            </h4>
-                            <div class="form-group">
-                                <textarea name="comentario_review" id="comentario_review" class="form-control" placeholder="Type Review Here"></textarea>
-                            </div>
-                            <div class="form-group text-center mt-4">
-                                <div class="row">
-                                    <div class="col-md-12"><input type="submit" id="save_review" value="Submit" class="btn btn-primary"></div>
-                                </div>
-                            </div>
+                        <div class="row">
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <h2 class="pt-3 ps-3">Feedback</h2>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-sm-11">
+                        <div id="review_content" class="review_content" >
+                        </div>
+                    </div>
+                </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -59,6 +58,7 @@
 
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
+<script src="freelancer_feedback.js"></script>
 <script>
     var rating_data = 0;
 
@@ -66,11 +66,10 @@
         load_rating_data();
     })
 
-    $('#add_review').click(function() {
+    $('.ver-mais-feedback').click(function() {
+        load_rating_data();
         $('#review_modal').modal('show');
-        $('#user_name').val("");
-        $('#user_review').val("");
-        reset_background();
+       
     });
 
     $('.close').click(function() {
@@ -146,120 +145,120 @@
 
     });
 
-    function load_rating_data() {
-        $.ajax({
-            url: "freelancer_feedback_CadastroEPesquisa.php",
-            method: "POST",
-            data: {
-                action: 'load_data'
-            },
-            dataType: "JSON",
-            success: function(data) {
-                $('#average_rating').text(data.average_rating);
-                $('#total_review').text(data.total_review);
+    // function load_rating_data() {
+    //     $.ajax({
+    //         url: "freelancer_feedback_CadastroEPesquisa.php",
+    //         method: "POST",
+    //         data: {
+    //             action: 'load_data'
+    //         },
+    //         dataType: "JSON",
+    //         success: function(data) {
+    //             $('#average_rating').text(data.average_rating);
+    //             $('#total_review').text(data.total_review);
 
-                var count_star = 0;
+    //             var count_star = 0;
 
-                $('.main_star').each(function() {
-                    count_star++;
-                    if (Math.ceil(data.average_rating) >= count_star) {
-                        $(this).addClass('text-warning');
-                        $(this).addClass('star-light');
-                    }
-                });
+    //             $('.main_star').each(function() {
+    //                 count_star++;
+    //                 if (Math.ceil(data.average_rating) >= count_star) {
+    //                     $(this).addClass('text-warning');
+    //                     $(this).addClass('star-light');
+    //                 }
+    //             });
 
-                $('#total_five_star_review').text(data.five_star_review);
+    //             $('#total_five_star_review').text(data.five_star_review);
 
-                $('#total_four_star_review').text(data.four_star_review);
+    //             $('#total_four_star_review').text(data.four_star_review);
 
-                $('#total_three_star_review').text(data.three_star_review);
+    //             $('#total_three_star_review').text(data.three_star_review);
 
-                $('#total_two_star_review').text(data.two_star_review);
+    //             $('#total_two_star_review').text(data.two_star_review);
 
-                $('#total_one_star_review').text(data.one_star_review);
+    //             $('#total_one_star_review').text(data.one_star_review);
 
-                $('#five_star_progress').css('width', (data.five_star_review / data.total_review) * 100 + '%');
+    //             $('#five_star_progress').css('width', (data.five_star_review / data.total_review) * 100 + '%');
 
-                $('#four_star_progress').css('width', (data.four_star_review / data.total_review) * 100 + '%');
+    //             $('#four_star_progress').css('width', (data.four_star_review / data.total_review) * 100 + '%');
 
-                $('#three_star_progress').css('width', (data.three_star_review / data.total_review) * 100 + '%');
+    //             $('#three_star_progress').css('width', (data.three_star_review / data.total_review) * 100 + '%');
 
-                $('#two_star_progress').css('width', (data.two_star_review / data.total_review) * 100 + '%');
+    //             $('#two_star_progress').css('width', (data.two_star_review / data.total_review) * 100 + '%');
 
-                $('#one_star_progress').css('width', (data.one_star_review / data.total_review) * 100 + '%');
+    //             $('#one_star_progress').css('width', (data.one_star_review / data.total_review) * 100 + '%');
 
-                if (data.review_data.length > 0) {
-                    var html = '';
+    //             if (data.review_data.length > 0) {
+    //                 var html = '';
 
-                    for (var count = 0; count < data.review_data.length; count++) {
+    //                 for (var count = 0; count < data.review_data.length; count++) {
                         
-                        /*ABRE A ESTRUTURA BASE DO CARD*/ 
-                        html += '<div class="card mb-3" style="position: relative">';
-                        /*ABRE A ESTRUTURA DO CORPO DO CARD*/
-                        html += '<div class="card-body" style="position: relative">';
-                        /*ABRE A ROW DO NOME E DA IMAGEM*/
-                        html += '<div class="row">';
-                        /*DECIDE O TAMANHO DA COLUNA DO NOME*/
-                        html += '<div class="col-sm-8" style="position: relative">';
-                        /*NOME*/
-                        html += '<p style="font-size:25px; height:40px; line-height: 40px;" class="nomeContratante" id="nomeContratante">' + data.review_data[count].nome_contratante + '</p>';
-                        html += '<div class="avaliacao d-inline">';
-                        html += '<p class="small">';
+    //                     /*ABRE A ESTRUTURA BASE DO CARD*/ 
+    //                     html += '<div class="card mb-3" style="position: relative">';
+    //                     /*ABRE A ESTRUTURA DO CORPO DO CARD*/
+    //                     html += '<div class="card-body" style="position: relative">';
+    //                     /*ABRE A ROW DO NOME E DA IMAGEM*/
+    //                     html += '<div class="row">';
+    //                     /*DECIDE O TAMANHO DA COLUNA DO NOME*/
+    //                     html += '<div class="col-sm-8" style="position: relative">';
+    //                     /*NOME*/
+    //                     html += '<p style="font-size:25px; height:40px; line-height: 40px;" class="nomeContratante" id="nomeContratante">' + data.review_data[count].nome_contratante + '</p>';
+    //                     html += '<div class="avaliacao d-inline">';
+    //                     html += '<p class="small">';
 
-                        for (var star = 1; star <= 5; star++) {
-                            var class_name = '';
+    //                     for (var star = 1; star <= 5; star++) {
+    //                         var class_name = '';
 
-                            if (data.review_data[count].rating >= star) {
-                                class_name = 'text-warning';
-                            } else {
-                                class_name = 'star-light';
-                            }
+    //                         if (data.review_data[count].rating >= star) {
+    //                             class_name = 'text-warning';
+    //                         } else {
+    //                             class_name = 'star-light';
+    //                         }
 
-                            html += '<i class="fas fa-star ' + class_name + ' mr-1"></i>';
-                        }
-                        html += '</p>';
-                        html += '</div>';
-                        /*FECHA A COL DO NOME*/
-                        html += '</div>';
-                        /*DECIDE O TAMANHO DA COLUNA DA IMAGEM*/
-                        html += '<div class="col-sm-4 d-flex justify-content-center">';
-                        /*IMAGEM*/
-                        html += '<img src="' + data.review_data[count].img_contratante + '" style="background-color: #000; width:50px; height:50px; border-radius: 50%">';
-                        /*FECHA A COL DA IMAGEM*/
-                        html += '</div>';
+    //                         html += '<i class="fas fa-star ' + class_name + ' mr-1"></i>';
+    //                     }
+    //                     html += '</p>';
+    //                     html += '</div>';
+    //                     /*FECHA A COL DO NOME*/
+    //                     html += '</div>';
+    //                     /*DECIDE O TAMANHO DA COLUNA DA IMAGEM*/
+    //                     html += '<div class="col-sm-4 d-flex justify-content-center">';
+    //                     /*IMAGEM*/
+    //                     html += '<img src="' + data.review_data[count].img_contratante + '" style="background-color: #000; width:50px; height:50px; border-radius: 50%">';
+    //                     /*FECHA A COL DA IMAGEM*/
+    //                     html += '</div>';
 
-                        html += '</div">';
+    //                     html += '</div">';
 
-                        html += '<div class="row">';
-                        html += '<div class="col-sm-12">';
+    //                     html += '<div class="row">';
+    //                     html += '<div class="col-sm-12">';
                         
 
-                        html += '<p class="comentarioFeedback" id="comentarioFeedback">' + data.review_data[count].comentario_review + '</p>';
+    //                     html += '<p class="comentarioFeedback" id="comentarioFeedback">' + data.review_data[count].comentario_review + '</p>';
 
-                        html += '</div>';
-                        html += '</div>';
-                        html += '</div>';
-                        html += '<div class="row">';
-                        html += '<div class="col-sm-12">';
+    //                     html += '</div>';
+    //                     html += '</div>';
+    //                     html += '</div>';
+    //                     html += '<div class="row">';
+    //                     html += '<div class="col-sm-12">';
 
-                        html += '<p class="text-right small">Em ' + data.review_data[count].data_review + '</p>';
+    //                     html += '<p class="text-right small">Em ' + data.review_data[count].data_review + '</p>';
  
 
-                        html += '</div>';
+    //                     html += '</div>';
 
-                        html += '</div>';
+    //                     html += '</div>';
 
-                        html += '</div>';
-                        html += '</div>';
-                        html += '</div>';
-                    }
+    //                     html += '</div>';
+    //                     html += '</div>';
+    //                     html += '</div>';
+    //                 }
 
-                    $('#review_content').html(html);
-                }
-            },
-            error: function(jqXhr, textStatus, errorMessage, data) {
-                alert(errorMessage);
-            }
-        })
-    }
+    //                 $('#review_content').html(html);
+    //             }
+    //         },
+    //         error: function(jqXhr, textStatus, errorMessage, data) {
+    //             alert(errorMessage);
+    //         }
+    //     })
+    // }
 </script>

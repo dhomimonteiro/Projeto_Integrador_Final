@@ -26,7 +26,6 @@ insert into Contratante
 	bairro_contratante, cidade_contratante, uf_contratante, cep_contratante, login_contratante, senha_contratante, status_contratante,
 	obs_contratante)
 values
-	('Nestle', '52.111.969/0001-00', '(11)95606-9991', '', 'Rua Campos do Jordão', 390, 'Cabo Sul', 'Guarulhos', 'SP', '83299-953', 'Nestle@official.com', '7197', 'Ativo', ''),
 	('Loja Seu Toba', '20.152.875/0001-00', '(11)95674-9290', '(11)98991-9475', 'Av Paulo Faccini', 369, 'Vila Rio de Janeiro', 'Guarulhos', 'SP', '28147-232', 'LojaSeuToba@official.com', '4685', 'Ativo', ''),
 	('Americanas', '23.400.886/0001-00', '(11)97615-9818', '', 'Rua Alasca', 617, 'Pimentas', 'Guarulhos', 'SP', '69688-413', 'Americanas@official.com', '2633', 'Ativo', ''),
 	('McDonalds', '68.723.957/0001-00', '(11)92357-9459', '(11)96130-9955', 'Rua Monteiro', 657, 'Taboão', 'Guarulhos', 'SP', '60686-955', 'McDonalds@official.com', '7297', 'Ativo', ''),
@@ -45,10 +44,7 @@ create table Linguagem
 insert into Linguagem
 	(nome_linguagem, status_linguagem, obs_linguagem)
 values
-	('SASS', 'Ativo', ''),
-    ('Node.js', 'Ativo', ''),
-    ('Oracle', 'Ativo', '');
-    
+	('MySQL', 'Ativo', '');
 
 select * from Linguagem order by id_linguagem;
 
@@ -80,7 +76,12 @@ create table Freelancer
 );
 
 ALTER TABLE Freelancer
-ADD COLUMN descricao_freelancer varchar(255) not null AFTER senha_freelancer;
+ADD COLUMN area_freelancer varchar(50) not null AFTER senha_freelancer;
+
+select * from freelancer where area_freelancer = Fullstack;
+update freelancer set area_freelancer = 'Fullstack' where id_freelancer = 1;
+
+SELECT nome_freelancer FROM freelancer WHERE nome_freelancer LIKE '%E%';
 
 select * from freelancer;
 select * from projeto;
@@ -271,7 +272,9 @@ where id_freelancer = 1;
 insert into reviewFreelancer
 (id_freelancer_review, id_contratante_review,nota_review, comentario_review, status_review, obs_review)
 values
-(1, 1, 4, 'Muito bom', 'Ativo', '');
+(2, 5, 5, 'Muito bom trabalho', 'Ativo', '');
+
+select * from reviewFreelancer;
 
 drop table reviewFreelancer;
 
