@@ -108,7 +108,6 @@ if($_POST){
                         </div>
                     </div>
                     <?=$mensagem?>
-                    <a href="form_CadastroContratante.php" class="esqueceu">Esqueci minha senha</a>
                 </form>
             </div>
             <div class="form formInscrever">
