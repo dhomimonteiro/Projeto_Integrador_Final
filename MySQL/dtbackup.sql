@@ -1,6 +1,10 @@
 create database Projeto;
 use Projeto;
 
+
+SELECT Contrato where status_contrato = Finalizado  ;
+select * from Contrato where status_contrato = 'Finalizado';
+SELECT sum(lucro_contrato) FROM Contrato where status_contrato = 'Finalizado';
 create table Contratante
 (
 	id_contratante int not null auto_increment primary key,
@@ -79,6 +83,8 @@ create table Freelancer
 );
 alter table freelancer
 add column email_freelancer varchar(255) not null AFTER login_freelancer;
+
+SELECT * FROM Projetos LIMIT 8;
 
 insert into Freelancer
 	(nome_freelancer, cpf_freelancer, rg_freelancer, celular1_freelancer, celular2_freelancer, telefone_freelancer, logradouro_freelancer,
@@ -226,7 +232,28 @@ create table Funcionarios
 );
 
 
-create table nada
+create table TesteUniario
 (
-obs_nada varchar(255) null
+	id_testeUni int not null auto_increment primary key,
+    data_testeUni timestamp not null,
+    nome_testeUni varchar(100) not null,
+    descricao_testeUni text not null,
+    resultadoEsperado_testeUni text not null,
+    resultadoReal_testeUni text not null,
+    status_testeUni char(5) not null,
+    prioridade_testeUni varchar(5),
+    solucao_testeUni text null
+);
+
+create table TesteRegra
+(
+	id_testeRegra int not null auto_increment primary key,
+    data_testeRegra timestamp not null,
+    nome_testeRegra varchar(100) not null,
+    descricao_testeRegra text not null,
+    resultadoEsperado_testeRegra text not null,
+    resultadoReal_testeRegra text not null,
+    status_testeRegra char(5) not null,
+    prioridade_testeRegra varchar(5),
+    solucao_testeRegra text null
 );
