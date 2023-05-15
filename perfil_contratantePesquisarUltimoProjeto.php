@@ -14,7 +14,8 @@ try {
             from Projeto where id_projeto = $UltimoProjeto");
 
            if($linha = $sql->fetch()){
-
+                $cont = 0;
+                $cont = $cont + 1;
                 $nome = $linha[1];
                 $obs = $linha[3];
                 $data = $linha[0];
@@ -24,9 +25,9 @@ try {
                 $img = $linha[6];
         
                 echo
-               '<div class="card">'.
+               '<div class="card ultimo">'.
                 '<div class="seu-projeto">'.
-                    '<h1 style="text-align: center; ">Ultimo projeto</h1>'.
+                    '<h1 class="textultimo" style="text-align: center; ">Ultimo projeto</h1>'.
                     '<hr>'.
                     '<div class="card-title">'.
                         '<h2 class="ms-4 mt-4">'.$nome.'</h2>'.

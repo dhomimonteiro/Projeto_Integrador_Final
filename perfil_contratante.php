@@ -102,9 +102,45 @@
     .modal {
         z-index: 100;
     }
-    .Cards{
+
+    .Cards {
         max-width: 400px;
-        max-height: 500px;
+        max-height: 350px;
+        min-width: 400px;
+        min-height: 350px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 15px;
+    }
+
+    .perfil {
+        border: black 1px solid;
+        margin-left: 5.5%;
+        width: 90%;
+        background-color: #F0F0F0;
+        padding: 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .ultimo {
+        border: black 1px solid;
+        margin-left: 5.5%;
+        width: 90%;
+        background-color: #F0F0F0;
+        padding: 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .textultimo {
+        border: var(--roxo-escuro) 1px solid;
+        padding: 5px;
+    }
+
+    .portfolio {
+        border: black 1px solid;
+        width: 100%;
+        background-color: #F0F0F0;
+        padding: 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 </style>
 <title>Document</title>
@@ -114,51 +150,56 @@
 <body>
     <?php include_once('cabecalho_autenticar.php'); ?>
     <?php include_once('perfil_contratantePesquisar.php'); ?>
+    <!-- perfil -->
     <div class="cartao">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 d-flex justify-content-center">
-                    <div class="d-flex justify-content-center ">
-                        <div class="cartao-conteudo">
-                            <div class="img mt-4">
-                                <img src="<?= $img ?>" alt="">
-                            </div>
-                            <div class="conteudo-texto d-flex justify-content-evenly">
-                                <div class="contratacoes d-inline">
-                                    <p class="small text-center">contratos: <br> <span style="font-weight: bold;"> <?= $ID ?></span>
+            <div class="perfil">
+                <div class="row">
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <div class="d-flex justify-content-center ">
+                            <div class="cartao-conteudo">
+                                <div class="img mt-4">
+                                    <img src="<?= $img ?>" alt="">
+                                </div>
+                                <div class="conteudo-texto d-flex justify-content-evenly">
+                                    <div class="contratacoes d-inline">
+                                        <p class="small text-center">contratos: <br> <span style="font-weight: bold;"> <?= $ID ?></span>
+                                        </p>
+                                    </div>
+                                    <div class="nome d-inline mx-5 w-25">
+                                        <p class="text-center mt-2" style="font-weight: bold; font-size:25px;"><?= $nomeUsuario ?> <a href="perfil_ContratanteAlterar.php"><i class="fa-sharp fa-solid fa-pencil"></i></a></p>
+                                    </div>
+
+                                    <div class="avaliacao d-inline">
+                                        <p class="text-center small">
+                                            Avaliação <br>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="descricao px-3 w-75 mt-3">
+                                    <p>
+                                        <?php
+                                        if ($obs != "")
+                                            echo $obs;
+                                        else
+                                            echo 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae doloremque vel itaque sed? Dicta quibusdam quisquam placeat? Quidem optio veniam eius. Eius eaque natus facere similique accusamus officiis dignissimos iure?'
+                                        ?>
                                     </p>
                                 </div>
-                                <div class="nome d-inline mx-5 w-25">
-                                    <p class="text-center mt-2" style="font-weight: bold; font-size:25px;"><?= $nomeUsuario ?>  <a href="perfil_ContratanteAlterar.php"><i class="fa-sharp fa-solid fa-pencil"></i></a></p>
-                                </div>
-                                
-                                <div class="avaliacao d-inline">
-                                    <p class="text-center small">
-                                        Avaliação <br>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="descricao px-3 w-75 mt-3">
-                                <p>
-                                    <?php 
-                                    if ($obs != "")
-                                        echo $obs;
-                                    else
-                                    echo 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae doloremque vel itaque sed? Dicta quibusdam quisquam placeat? Quidem optio veniam eius. Eius eaque natus facere similique accusamus officiis dignissimos iure?'
-                                    ?>
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- perfil -->
+            <!-- projetos -->
             <div class="container">
-                <div class="row mt-5 ml-4 margin2">
+                <div class="row mt-3 ml-4 margin2">
                     <div class="col-sm-4">
                         <?php include_once('perfil_contratantePesquisarUltimoProjeto.php') ?>
                     </div>
@@ -245,7 +286,7 @@
                                         </div>
                                     </div>
                                     <div class="row p-4">
-                                        <?php include_once('perfil_contratantePesquisarProjeto.php')?>
+                                        <?php include_once('perfil_contratantePesquisarProjeto.php') ?>
                                     </div>
                                 </div>
                             </div>
@@ -285,6 +326,13 @@
             preview.src = "";
         }
     }
+
+
+    function entrarprojeto() {
+        const element = document.querySelector('#Projeto');
+        element.click();
+    }
+    
 </script>
 
 </html>
