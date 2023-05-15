@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Freelancers</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col sm-6 freelancers">
+            <div class="col sm-6 freelancers" style="min-height: 500px">
 
                 <?php include('tela_freelancers_pesquisar.php'); ?>
             </div>

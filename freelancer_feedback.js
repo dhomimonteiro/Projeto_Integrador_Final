@@ -1,9 +1,14 @@
 function load_rating_data() {
+    
+    let id = $('#txtID').val();
+   
+    
     $.ajax({
         url: "freelancer_feedback_CadastroEPesquisa.php",
         method: "POST",
         data: {
-            action: 'load_data'
+            action: 'load_data',
+            txtID:id
         },
         dataType: "JSON",
         success: function(data) {

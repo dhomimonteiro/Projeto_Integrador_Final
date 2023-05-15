@@ -128,6 +128,7 @@
         while ($row = $sql->fetch()) {
             $nome = $row[1];
             $img = $row[2];
+            $bio = $row[19];
             echo '
     <div class="cartao">
     <div class="container-fluid">
@@ -163,11 +164,13 @@
                             </div>
                         </div>
                         <div class="descricao px-3 w-75 mt-3">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad saepe a sed quod porro in velit molestiae similique sit necessitatibus id, ab, nam fugit suscipit aspernatur iusto dicta perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non vel dolores, officia tempora debitis deserunt. Consectetur fugiat eos, corrupti voluptatem debitis commodi blanditiis vel voluptate officia, reiciendis aut soluta.
+                            <p>'.$bio.'
                             </p>
                         </div>
                         
-                        <div>';
+                        <div>
+                        
+                        ';
 
             try {
                 $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 

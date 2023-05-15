@@ -37,6 +37,7 @@ if (isset($_POST["rating_data"])) {
 
 if(isset($_POST["action"]))
 {
+	$id = $_POST["txtID"];
 	$average_rating = 0;
 	$total_review = 0;
 	$five_star_review = 0;
@@ -47,11 +48,11 @@ if(isset($_POST["action"]))
 	$total_user_rating = 0;
 	$review_content = array();
 
-    $sql = $conn->query('SELECT reviewFreelancer.id_review, freelancer.nome_freelancer, contratante.nome_contratante, contratante.img_contratante, reviewFreelancer.nota_review, 
+    $sql = $conn->query("SELECT reviewFreelancer.id_review, freelancer.nome_freelancer, contratante.nome_contratante, contratante.img_contratante, reviewFreelancer.nota_review, 
     reviewFreelancer.comentario_review, reviewFreelancer.data_review from reviewFreelancer
     inner join Freelancer on reviewFreelancer.id_freelancer_review = freelancer.id_freelancer
     inner join Contratante on reviewFreelancer.id_contratante_review = contratante.id_contratante
-    where id_freelancer = 1 order by id_review desc');
+    where id_freelancer = $id order by id_review desc");
 
     while($row = $sql->fetch())
     {
