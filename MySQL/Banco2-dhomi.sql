@@ -83,7 +83,7 @@ update freelancer set area_freelancer = 'Fullstack' where id_freelancer = 1;
 
 SELECT nome_freelancer FROM freelancer WHERE nome_freelancer LIKE '%E%';
 
-select * from freelancer;
+select * from contratante;
 select * from projeto;
 
 select Freelancer.nome_freelancer,Freelancer.obs_freelancer,FreelancerLinguagem.id_freelancerLinguagem, FreelancerLinguagem.id_freelancer_freelancerLinguagem, 
@@ -192,6 +192,7 @@ create table Projeto
     img_projeto longblob null,
 	dtCriacao_projeto timestamp not null,
 	versao_projeto varchar(20) not null,
+    descricao_projeto text not null,
 	status_projeto varchar(20) not null,
 	obs_projeto varchar(300) null,
 
@@ -199,14 +200,34 @@ create table Projeto
 	constraint Fk_Id_Contratante_Projeto foreign key (id_contratante_projeto) references Contratante (id_contratante),
     constraint Fk_Id_Linguagem_Projeto foreign key (id_linguagem_projeto) references Linguagem (id_linguagem)
 );
+
 drop table projeto;
 insert into projeto
-	(id_contratante_projeto, id_linguagem_projeto,nome_projeto, versao_projeto, status_projeto, obs_projeto)
+	(id_contratante_projeto, id_freelancer_projeto, id_linguagem_projeto, nome_projeto,img_projeto, versao_projeto,descricao_projeto, status_projeto, obs_projeto)
 values
-	(1, 1,'Página web', '1.0', 'Ativo', '');
+	(1, 1, 1,'Página web', '', '1.0','Aplicação Web com React', 'Em andamento', '');
     
 select * from projeto;
+select projeto.nome_projeto, projeto.descricao_projeto, projeto.status_projeto, projeto.versao_projeto, contratante.nome_contratante,
+contratante.img_contratante, linguagem.nome_linguagem from projeto
+INNER JOIN Contratante on Projeto.id_contratante_projeto = Contratante.id_contratante
+INNER JOIN Freelancer on projeto.id_freelancer_projeto = freelancer.id_freelancer
+INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where projeto.id_freelancer_projeto = 1;
 
+create table Portfolio_Freelancer
+(
+	id_projeto_porfolio int not null auto_increment primary key,
+    nome_projeto_portfolio varchar(255) not null,
+    id_freelancer_portfolio int not null,
+    img_projeto_portfolio longblob not null,
+    status_projeto_porfolio varchar(50) not null,
+    obs_projeto_porfolio varchar(255) null,
+    
+    constraint FK_ID_Freelancer_Portfolio foreign key(id_freelancer_portfolio) references Freelancer(id_freelancer)
+);
+
+drop table Portfolio_Freelancer;
+select * from freelancer;
 drop table Projeto;
 
 create table Historico

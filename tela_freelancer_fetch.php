@@ -2,6 +2,7 @@
 include_once('Projeto/TelaLoginteste/conexao.php');
 
 if ($_POST) {
+    
     if (isset($_POST["request"]) && !empty($_POST["request"])) {
         $request = " where freelancerlinguagem.id_linguagem_freelancerLinguagem = " . $_POST["request"];
 
@@ -145,8 +146,20 @@ if ($_POST) {
         $texto = str_replace(" ", "", $texto);
         try {
             $sql = $conn->query("select * from Freelancer where nome_freelancer like '%$texto%'");
+            
         } catch (PDOException $ex) {
             echo $ex->getMessage();
+        }
+        
+        if ($sql->rowCount() == 0){
+            echo '
+            <div class="row mt-4">
+                <div class="col-sm-12 d-flex flex-column align-items-center">
+                    <h4> Ops, esse resultado não foi encontrado! :( </h4>
+                    <img src="img/no-found.jpg" style="height:500px">
+                </div>
+            </div>
+            ';
         }
         // print_r($sql);
         while ($row = $sql->fetch()) {
@@ -207,6 +220,7 @@ if ($_POST) {
         </div>
                 ';
         }
+        
     }
     elseif (isset($_POST["request"]) && empty($_POST["request"]) || isset($_POST["area"]) && $_POST["area"] == " ") {
         try {
@@ -214,6 +228,7 @@ if ($_POST) {
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
+
 
         while ($row = $sql->fetch()) {
             $nome = $row[1];

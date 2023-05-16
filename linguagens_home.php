@@ -12,11 +12,29 @@
 
         while ($row = $sql->fetch()){
             echo '
-                <a href="#">
-                    <li class="linguagem mx-4 mt-4">'.$row[1] .'</li>
+                <a href="tela_freelancers.php">
+                    <li " class="linguagem mx-4 mt-4">'.$row[1] .'</li>
                 </a>
             ';
         }
         ?>
     </ul>
 </div>
+
+<script>
+    $('.linguagem').click(function(){
+       let valor = $(this).text()
+
+        $.ajax({
+            url:'tela_freelancer_fetch.php',
+            type: "post",
+            data: "request=" + valor,
+            success: function(data, status, xhr) {
+                alerta("Foi")
+            },
+            error: function(jqXhr, textStatus, errorMessage, data) {
+                alert(errorMessage, data);
+            }
+        })
+    })
+</script>

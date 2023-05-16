@@ -34,11 +34,11 @@
         }
 
         .img-empresa {
-            height: 100px;
-            width: 100px;
+            height: 120px;
+            width: 120px;
             border-radius: 50%;
             padding: 3px;
-            background-color: #7d2ae8;
+            background-color: var(--amarelo-texto);
         }
 
         .img-empresa img {
@@ -46,26 +46,18 @@
             width: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #fff;
+            border: 3px solid var(--roxo-escuro);
         }
+
 
         .cartao {
-            position: relative;
-            width: 100%;
-            background-color: #fff;
-        }
-
-        .cartao::before {
-            content: "";
-            position: absolute;
             height: 170px;
             width: 100%;
             background-color: var(--roxo-escuro);
         }
 
         .cartao-conteudo {
-            position: relative;
-            z-index: 10;
+            
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -78,8 +70,8 @@
 
 
         .status p {
-            background-color: #7d2ae8;
-            color: white;
+            background-color: var(--roxo-escuro);
+            color: var(--amarelo-texto);
             border-radius: 20px;
         }
 
@@ -124,18 +116,22 @@
 
     try {
         $sql = $conn->query("SELECT * from Freelancer where id_freelancer = $idUsuario");
-
+        
         while ($row = $sql->fetch()) {
+            $id = $row[0];
             $nome = $row[1];
             $img = $row[2];
             $bio = $row[19];
+            
             echo '
+    
     <div class="cartao">
     <div class="container-fluid">
         <div class="row ">
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
+                    <input style="display: none" value="' . $id . '" id="txtID">
                         <div class="img mt-4">
                             <img src="' . $img . '">
                         </div>
@@ -192,33 +188,13 @@
         <div class="col-sm-1"></div>
             <div class="col-sm-10">
                 <div class="seu-projeto">
-                    <h3>Seu projeto</h3>
-                    <div class="card">
-                        <div class="card-title">
-                            <h4 class="ms-4 mt-4">Nome do projeto</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <h5 class="nome-empresa">Nome-empresa</h5>
-                                    <p class="descricao-seu-projeto">
-                                        *Descrição do projeto* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id impedit accusantium perspiciatis facere aut assumenda commodi asperiores repellendus, magnam blanditiis pariatur, et quasi earum atque animi omnis laboriosam nam aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit porro saepe molestias impedit assumenda quae natus alias. Voluptatum, cupiditate quaerat. Consequatur vero mollitia in, officia quisquam debitis sequi corrupti asperiores.
-                                    </p>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="img-empresa">
-                                        <img src="" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-1 col-md-2 status">
-                                    <p class="text-center">STATUS</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="texto mb-2">
+                        <h3 class="d-inline">Seu projeto</h3>
+                        <a href="#" class="small d-inline">Ver todos seus projetos</a>
+                    </div>';
+                    include_once("perfil_freelancer_seuProjeto.php");
+
+            echo '
                 <hr class="mt-4">
             </div>
         </div>
@@ -226,15 +202,42 @@
         <div class="row pb-4">
         <div class="col-sm-1 col-md-1"></div>
             <div class="col-sm-10 col-md-10 col-lg-7 mt-3">
-                <div class="card">
-                    <div class="portfolio">
-                        <div class="row">
-                            <h2 class="pt-3 ps-3">Portfólio</h2>
-                        </div>
-                        <div class="row">
-                        </div>
+            <div class="card" style="border:none">
+            <div class="portfolio pb-3">
+                <div class="row d-flex flex-row justify-content-center mb-3">
+                    <h2 class="ps-4">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
+                </div>
+                <div class="row gy-5">
+                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
+                    </div>
+                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
+                        <img src="" style="height: 150px; width:250px; background-color:black">
                     </div>
                 </div>
+            </div>
+        </div>
             </div>
             <div class="col-sm-1 col-md-1 d-lg-none"></div>
             <div class="col-sm-1 col-md-1 d-lg-none"></div>
@@ -245,7 +248,7 @@
             echo '</div>            
         </div>
     </div>
-</div>      
+</div>      </div>
             ';
         }
     } catch (PDOException $ex) {
@@ -253,6 +256,8 @@
     }
     ?>
     <?php include_once('rodape.php'); ?>
+
+
 
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
@@ -262,121 +267,6 @@
             load_rating_data();
         })
 
-        // function load_rating_data() {
-        //     $.ajax({
-        //         url: "freelancer_feedback_CadastroEPesquisa.php",
-        //         method: "POST",
-        //         data: {
-        //             action: 'load_data'
-        //         },
-        //         dataType: "JSON",
-        //         success: function(data) {
-        //             $('#average_rating').text(data.average_rating);
-        //             $('#total_review').text(data.total_review);
-
-        //             var count_star = 0;
-
-        //             $('.main_star').each(function() {
-        //                 count_star++;
-        //                 if (Math.ceil(data.average_rating) >= count_star) {
-        //                     $(this).addClass('text-warning');
-        //                     $(this).addClass('star-light');
-        //                 }
-        //             });
-
-        //             $('#total_five_star_review').text(data.five_star_review);
-
-        //             $('#total_four_star_review').text(data.four_star_review);
-
-        //             $('#total_three_star_review').text(data.three_star_review);
-
-        //             $('#total_two_star_review').text(data.two_star_review);
-
-        //             $('#total_one_star_review').text(data.one_star_review);
-
-        //             $('#five_star_progress').css('width', (data.five_star_review / data.total_review) * 100 + '%');
-
-        //             $('#four_star_progress').css('width', (data.four_star_review / data.total_review) * 100 + '%');
-
-        //             $('#three_star_progress').css('width', (data.three_star_review / data.total_review) * 100 + '%');
-
-        //             $('#two_star_progress').css('width', (data.two_star_review / data.total_review) * 100 + '%');
-
-        //             $('#one_star_progress').css('width', (data.one_star_review / data.total_review) * 100 + '%');
-
-        //             if (data.review_data.length > 0) {
-        //                 var html = '';
-
-        //                 for (var count = 0; count < data.review_data.length; count++) {
-
-        //                     /*ABRE A ESTRUTURA BASE DO CARD*/
-        //                     html += '<div class="card mb-3" style="position: relative">';
-        //                     /*ABRE A ESTRUTURA DO CORPO DO CARD*/
-        //                     html += '<div class="card-body" style="position: relative">';
-        //                     /*ABRE A ROW DO NOME E DA IMAGEM*/
-        //                     html += '<div class="row">';
-        //                     /*DECIDE O TAMANHO DA COLUNA DO NOME*/
-        //                     html += '<div class="col-sm-8" style="position: relative">';
-        //                     /*NOME*/
-        //                     html += '<p style="font-size:25px; height:40px; line-height: 40px;" class="nomeContratante" id="nomeContratante">' + data.review_data[count].nome_contratante + '</p>';
-        //                     html += '<div class="avaliacao d-inline">';
-        //                     html += '<p class="small">';
-
-        //                     for (var star = 1; star <= 5; star++) {
-        //                         var class_name = '';
-
-        //                         if (data.review_data[count].rating >= star) {
-        //                             class_name = 'text-warning';
-        //                         } else {
-        //                             class_name = 'star-light';
-        //                         }
-
-        //                         html += '<i class="fas fa-star ' + class_name + ' mr-1"></i>';
-        //                     }
-        //                     html += '</p>';
-        //                     html += '</div>';
-        //                     /*FECHA A COL DO NOME*/
-        //                     html += '</div>';
-        //                     /*DECIDE O TAMANHO DA COLUNA DA IMAGEM*/
-        //                     html += '<div class="col-sm-4 d-flex justify-content-center">';
-        //                     /*IMAGEM*/
-        //                     html += '<img src="' + data.review_data[count].img_contratante + '" style="background-color: #000; width:50px; height:50px; border-radius: 50%">';
-        //                     /*FECHA A COL DA IMAGEM*/
-        //                     html += '</div>';
-
-        //                     html += '</div">';
-
-        //                     html += '<div class="row">';
-        //                     html += '<div class="col-sm-12">';
-
-
-        //                     html += '<p class="comentarioFeedback" id="comentarioFeedback">' + data.review_data[count].comentario_review + '</p>';
-
-        //                     html += '</div>';
-        //                     html += '</div>';
-        //                     html += '</div>';
-        //                     html += '<div class="row">';
-        //                     html += '<div class="col-sm-12">';
-
-        //                     html += '<p class="text-right small">Em ' + data.review_data[count].data_review + '</p>';
-
-
-        //                     html += '</div>';
-
-        //                     html += '</div>';
-
-        //                     html += '</div>';
-        //                     html += '</div>';
-        //                     html += '</div>';
-        //                 }
-
-        //                 $('#review_content').html(html);
-        //             }
-        //         },
-        //         error: function(jqXhr, textStatus, errorMessage, data) {
-        //             alert(errorMessage);
-        //         }
-        //     })
-        // }
+        
     </script>
 </body>

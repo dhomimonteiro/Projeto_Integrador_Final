@@ -15,11 +15,11 @@
     .btoContratar {
         background-color: var(--amarelo-texto);
     }
+
     .btoContratar:hover {
         background-color: var(--roxo-escuro);
         color: var(--cinza-claro);
     }
-
 </style>
 <?php
 include_once('Projeto/TelaLoginteste/conexao.php');
@@ -58,15 +58,23 @@ while ($row = $sql->fetch()) {
                 <div class="avaliacao d-inline">
                     <p class="text-center small">
                         Avaliação <br>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-stroke"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
                     </p>
-                </div>
-                <div class="foto-freelancer mt-1" style="height:100px;width:100px;">
-                    <img src="' . $row[2] . '" alt="" style="height:100%;width:100%; object-fit:cover;border-radius:50%">
+                </div>'
+?>
+
+                <script>
+                    $(document).ready(function() {
+                        load_rating_data()
+                    })
+                </script>
+
+                <?php echo '<div class="foto-freelancer mt-1" style="height:100px;width:100px;">
+                    <img src="' . $img . '" alt="" style="height:100%;width:100%; object-fit:cover;border-radius:50%">
                 </div>
             </div>
         </div>
@@ -98,16 +106,12 @@ while ($row = $sql->fetch()) {
 
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
+<script src="freelancer_feedback.js"></script>
 <script>
     $("#btoCarregar").click(function() {
         let idFreelancer = $("#txtID").val();
         let action = 'perfil_freelancer_vVisitante.php'
 
-        // $.post('perfil_freelancer_vVisitante.php', {
-        //     idFreelancer: idFreelancer,
-        // }, function(result) {
-        //     alert('successfully posted key1=value1&key2=value2 to foo.php');
-        // });
 
         $.ajax({
             url: action,
