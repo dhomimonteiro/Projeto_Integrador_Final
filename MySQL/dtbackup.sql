@@ -1,6 +1,8 @@
 create database Projeto;
 use Projeto;
-
+select * from Projeto where id_projeto = 5;
+select date_format(dtCriacao_projeto,'%d/%m/%Y'),nome_projeto,status_projeto,obs_projeto,id_linguagem_projeto ,id_projeto, img_projeto
+            from Projeto where id_contratante_projeto = 8
 
 SELECT Contrato where status_contrato = Finalizado  ;
 select * from Contrato where status_contrato = 'Finalizado';
@@ -109,7 +111,7 @@ create table TipoPagamento
 	status_tipoPagamento varchar(20) not null ,
 	obs_tipoPagamento varchar(300) null
 );
-
+select * from TipoPagamento;
 insert into TipoPagamento
 	(nome_tipoPagamento, parcela_tipoPagamento, status_tipoPagamento, obs_tipoPagamento)
 values
@@ -174,6 +176,7 @@ create table Projeto
 	id_projeto int not null auto_increment primary key,
 	id_freelancer_projeto int null ,
     id_linguagem_projeto int not null ,
+   
 	nome_projeto varchar(50) not null ,
     img_projeto longblob null,
 	dtCriacao_projeto timestamp not null,
@@ -181,9 +184,15 @@ create table Projeto
 	status_projeto varchar(20) null,
 	obs_projeto varchar(300) not null,
     
+    
 	constraint Fk_Id_Freelancer_Projeto foreign key(id_freelancer_projeto) references Freelancer(id_freelancer),
     constraint Fk_Id_linguagem_projeto foreign key(id_linguagem_projeto) references Linguagem(id_linguagem)
+    
 );
+
+alter table Projeto 
+
+
 drop table projeto;
 select * from Linguagem;
 select * from projeto;
@@ -232,28 +241,17 @@ create table Funcionarios
 );
 
 
-create table TesteUniario
+create table MandarProposta
 (
-	id_testeUni int not null auto_increment primary key,
-    data_testeUni timestamp not null,
-    nome_testeUni varchar(100) not null,
-    descricao_testeUni text not null,
-    resultadoEsperado_testeUni text not null,
-    resultadoReal_testeUni text not null,
-    status_testeUni char(5) not null,
-    prioridade_testeUni varchar(5),
-    solucao_testeUni text null
-);
+id_mandarproposta int not null auto_increment primary key,
+id_contratante_mandarproposta int not null,
+id_freelancer_mandarproposta int not null,
+id_projeto_mandarproposta int not null,
+datacriacao_mandarproposta timestamp not null,
+descricao_mandarproposta varchar(255) not null ,
 
-create table TesteRegra
-(
-	id_testeRegra int not null auto_increment primary key,
-    data_testeRegra timestamp not null,
-    nome_testeRegra varchar(100) not null,
-    descricao_testeRegra text not null,
-    resultadoEsperado_testeRegra text not null,
-    resultadoReal_testeRegra text not null,
-    status_testeRegra char(5) not null,
-    prioridade_testeRegra varchar(5),
-    solucao_testeRegra text null
+	constraint Fk_Id_Contratante_mandarproposta foreign key(id_contratante_mandarproposta) references Contratante(id_contratante),
+	constraint Fk_Id_Freelancer_mandarproposta foreign key(id_freelancer_mandarproposta) references Freelancer(id_freelancer),
+	constraint Fk_Id_Projeto_mandarproposta foreign key(id_projeto_mandarproposta) references Projeto(id_projeto)
 );
+drop table MandarProposta

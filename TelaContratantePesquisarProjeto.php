@@ -64,7 +64,7 @@ try {
                             }     
                             echo'</div>'.
                             '<div class="col-sm-4">'.
-                                '<a href="" class="btn btn-primary">Mandar Proposta</a>'.
+                                '<a href="MandarProposta.php?Projeto='.$idprojeto.'" class="btn btn-primary">Mandar Proposta</a>'.
                             '</div>'.
                         '</div>'.
                     '</div>'.

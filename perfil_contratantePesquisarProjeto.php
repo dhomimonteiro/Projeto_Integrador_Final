@@ -23,6 +23,7 @@ try {
                 '<div class="card Cards">'.
                    '<div class="row">'.
                         '<div class="col-sm-12">'.
+                        '<input type="text" id="IDprojeto" value="'.$idprojeto.'" style="display: none;">'.
                             '<h3>'.$nome.'</h3>'.
                             '<hr>'.
                         '</div>'.
@@ -36,7 +37,7 @@ try {
                     '<div class="row mb-4">'.
                         '<div class="col-sm-2"></div>'.
                         '<div class="col-sm-8">'.
-                                '<a href="perfil_contratanteEntrarProjeto.php" class="btn  btn-success form-control">Entrar no projeto</a>'.
+                                '<a href="perfil_contratanteEntrarProjeto.php?Projeto='.$idprojeto.'" class="btn  btn-success form-control">Entrar no projeto</a>'.
                         '</div>'.
                         '<div class="col-sm2"></div>'.
                     '</div>'.

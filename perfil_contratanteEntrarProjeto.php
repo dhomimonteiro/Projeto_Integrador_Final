@@ -33,51 +33,66 @@
             transition: all 0.3s ease-out;
         }
     </style>
-    <?php include_once('Projeto/TelaLoginteste/conexao.php') ?>
-    <div class="div" style="display: none;">
-        <?php include_once('perfil_contratantePesquisarProjeto.php') ?>
-    </div>
-    <div class="container">
-        <div id="form">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1 style="text-align: center; border: 1px #800080 solid; padding: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                        Projeto: Fabula
-                    </h1>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-6">
-                    <img src="img/image.jpeg" alt="" class="imgProjeto">
-                </div>
-                <div class="col-sm-2"></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="row">
+    <?php include_once('Projeto/TelaLoginteste/conexao.php') ;
+        $IDProjeto = $_GET["Projeto"];
+        echo $IDProjeto;
+        try {
+            $sql = $conn->query("select * from Projeto where id_projeto = $IDProjeto");
+        
+            while($linha = $sql->fetch()){
+                $nomeProjeto = $linha[4];
+                $obs = $linha[9];
+                $status = $linha[8];
+                $id = $linha[1];
+                $img = $linha[5];
+                      
+                echo 
+                '<div class="container">'.
+                    '<div id="form">'.
+                        '<div class="row">'.
+                            '<div class="col-sm-12">'.
+                                '<h1 style="text-align: center; border: 1px #800080 solid; padding: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">'.
+                                    'Projeto: '.$nomeProjeto.
+                                '</h1>'.
+                            '</div >'.
+                        '</div>'.
+                        '<div class="row mt-3">'.
+                            '<div class="col-sm-4"></div>'.
+                            '<div class="col-sm-6">'.
+                                '<img src="'.$img.'" alt="" class="imgProjeto">'.
+                            '</div>'.
+                            '<div class="col-sm-2"></div>'.
+                        '</div>'.
+                        '<div class="row">'.
+                            '<div class="col-sm-12">'.
+                                '<div class="row">'.
+                                    '<div class="col-sm-12">'.
+                                        '<div class="card cards">'.
+                                            '<p>'.$obs.'</p>'.
+                                        '</div>'.
+                                    '</div>'.
+                                '</div>'.
+                            '</div>'.
+                        '</div>'.
+                        '<div class="row">'.
+                            '<div class="col-sm-3"></div>'.
+                            '<div class="col-sm-6">'.
+                                '<a href="perfil_contratante.php" class="btn btn-danger form-control">Voltar</a>'.
+                            '</div>'.
+                            '<div class="col-sm-3"></div>'.
+                        '</div>'.
+                    '</div>'.
+                '</div>';
+            }
+            
+        
+        }
+         catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
+        
 
-                        <div class="col-sm-12">
-                            <div class="card cards">
-                                <p>O projeto consiste na criação de um site de comércio eletrônico responsivo,
-                                    utilizando as linguagens HTML e CSS. O objetivo é desenvolver uma plataforma
-                                    intuitiva e atraente que permita aos usuários navegar e comprar produtos de forma fácil e eficiente.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <a href="perfil_contratante.php" class="btn btn-danger form-control">Voltar</a>
-                </div>
-                <div class="col-sm-3"></div>
-            </div>
-        </div>
-    </div>
-
+    ?>
 
 
     <script src="form_CadastroContratante.js"></script>
