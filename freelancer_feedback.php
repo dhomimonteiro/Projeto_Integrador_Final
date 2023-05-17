@@ -13,7 +13,7 @@
 </style>
 
 <form action="" method="post" onsubmit="return false">
-    <div class="card" style="height:600px;overflow: scroll; overflow-x:hidden">
+    <div class="card" style="height:600px;overflow: auto; overflow-x:hidden">
         <div class="row">
             <input type='text' class='txtIDLogado' id='txtIDLogado' name='txtIDLogado' value='<?= $idUsuario ?>' style="display: none" />
             <input type='text' class='form-control' id='txtIDFreelancer' name='txtIDFreelancer' value='<?= $row[0] ?>' style="display: none" />

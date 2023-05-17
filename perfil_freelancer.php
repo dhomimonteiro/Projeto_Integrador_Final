@@ -207,34 +207,9 @@
                 <div class="row d-flex flex-row justify-content-center mb-3">
                     <h2 class="ps-4">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
                 </div>
-                <div class="row gy-5">
-                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
-                    <div class="col-sm-12 col-md-4  d-flex flex-row justify-content-center">
-                        <img src="" style="height: 150px; width:250px; background-color:black">
-                    </div>
+                <div class="row gy-5">';
+                    include_once("portfolio_pesquisar.php");
+                    echo '
                 </div>
             </div>
         </div>
@@ -258,7 +233,7 @@
     <?php include_once('rodape.php'); ?>
 
 
-
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
     <script src="freelancer_feedback.js"></script>

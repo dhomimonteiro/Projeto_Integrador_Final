@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-sm-8">
                             <label for="txtLink">Link do projeto</label>
-                            <input class="form-control" type="link" name="txtLink" id="txtLink" placeholder="Não obrigatório">
+                            <input class="form-control" type="text" name="txtLink" id="txtLink" placeholder="Não obrigatório">
                         </div>
                     </div>
 
@@ -49,7 +49,8 @@
                             <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
                         </div>
                     </div>
-                    <button class="btn btn-primary" id="btoSalvar">Salvar</button>
+                    <button class="btn btn-primary" id="btoSalvar" name="btoSalvar">Salvar</button>
+
                 </form>
             </div>
         </div>
@@ -89,21 +90,28 @@
                 return;
             }
 
+            let id_freelancer_portfolio = $("#txtID").val();
             let nome_projeto_portfolio = $('#txtNome').val();
             let img_projeto_portfolio = $('#base64Code').val();
+            let link_projeto_portfolio = $('#txtLink').val();
             let action = "portfolio_cadastrar.php";
 
             $.ajax({
                 url: action,
                 type: "post",
                 data: {
+                    txtID: id_freelancer_portfolio,
                     txtNome: nome_projeto_portfolio,
+                    txtLink: link_projeto_portfolio,
                     txtImg: img_projeto_portfolio
+
                 },
                 success: function(data, status, xhr) {
                     // console.log('foi');
                     alert(data);
-                    window.location.replace('portfolio_cadastrar.php');
+                },
+                error: function(jqXhr, textStatus, errorMessage, data) {
+                    alert(errorMessage, data);
                 }
             })
 

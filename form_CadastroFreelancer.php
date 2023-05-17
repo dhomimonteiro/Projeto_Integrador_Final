@@ -218,7 +218,7 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm-3">
                         <div id="btnSair">
-                            <button class="btn form-control" id="btnSair">Sair</button>
+                            <a href="" class="btn form-control" id="btnSair">Sair</a>
                         </div>
                         </div>
                         <div class="col-sm-2">

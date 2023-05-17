@@ -1,6 +1,25 @@
-<?php 
+<?php
 // include_once('autenticar.php'); 
-?> 
+?>
+
+<style>
+    .dropdown-toggle {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--amarelo-texto);
+        font-size: 25px;
+
+
+    }
+
+    .ola {
+
+        margin-bottom: 0;
+    }
+</style>
+
+
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="home.php">
@@ -23,16 +42,26 @@
                     <a class="nav-link" href="TelaContratante.php">Contratantes</a>
                 </li>
 
-                <li class="nav-item ola-usuario">
+                <!-- <li class="nav-item ola-usuario">
                     <div class="row d-flex flex-column">
                         <p class="ola">Olá,</p>
                         <button class="botaoUsuario" id="botaoUsuario">
-                            <p class="usuario" id="usuario"><?= $nomeUsuario ?></p>
+                            <p class="usuario" id="usuario"></p>
                         </button>
 
 
                     </div>
+                </li> -->
+                <li class="nav-item dropdown me-4">
+                    <button class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?=$nomeUsuario?>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="perfil_autenticar.php">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="autenticar_sair.php">Sair</a></li>
+                    </ul>
                 </li>
+
             </ul>
 
             <!-- <form class="d-flex">
@@ -42,31 +71,11 @@
         </div>
     </div>
 </nav>
-<div class="menuUsuario" id="menuUsuario">
-    <div class="container-fluid">
-        <div class="row d-flex justify-content-end w-100" style="position: absolute; right: 5%">
-            <div class="col-sm-1 menuUsuarioMenu" style="font-size: 18px">
-                <!-- <p class="pt-2 ps-2 btoAdicionarProjeto btoMenuUsuario">Adicionar projeto</p> -->
-                <p class="pt-2 ps-2 btoPerfil btoMenuUsuario">
-                    <a href="perfil_autenticar.php" style="text-decoration: none;">
-                        Perfil
-                    </a>
-                </p>
-                <p class="py-1 ps-2 btoSair btoMenuUsuario">
-                    <a href="autenticar_sair.php" style="text-decoration: none;">
-                        Sair
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.6.4.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#botaoUsuario').click(function() {
-            $('#menuUsuario').toggle();
-        })
-    });
+
 </script>
