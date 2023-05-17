@@ -29,26 +29,29 @@ try {
                 '<div class="seu-projeto">'.
                     '<h1 class="textultimo" style="text-align: center; ">Ultimo projeto</h1>'.
                     '<hr>'.
-                    '<div class="card-title">'.
-                        '<h2 class="ms-4 mt-4">'.$nome.'</h2>'.
-                    '</div>'.
+                    
                     '<div class="card-body">'.
                         '<div class="row">'.
-                            '<div class="col-md-12">'.
-                                '<div class="img-empresa">'.
+                            '<div class="col-sm-4">'.
+                                '<div class="img-empresa form-control">'.
                                     '<img src="'.$img.'" alt="">'.
                                 '</div>'.
                             '</div>'.
-                        '</div>'.
-                       '<div class="row">'.
-                            '<div class="col-md-12">'.
-                                '<p class="descricao-s.eu-projeto">'.
-                                    $obs.
-                                '</p>'.
+                            '<div class="col-sm-8 mt-2">'.
+                                '<h2 style="margin-left:30px; margin-top:20px;">'.$nome.'</h2>'.
                             '</div>'.
                         '</div>'.
-                        '<div class="row">'.
-                            '<div class="col-sm-4 status">'.
+                       '<div class="row mt-4">'.
+                            '<div class="card">'.
+                                '<div class="col-sm-12">'.
+                                    '<p class="descricao-seu-projeto">'.
+                                        $obs.
+                                    '</p>'.
+                                '</div>'.
+                            '</div>'.        
+                        '</div>'.
+                        '<div class="row mt-3">'.
+                            '<div class="col-sm-6 form-control status">'.
                                 '<p class="text-center">'.$status.'</p>'.
                             '</div>
                         </div>

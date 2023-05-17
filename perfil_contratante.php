@@ -40,16 +40,17 @@
 
     .img-empresa {
         height: 100px;
-        width: 300px;
+        width: 100px;
         padding: 3px;
-        background-color: #7d2ae8;
+        border-radius: 50%;
+
     }
 
 
     .img-empresa img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        border-radius: 50%;
         border: 3px solid #fff;
     }
 
@@ -89,6 +90,10 @@
         cursor: pointer;
     }
 
+    .status{
+        border: none;
+    }
+
     .status p {
         background-color: #7d2ae8;
         color: white;
@@ -113,21 +118,24 @@
     }
 
     .perfil {
-        border: black 1px solid;
         margin-left: 5.5%;
         width: 90%;
-        background-color: #F0F0F0;
         padding: 10px 10px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
+    }
+
+    .imgProjeto{
+        min-width: 100px;
+        min-height: 100px;
+        max-width: 100px;
+        max-height: 100px;
     }
 
     .ultimo {
         border: black 1px solid;
         margin-left: 5.5%;
         width: 90%;
-        background-color: #F0F0F0;
         padding: 10px 10px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .textultimo {
@@ -138,11 +146,13 @@
     .portfolio {
         border: black 1px solid;
         width: 100%;
-        background-color: #F0F0F0;
         padding: 10px 10px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        overflow:scroll; 
+        max-height: 1000px;
+
     }
-</style>
+
+ </style>
 <title>Document</title>
 </head>
 
@@ -200,14 +210,15 @@
             <!-- projetos -->
             <div class="container">
                 <div class="row mt-3 ml-4 margin2">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <?php include_once('perfil_contratantePesquisarUltimoProjeto.php') ?>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-9">
                         <div class="col-sm-12">
                             <div class="card" id="zezedecamargo">
                                 <div class="portfolio">
                                     <div class="row mt-2 ">
+                                        
                                         <div class="col-sm-11">
                                             <h1 class="pb-2" style="text-align: center; border-bottom: black 1px solid;">Projetos</h1>
                                         </div>

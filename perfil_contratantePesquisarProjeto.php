@@ -28,9 +28,13 @@ try {
                             '<hr>'.
                         '</div>'.
                     '</div>'.
-                   ' <div class="row">'.
-                        '<div class="col-sm-12">'.
-                            '<p>'.$obs.'</p>'.
+                    ' <div class="row">'.
+                        '<div class="col-sm-3">'.
+                        '<img src="'.$img.'" class="imgProjeto" alt="">'.
+                        '</div>'.
+                        '<div class="col-sm-1"></div>'.
+                        '<div class="col-sm-8">'.
+                            '<p style="font-size:12px;">'.$obs.'</p>'.
                         '</div>'.
                    '</div>'.
                     '<hr>'.
