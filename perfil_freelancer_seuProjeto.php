@@ -7,7 +7,7 @@ try {
     contratante.img_contratante, linguagem.nome_linguagem from projeto
     INNER JOIN Contratante on Projeto.id_contratante_projeto = Contratante.id_contratante
     INNER JOIN Freelancer on projeto.id_freelancer_projeto = freelancer.id_freelancer
-    INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where projeto.id_freelancer_projeto = $idUsuario;");
+    INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where projeto.id_freelancer_projeto = $idUsuario and projeto.status_projeto = 'Em andamento';");
 
     while ($row = $sql->fetch()) {
         $nome_projeto = $row[0];

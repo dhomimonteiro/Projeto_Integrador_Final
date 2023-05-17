@@ -2,14 +2,19 @@
 include_once('Projeto/TelaLoginteste/conexao.php');
 
 try {
-    $sql = $conn->query("SELECT * from projeto");
+    $sql = $conn->query("SELECT * from projeto where status_projeto = 'Em andamento'");
 } catch (PDOException $ex) {
     echo $ex->getMessage();
 }
 
 while ($row = $sql->fetch()) {
     $nome_projeto = $row[4];
-    $data = $row[5];
+    $descricao = $row[8];
+    $status = $row[9];
+    $versao = $row[7];
+    $nome_contratante = $row[2];
+    $img_contratante = $row[5];
+    $lingaugem = $row[3];
 
    echo '
    <div class="card mt-3">
@@ -19,7 +24,6 @@ while ($row = $sql->fetch()) {
                 <div class="row d-flex justify-content-between">
                     <div class="col-sm-9"><h5 class="card-title d-inline">' . $nome_projeto . '</h5></div>
                 <div class="col-sm-3">
-                <p class="d-inline">' . $data . '</p>
                 </div>
                 
                 </div>
@@ -27,10 +31,12 @@ while ($row = $sql->fetch()) {
                 <hr>
                 <div class="row">
                     <div class="col-sm-12">
-                        <h5>Nome contratante</h5>
+                        <h5>'.$nome_contratante.'</h5>
                     </div>
                     <div class="col-sm-12">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias sapiente quos iste velit, facilis esse explicabo, necessitatibus voluptatem ut earum similique reprehenderit laborum voluptas! Nesciunt est facere amet quidem quasi.</p>
+                        <p class="card-text">'.
+                            $descricao
+                        .'</p>
 
                     </div>
 
@@ -38,8 +44,8 @@ while ($row = $sql->fetch()) {
             </div>
             <div class="col-sm-3 d-flex flex-column align-items-center">
                 
-                <div class="foto-freelancer bg-dark mt-1">
-                    <img src="" alt="" style="background-color: #888; border-radius:100%; height:200px;width:200px;">
+                <div class="foto-freelancer mt-1">
+                    <img src="'.$img_contratante.'" alt="" style="background-color: #888; border-radius:100%; height:200px;width:200px;">
                 </div>
             </div>
 
@@ -47,7 +53,7 @@ while ($row = $sql->fetch()) {
         <div class="row mt-3">
             <div class="col-sm-9"></div>
             <div class="col-sm-3 d-flex flex-row justify-content-center">
-                <button class="btn btn-primary">Candidatar-se</button>
+                <button class="btn" style="background-color: var(--roxo-escuro); color: var(--cinza-claro);">Candidatar-se</button>
             </div>
         </div>
     </div>
