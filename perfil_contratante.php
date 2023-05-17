@@ -225,7 +225,7 @@
 
                                                         <div class="w3-container">
 
-                                                            <div class="container">
+                                                            <div class="container p-4">
                                                                 <div class="row mt-3">
                                                                     <div class="col-sm-8">
                                                                         <label for="Nome">Nome do Projeto</label>
@@ -247,10 +247,16 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mt-2">
-                                                                    <div class="col-sm-12">
+                                                                    <div class="col-sm-4">
+                                                                    <label for="Nome">Valor</label>
+                                                                        <div class="input">
+                                                                            <input type="number" id="txtPreco" name="txtPreco" placeholder="Insira o Valor do projeto">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-8">
                                                                         <label for="Nome">Descrição</label>
                                                                         <div class="input">
-                                                                            <textarea name="txtDescricao" id="txtDescricao" class="formcontrol" cols="87" style="border: none; outline: none;"></textarea>
+                                                                            <textarea name="txtDescricao" id="txtDescricao" class="formcontrol" cols="55" style="border: none; outline: none;"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>

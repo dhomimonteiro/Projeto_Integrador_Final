@@ -141,7 +141,7 @@
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3">
                         <div id="btnSair">
-                            <button class="btn form-control" id="btnSair">Sair</button>
+                            <button class="btn form-control"><a href="Projeto/TelaLoginteste/index.php" style="text-decoration: none; color: white;" id="btnSair">Sair</a></button>
                         </div>
                     </div>
                     <div class="col-sm-2">

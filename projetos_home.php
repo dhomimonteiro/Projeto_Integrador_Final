@@ -8,7 +8,7 @@
             <?php
             include_once('Projeto/TelaLoginteste/conexao.php');
             try {
-                $sql = $conn->query('SELECT * FROM projeto LIMIT 10');
+                $sql = $conn->query('SELECT * FROM projeto LIMIT 8');
             } catch (PDOException $ex) {
                 echo $ex->getMessage();
             }

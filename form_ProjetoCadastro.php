@@ -10,7 +10,7 @@ if ($_POST) {
     $versao = $_POST['txtVersao'];
     $status = $_POST['txtStatus'];
     $id = $_POST['txtIDcontratante'];
-
+    
     try {
         $sql = $conn->prepare("insert into projeto
         (id_contratante_projeto,id_linguagem_projeto, nome_projeto, img_projeto, versao_projeto, status_projeto, obs_projeto)

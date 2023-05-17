@@ -16,6 +16,13 @@
 </head>
 
 <body>
+    <style>
+        .filtro-menu button {
+            outline: none;
+            border: none;
+            background-color: var(--roxo-escuro);
+        }
+    </style>
     <?php include_once('cabecalho_autenticar.php') ?>
 
     <div class="container">
@@ -35,26 +42,32 @@
             <div class="col-sm-4">
                 <div class="card cardfiltro">
                     <div class="row">
-                        <div class="col-sm-12">
-                            <h3 class="TituloFiltro">Linguagem</h3>
+                    <button class="accordion titulo-menu w-100">
+                        <h5>Linguagem</h5>
+                    </button>
+                    <div class="menu-filtros panel px-3 pt-2">
+                        <div class="d-flex justify-content-start" style="flex-wrap: wrap;">
+                            <?php
+                            include_once('Projeto/TelaLoginteste/conexao.php');
+
+                            try {
+                                $sql = $conn->query('select * from Linguagem order by nome_linguagem');
+                            } catch (PDOException $ex) {
+                                echo $ex->getMessage();
+                            }
+
+                            while ($row = $sql->fetch()) {
+                                echo '                             
+                                   <p class="d-inline-block small" style="width: 91px">
+                                    <input  type="checkbox" name="' . $row[1] . '" id="' . $row[1] . '" value="' . $row[0] . '" class="filtro">
+                                    <label for="">' . $row[1] . '</label>
+                                    </p>
+                            ';
+                            }
+                            ?>
+
                         </div>
                     </div>
-                    <div class="row p-2">
-                        <?php
-                        include_once('Projeto/TelaLoginteste/conexao.php');
-                        try {
-                            $sql = $conn->query("select id_linguagem, nome_linguagem from Linguagem");
-
-                            while ($linha = $sql->fetch()) {
-                                echo '<div class="col-sm-3 mb-2">' .
-                                    '<input type="checkbox" id="' . $linha[0] . '" name="" value="' . $linha[0] . '"' .
-                                    '<label for="html">' . $linha[1] . '</label>' .
-                                    '</div>';
-                            }
-                        } catch (PDOException $ex) {
-                            echo $ex->getMessage();
-                        }
-                        ?>
                     </div>
                 </div>
             </div>
@@ -110,6 +123,26 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.6.4.js"></script>
     <script src="Projeto/TelaLoginteste/script.js"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
+
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>
