@@ -102,6 +102,12 @@
         .nome a {
             color: var(--roxo-escuro);
         }
+
+        .fa-plus:hover {
+            transform: scale(1.1);
+            transition: .1s;
+            background-color: transparent;
+        }
     </style>
 
 </head>
@@ -190,7 +196,7 @@
                 <div class="seu-projeto">
                     <div class="texto mb-2">
                         <h3 class="d-inline">Seu projeto</h3>
-                        <a href="#" class="small d-inline">Ver todos seus projetos</a>
+                        <a href="perfil_freelancer_projetos.php" class="small d-inline" style="text-decoration: none;">Ver todos seus projetos</a>
                     </div>';
                     include_once("perfil_freelancer_seuProjeto.php");
 
@@ -205,7 +211,7 @@
             <div class="card" style="border:none">
             <div class="portfolio pb-3">
                 <div class="row d-flex flex-row justify-content-center mb-3">
-                    <h2 class="ps-4">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
+                    <h2 class="ps-4">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" style="text-decoration: none"> <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
                 </div>
                 <div class="row gy-5">';
                     include_once("portfolio_pesquisar.php");

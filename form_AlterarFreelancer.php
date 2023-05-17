@@ -81,7 +81,7 @@
                 <a class="nav-link active" id="perfil-aba" data-bs-toggle="tab" href="#dados-perfil" role="tab" aria-controls="dados-perfil" aria-selected="true">Dados pessoais</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="linguagem-aba" data-bs-toggle="tab" href="#dados-linguagem" role="tab" aria-controls="dados-linguagem" aria-selected="false">Linguagens</a>
+                <a class="nav-link" id="linguagem-aba" data-bs-toggle="tab" href="#dados-linguagem" role="tab" aria-controls="dados-linguagem" aria-selected="false">Trabalho</a>
             </li>
 
         </ul>
@@ -240,9 +240,17 @@
                 <form action="" method="post" class="form-control" onsubmit="return false">
                     <input style="display:none" type="text" id="txtID" name="txtID" value="<?= $idUsuario ?>">
                     <div class="row mt-3">
-                        <h1 class="text-center">Adicionar linguagens</h1>
+                        <h1 class="">Trabalho</h1>
                     </div>
-                    <h3>Suas linguagens</h3>
+                    <h5>Sua área</h5>
+                    <p class="">Área selecionada:</p>
+                    <select name="txtLinguagem" id="txtLinguagem" class="select form-control">
+                        <option value="">--Selecione--</option>
+                        <option value="Back-end">Back-end</option>
+                        <option value="Front-end">Front-end</option>
+                        <option value="Fullstack">Fullstack</option>
+                    </select>
+                    <h5 class="mt-4">Suas linguagens</h5>
                     <div class="suas-linguagens">
                         <?php
                         try {
@@ -260,7 +268,7 @@
                     <div class="adicionar-linguagem mt-3">
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-5 d-inline-flex justify-content-end ">
-                                <h5>Adicionar nova linguagem:</h5>
+                                <h6>Adicionar nova linguagem:</h6>
                             </div>
                             <div class="col-sm-6 d-inline-flex justify-content-start">
                                 <select name="txtLinguagem" id="txtLinguagem" class="select">
@@ -273,8 +281,8 @@
                         </div>
                     </div>
                     <div class="row mt-3 mb-4">
-                        <div class="col-sm-12 mt-3 ">
-                            <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="linguagemAdicionar()">Salvar</button>
+                        <div class="col-sm-12 mt-3 d-flex justify-content-center">
+                            <button class="btn" name="btoSalvar" id="btoSalvar" onclick="linguagemAdicionar()" style="background-color: var(--roxo-escuro); color:var(--cinza-claro)">Salvar</button>
                         </div>
                     </div>
                 </form>
