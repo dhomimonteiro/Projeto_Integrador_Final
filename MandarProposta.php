@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="form_CadastroContratante.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Document</title>
 </head>
@@ -74,7 +78,8 @@
                                                 <hr>
                                                 <div class="row">
                                                     <div class="col-sm-11">
-                                                        <div class="card p-2" style="min-height: 150px; max-height: 150px;">
+                                                        <div class="card p-2"
+                                                            style="min-height: 150px; max-height: 150px;">
                                                             descrição do Projeto
                                                         </div>
                                                     </div>
@@ -98,25 +103,44 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <form action="" method="post">
-                                    <div class="conteiner">
+                                    <div class="conteiner p-3">
                                         <div class="row mt-3">
                                             <div class="col-sm-12">
-                                                <h3 style="text-align: center;">Mandar Proposta</h3>
+                                                <div class="card">
+                                                    <div class="row p-3">
+                                                        <div class="col-sm-7">
+                                                            <label for="" class="p-2">Escreva sua Proposta:</label>
+                                                            <textarea name="txtDescricao" id="txtDescricao" rows="4"
+                                                                class="form-control">
+
+                                                        </textarea>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                <h4>Metodo de pagamento: À vista</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-5">
+                                                            <div class="col-sm-12 mt-3">
+                                                                    <button class="btn btn-success form-control">Mandar Proposta</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row p-3">
+                                                        <div class="col-sm-5">
+                                                           
+                                                        </div>
+                                                        <div class="col-sm-"></div>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row p-4">
-                                            <div class="card">
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        
-                                                    </div>
-                                                    <div class="col-sm-4"></div>
-                                                    <div class="col-sm-4">
-                                                        
-                                                    </div>
-                                                </div>
 
-                                            </div>
                                         </div>
                                     </div>
                                 </form>
