@@ -20,24 +20,24 @@
             <div class="feedback">
                 <div class="row">
                     <div class="col-sm-12 d-flex justify-content-center">
-                        <h2 class="pt-3 ps-3">Feedback</h2>
+                        <h2 class="pt-3">Feedback</h2>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-sm-11">
                         <div id="review_content" class="review_content" >
                         </div>
-                        <!-- <p class="text-right ver-mais-feedback">Ver mais</p> -->
+                        
                     </div>
                 </div>
             </div>
-            <div id="review_modal" class="modal" tabindex="-1" role="dialog">
+            <!-- <div id="review_modal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
                         <div class="row">
                     <div class="col-sm-12 d-flex justify-content-center">
-                        <h2 class="pt-3 ps-3">Feedback</h2>
+                        <h2 class="">Feedback</h2>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center ">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 </form>
 

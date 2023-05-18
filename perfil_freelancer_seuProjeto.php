@@ -9,6 +9,15 @@ try {
     INNER JOIN Freelancer on projeto.id_freelancer_projeto = freelancer.id_freelancer
     INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where projeto.id_freelancer_projeto = $idUsuario and projeto.status_projeto = 'Em andamento';");
 
+    if ($sql->rowCount()==0) {
+        echo '
+        <div class="row" style="background-color: #e3e3e3; border-radius: 20px;">
+            <div class="col-sm-12">
+                <p class="mensagem">Você não tem um projeto em andamento.</p>
+            </div>
+        </div>';
+    }
+
     while ($row = $sql->fetch()) {
         $nome_projeto = $row[0];
         $descricao_projeto = $row[1];

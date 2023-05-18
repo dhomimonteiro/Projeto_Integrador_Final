@@ -54,6 +54,10 @@ if(isset($_POST["action"]))
     inner join Contratante on reviewFreelancer.id_contratante_review = contratante.id_contratante
     where id_freelancer = $id order by id_review desc");
 
+	if ($sql->rowCount()==0) {
+		echo 'tem nada aqui não';
+	}
+
     while($row = $sql->fetch())
     {
         $review_content[] = array(

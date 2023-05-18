@@ -189,7 +189,7 @@
                 while ($linha = $sql2->fetch()) {
                     echo '<p style="background-color: #1e102e; color:#e6e6e6;" class="d-inline mx-2 px-2">' . $linha[3] . '</p>';
                 }
-                echo '<a href="form_AlterarFreelancer.php#dados-linguagem"><i class="fa-solid fa-plus"></i></a>
+                echo '
                        
                         </div>
                     </div>

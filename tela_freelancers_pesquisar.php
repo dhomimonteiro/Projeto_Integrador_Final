@@ -80,7 +80,7 @@ while ($row = $sql->fetch()) {
         </div>
         <div class="row mt-3">
             <div class="col-sm-9">
-            <div class="linguagens">';
+            <div class="linguagens d-flex justify-content-center justify-content-md-start">';
     try {
         $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
         freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem

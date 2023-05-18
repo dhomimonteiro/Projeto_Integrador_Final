@@ -116,7 +116,15 @@ function load_rating_data() {
             }
         },
         error: function(jqXhr, textStatus, errorMessage, data) {
-            alert(errorMessage);
+            var html = '';
+            html += '<div class="row">';
+            html +=     '<div class="col-sm-12 d-flex justify-content-center">';
+            html +=         '<p>Tem nada aqui não</p>';
+            html +=     '</div>';
+            html += '</div>';
+
+            $('#review_content').html(html);
+            $('.review_content').html(html);
         }
     })
 }

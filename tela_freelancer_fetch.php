@@ -1,3 +1,27 @@
+<style>
+    .foto-freelancer {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .btoCarregar {
+        border: none;
+        background: transparent;
+        font-size: 1.4em;
+        font-weight: 600;
+    }
+
+    .btoContratar {
+        background-color: var(--amarelo-texto);
+    }
+
+    .btoContratar:hover {
+        background-color: var(--roxo-escuro);
+        color: var(--cinza-claro);
+    }
+</style>
+
 <?php
 include_once('Projeto/TelaLoginteste/conexao.php');
 
@@ -51,7 +75,7 @@ if ($_POST) {
             </div>
             <div class="row mt-3">
                 <div class="col-sm-9">
-                <div class="linguagens">';
+                <div class="linguagens d-flex justify-content-center justify-content-md-start">';
             try {
                 $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
             freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
@@ -65,8 +89,8 @@ if ($_POST) {
             echo            '</div>
                 </div>
                 <div class="col-sm-3 d-flex flex-row justify-content-center">
-                    <button class="btn btn-primary">Contratar</button>
-                </div>
+                    <a class="btn btoContratar" href="tela_freelancer_autenticar.php" id="btoContratar" name="btoContratar">Contratar</a>
+                </div>   
             </div>
         </div>
     </div>
@@ -119,7 +143,7 @@ if ($_POST) {
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-9">
-                    <div class="linguagens">';
+                    <div class="linguagens d-flex justify-content-center justify-content-md-start">';
             try {
                 $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
                 freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
@@ -133,7 +157,7 @@ if ($_POST) {
             echo            '</div>
                     </div>
                     <div class="col-sm-3 d-flex flex-row justify-content-center">
-                        <a class="btn btn-primary" href="tela_freelancer_autenticar.php">Contratar</a>
+                        <a class="btn btoContratar" href="tela_freelancer_autenticar.php" id="btoContratar" name="btoContratar">Contratar</a>
                     </div>                    
                 </div>
             </div>
@@ -199,7 +223,7 @@ if ($_POST) {
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-9">
-                    <div class="linguagens">';
+                    <div class="linguagens d-flex justify-content-center justify-content-md-start">';
             try {
                 $sql2 = $conn->query("SELECT freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
                 freelancerlinguagem.id_linguagem_freelancerLinguagem,Linguagem.nome_linguagem  from freelancerlinguagem
@@ -213,8 +237,8 @@ if ($_POST) {
             echo            '</div>
                     </div>
                     <div class="col-sm-3 d-flex flex-row justify-content-center">
-                        <a class="btn btn-primary" href="tela_freelancer_autenticar.php">Contratar</a>
-                    </div>                    
+                <a class="btn btoContratar" href="tela_freelancer_autenticar.php" id="btoContratar" name="btoContratar">Contratar</a>
+            </div>                   
                 </div>
             </div>
         </div>

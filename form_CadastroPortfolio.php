@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<style>
+    #btoSalvar {
+        background-color: var(--roxo-escuro);
+        color: var(--cinza-claro);
+    }
+    #btoSalvar:hover {
+        background-color: var(--amarelo-texto);
+        color: var(--roxo-escuro);
+        transform: scale(1.1);
+        transition: .1s;
+    }
+</style>
+
 </head>
 
 <body>
@@ -49,7 +62,10 @@
                             <textarea name="base64Code" class="form-control" id="base64Code" rows="5"></textarea>
                         </div>
                     </div>
-                    <button class="btn btn-primary" id="btoSalvar" name="btoSalvar">Salvar</button>
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <button class="btn" id="btoSalvar" name="btoSalvar">Salvar</button>
+                    </div>
+
 
                 </form>
             </div>
@@ -109,9 +125,13 @@
                 success: function(data, status, xhr) {
                     // console.log('foi');
                     alert(data);
+                    $('#txtNome').val("");
+                    $('#txtLink').val("");
+                    $('#txtImg').removeAttr('src');
+
                 },
                 error: function(jqXhr, textStatus, errorMessage, data) {
-                    alert(errorMessage, data);
+                    alert("Ops, algo deu errado. Tente novamente em alguns minutos.");
                 }
             })
 

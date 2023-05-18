@@ -1,3 +1,11 @@
+<style>
+    .imagemPortfolio:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+</style>
+
 <?php
 
 include_once('Projeto/TelaLoginteste/conexao.php');
@@ -17,10 +25,16 @@ include_once('Projeto/TelaLoginteste/conexao.php');
         }
 
         while($row = $sql->fetch()){
+            $nome = $row[1];
             $img = $row[3];
+            $link = $row[4];
             echo '
-                    <div class="col-sm-12 col-lg-4  d-flex flex-row justify-content-center">
-                        <img src="'.$img.'" style="height: 150px; width:250px; background-color:black">
+                    <div class="col-sm-12 col-lg-4 d-flex flex-row justify-content-center mx-2" id="imagem-portfolio">
+                        <div class="imagens d-flex flex-column">
+                            <img src="'.$img.'" class="w-100 h-100 imagemPortfolio" style="cursor: pointer" id="myImg" alt="'.$nome.'">
+                            <p style="font-weight: 500;">'.$nome.'</p>
+                            <p class="link-projeto" id="link-projeto" style="display: none; ">'.$link.'</p>
+                        </div>
                     </div>
             ';
         }

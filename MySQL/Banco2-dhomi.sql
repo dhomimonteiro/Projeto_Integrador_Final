@@ -205,8 +205,12 @@ drop table projeto;
 insert into projeto
 	(id_contratante_projeto, id_freelancer_projeto, id_linguagem_projeto, nome_projeto,img_projeto, versao_projeto,descricao_projeto, status_projeto, obs_projeto)
 values
-	(1, 1, 1,'Página web', '', '1.0','Aplicação Web com React', 'Em andamento', '');
-    
+	(5, 1, 24,'Banco de Dados MySQL', '', '4.5','Construir um banco de dados MySQL para integrar todo o sistema da nossa empresa,
+    garantindo segurança, bom funcionamento e escalabilidade.', 'Finalizado', '');
+
+SELECT projeto.nome_projeto, projeto.img_projeto, projeto.descricao_projeto, projeto.status_projeto, contratante;
+select * from linguagem;
+select * from contratante;
 select * from projeto;
 select projeto.nome_projeto, projeto.descricao_projeto, projeto.status_projeto, projeto.versao_projeto, contratante.nome_contratante,
 contratante.img_contratante, linguagem.nome_linguagem from projeto
@@ -220,15 +224,17 @@ create table Portfolio_Freelancer
     nome_projeto_portfolio varchar(255) not null,
     id_freelancer_portfolio int not null,
     img_projeto_portfolio longblob not null,
-    status_projeto_porfolio varchar(50) not null,
-    obs_projeto_porfolio varchar(255) null,
+    link_projeto_portfolio text null,
+    status_projeto_portfolio varchar(50) not null,
+    obs_projeto_portfolio varchar(255) null,
     
     constraint FK_ID_Freelancer_Portfolio foreign key(id_freelancer_portfolio) references Freelancer(id_freelancer)
 );
 
 drop table Portfolio_Freelancer;
-select * from freelancer;
+select * from Portfolio_freelancer;
 drop table Projeto;
+select * from projeto;
 
 create table Historico
 (

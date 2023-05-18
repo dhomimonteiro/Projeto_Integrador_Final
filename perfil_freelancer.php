@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Perfil</title>
+    <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="portfolio_modal.css">
 
     <style>
         body {
@@ -57,7 +59,7 @@
         }
 
         .cartao-conteudo {
-            
+
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -99,8 +101,26 @@
             background-color: #ccc;
         }
 
+        .nome {
+            font-family: 'Poppins';
+        }
+
         .nome a {
             color: var(--roxo-escuro);
+        }
+
+        .seu-projeto-titulo,
+        .portfolio {
+            font-family: 'Poppins';
+        }
+
+        .mensagem {
+            font-family: 'Open Sans';
+            font-size: 17px;
+            color: #424242;
+            height: 91px;
+            line-height: 91px;
+            margin-bottom: 0;
         }
 
         .fa-plus:hover {
@@ -122,13 +142,13 @@
 
     try {
         $sql = $conn->query("SELECT * from Freelancer where id_freelancer = $idUsuario");
-        
+
         while ($row = $sql->fetch()) {
             $id = $row[0];
             $nome = $row[1];
             $img = $row[2];
             $bio = $row[19];
-            
+
             echo '
     
     <div class="cartao">
@@ -151,7 +171,7 @@
                             </div>
                             <div class="nome d-inline mx-5 w-25 d-flex justify-content-center">
                             <p style="display: none;" id="txtID" name="txtID">' . $row[0] . '</p>
-                                <p class="text-center" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">' . $row[1] . '</p> 
+                                <p class="text-center nome" style="font-weight: bold; font-size:30px; display:inline-block" id="txtNome" name="txtNome">' . $row[1] . '</p> 
                                 <a href="form_AlterarFreelancer.php"><i class="fas fa-regular fa-pen-to-square" style="z-index:10"></i></a>
                             </div>
                             <div class="avaliacao d-inline">
@@ -166,7 +186,7 @@
                             </div>
                         </div>
                         <div class="descricao px-3 w-75 mt-3">
-                            <p>'.$bio.'
+                            <p>' . $bio . '
                             </p>
                         </div>
                         
@@ -182,7 +202,7 @@
                 echo $ex->getMessage();
             }
             while ($linha = $sql2->fetch()) {
-                echo '<p style="background-color: #1e102e; color:#e6e6e6;" class="d-inline mx-2 px-2">' . $linha[3] . '</p>';
+                echo '<p style="background-color: #1e102e; color:#e6e6e6; border-radius: 10px" class="d-inline mx-2 px-2">' . $linha[3] . '</p>';
             }
             echo '<a href="form_AlterarFreelancer.php#dados-linguagem"><i class="fa-solid fa-plus"></i></a>
                    
@@ -195,10 +215,10 @@
             <div class="col-sm-10">
                 <div class="seu-projeto">
                     <div class="texto mb-2">
-                        <h3 class="d-inline">Seu projeto</h3>
+                        <h3 class="d-inline seu-projeto-titulo">Seu projeto</h3>
                         <a href="perfil_freelancer_projetos.php" class="small d-inline" style="text-decoration: none;">Ver todos seus projetos</a>
                     </div>';
-                    include_once("perfil_freelancer_seuProjeto.php");
+            include_once("perfil_freelancer_seuProjeto.php");
 
             echo '
                 <hr class="mt-4">
@@ -211,11 +231,11 @@
             <div class="card" style="border:none">
             <div class="portfolio pb-3">
                 <div class="row d-flex flex-row justify-content-center mb-3">
-                    <h2 class="ps-4">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" style="text-decoration: none"> <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
+                    <h2 class="ps-4 portfolio">Portfólio <span class="adicionarPortfolio"><a href="form_CadastroPortfolio.php" style="text-decoration: none"> <i class="fa-solid fa-plus fa-sm"></i></a></span> </h2>
                 </div>
                 <div class="row gy-5">';
-                    include_once("portfolio_pesquisar.php");
-                    echo '
+            include_once("portfolio_pesquisar.php");
+            echo '
                 </div>
             </div>
         </div>
@@ -229,7 +249,7 @@
             echo '</div>            
         </div>
     </div>
-</div>      </div>
+</div>      </div> </div>
             ';
         }
     } catch (PDOException $ex) {
@@ -237,6 +257,21 @@
     }
     ?>
     <?php include_once('rodape.php'); ?>
+
+
+
+
+    <div id="myModal" class="modelo">
+        <span class="close text-white">&times;</span>
+        <div id="caption"></div>
+        <img class="modal-conteudo" id="img01">
+
+        <a href="#" target="_blank" id="modalLink">Visitar site ></a>
+
+    </div>
+
+
+    </div>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -248,6 +283,26 @@
             load_rating_data();
         })
 
+        var modal = document.getElementById("myModal");
+        var img = document.getElementsByClassName("imagemPortfolio");
+        for (var i = 0; i < img.length; i++) {
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img[i].addEventListener('click', function() {
+                var projeto_link = document.getElementById("link-projeto").innerHTML;
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+                document.getElementById("modalLink").href = projeto_link;
+
+            })
+        }
+
         
+
+        $('.close').click(function() {
+            $('#myModal').hide();
+
+        })
     </script>
 </body>
