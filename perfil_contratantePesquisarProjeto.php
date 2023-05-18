@@ -19,34 +19,18 @@ try {
         $img = $linha[6];
 
         echo
-            '<div class="col-sm-6 mb-4">'.
-                '<div class="card Cards">'.
-                   '<div class="row">'.
-                        '<div class="col-sm-12">'.
-                        '<input type="text" id="IDprojeto" value="'.$idprojeto.'" style="display: none;">'.
-                            '<h3>'.$nome.'</h3>'.
-                            '<hr>'.
-                        '</div>'.
-                    '</div>'.
-                    ' <div class="row">'.
-                        '<div class="col-sm-3">'.
-                        '<img src="'.$img.'" class="imgProjeto" alt="">'.
-                        '</div>'.
-                        '<div class="col-sm-1"></div>'.
-                        '<div class="col-sm-8">'.
-                            '<p style="font-size:12px;">'.$obs.'</p>'.
-                        '</div>'.
-                   '</div>'.
-                    '<hr>'.
-                    '<div class="row mb-4">'.
-                        '<div class="col-sm-2"></div>'.
-                        '<div class="col-sm-8">'.
-                                '<a href="perfil_contratanteEntrarProjeto.php?Projeto='.$idprojeto.'" class="btn  btn-success form-control">Entrar no projeto</a>'.
-                        '</div>'.
-                        '<div class="col-sm2"></div>'.
-                    '</div>'.
-                '</div>'.
-            '</div>';
+            '<a href="perfil_contratanteEntrarProjeto.php?Projeto='.$idprojeto.'"  style="text-decoration: none;">'.
+            '<div class="col">
+            <div class="card cards">'.
+            '<input type="text" id="IDprojeto" value="'.$idprojeto.'" style="display: none;">'.
+                '<img src="'.$img.'" class="cardimg" alt="...">
+                <div class="card-body">
+                    <h5 class="cardtitle2">'.$nome.'</h5>
+                </div>
+            </div>
+        </div>'.
+        '</a>'
+            ;
     }
     
 

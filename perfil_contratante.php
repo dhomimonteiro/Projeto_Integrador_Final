@@ -11,148 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="perfil_contratante.css">
 
     <title>Document</title>
 </head>
-<style>
-    body {
-        height: 100vh;
-        background-color: #f2f2f2;
-    }
 
-    .img {
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
-        padding: 3px;
-        background-color: #7d2ae8;
-    }
-
-
-    .img img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid #fff;
-    }
-
-
-    .img-empresa {
-        height: 100px;
-        width: 100px;
-        padding: 3px;
-        border-radius: 50%;
-
-    }
-
-
-    .img-empresa img {
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        border: 3px solid #fff;
-    }
-
-
-    .cartao {
-        position: relative;
-        width: 100%;
-        background-color: #fff;
-    }
-
-
-    .cartao::before {
-        content: "";
-        position: absolute;
-        height: 170px;
-        width: 100%;
-        background-color: var(--roxo-escuro);
-    }
-
-
-    .cartao-conteudo {
-        position: relative;
-        z-index: 100;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .conteudo-texto {
-        width: 100%;
-    }
-
-
-    .avaliacao i {
-        cursor: pointer;
-    }
-
-    .status{
-        border: none;
-    }
-
-    .status p {
-        background-color: #7d2ae8;
-        color: white;
-        border-radius: 20px;
-    }
-
-    .margin2 {
-        margin-top: 100px !important;
-    }
-
-    .modal {
-        z-index: 100;
-    }
-
-    .Cards {
-        max-width: 400px;
-        max-height: 350px;
-        min-width: 400px;
-        min-height: 350px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 15px;
-    }
-
-    .perfil {
-        margin-left: 5.5%;
-        width: 90%;
-        padding: 10px 10px;
-        
-    }
-
-    .imgProjeto{
-        min-width: 100px;
-        min-height: 100px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .ultimo {
-        border: black 1px solid;
-        margin-left: 5.5%;
-        width: 90%;
-        padding: 10px 10px;
-    }
-
-    .textultimo {
-        border: var(--roxo-escuro) 1px solid;
-        padding: 5px;
-    }
-
-    .portfolio {
-        border: black 1px solid;
-        width: 100%;
-        padding: 10px 10px;
-        overflow:scroll; 
-        max-height: 1000px;
-
-    }
-
- </style>
 <title>Document</title>
 </head>
 
@@ -160,7 +23,6 @@
 <body>
     <?php include_once('cabecalho_autenticar.php'); ?>
     <?php include_once('perfil_contratantePesquisar.php'); ?>
-    <!-- perfil -->
     <div class="cartao">
         <div class="container-fluid">
             <div class="perfil">
@@ -169,7 +31,7 @@
                         <div class="d-flex justify-content-center ">
                             <div class="cartao-conteudo">
                                 <div class="img mt-4">
-                                    <img src="<?= $img ?>" alt="">
+                                    <img src="<?= $imgContratante ?>" alt="">
                                 </div>
                                 <div class="conteudo-texto d-flex justify-content-evenly">
                                     <div class="contratacoes d-inline">
@@ -209,16 +71,19 @@
             <!-- perfil -->
             <!-- projetos -->
             <div class="container">
-                <div class="row mt-3 ml-4 margin2">
-                    <div class="col-sm-3">
-                        <?php include_once('perfil_contratantePesquisarUltimoProjeto.php') ?>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="col-sm-12">
-                            <div class="card" id="zezedecamargo">
-                                <div class="portfolio">
-                                    <div class="row mt-2 ">
-                                        
+                <div class="row ml-4 margin2">
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <h3 style="text-align: center;">Seu ultimo projeto:</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <?php include_once('perfil_contratantePesquisarUltimoProjeto.php') ?>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <div class="row">
+
                                         <div class="col-sm-11">
                                             <h1 class="pb-2" style="text-align: center; border-bottom: black 1px solid;">Projetos</h1>
                                         </div>
@@ -259,7 +124,7 @@
                                                                 </div>
                                                                 <div class="row mt-2">
                                                                     <div class="col-sm-4">
-                                                                    <label for="Nome">Valor</label>
+                                                                        <label for="Nome">Valor</label>
                                                                         <div class="input">
                                                                             <input type="number" id="txtPreco" name="txtPreco" placeholder="Insira o Valor do projeto">
                                                                         </div>
@@ -302,8 +167,14 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="row p-4">
-                                        <?php include_once('perfil_contratantePesquisarProjeto.php') ?>
+                                    <div class="card" id="zezedecamargo">
+                                        <div class="portfolio">
+                                            <div class="row p-4">
+                                                <div class="row row-cols-1 row-cols-md-2 g-5">
+                                                    <?php include_once('perfil_contratantePesquisarProjeto.php')?>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -313,6 +184,8 @@
             </div>
         </div>
     </div>
+    
+            <?php include_once('rodape.php')?>
 </body>
 
 <script src="perfil_contratante.js"></script>
@@ -349,7 +222,6 @@
         const element = document.querySelector('#Projeto');
         element.click();
     }
-    
 </script>
 
 </html>
