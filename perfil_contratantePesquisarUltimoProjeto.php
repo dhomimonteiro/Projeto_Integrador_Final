@@ -25,22 +25,31 @@ try {
                 $imgPro = $linha[6];
         
                 echo
-                '<a href="perfil_contratanteEntrarProjeto.php?Projeto='.$idprojeto.'"  style="text-decoration: none;">'.
-                        '<div class="card cardr mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                <img src="'.$imgPro.'" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title cardtitle mb-5">'.$nome.'</h5>
-                                    <p class="card-text cardtext">'.$obs.'</p>
-                                    <p class="card-text cardtext"><small class="text-muted">'.$status.'</small></p>
-                                </div>
-                                </div>
-                            </div>
-                            </div>'.
-                '</a>'
+                '<div class="containerr">
+  <div class="login-form">
+    <div class="header">
+    <label class="title">Seu ultimo projeto:</label>
+    <p class="description">'.$nome  .'</p>
+    </div>
+    <div class="input_container">
+    <p>'.$obs.'</p>
+    </div>
+    <a href="perfil_contratanteEntrarProjeto.php?Projeto='.$idprojeto.'" class="sign-in_btn" type="submit" title="Sign In">
+    <span>Entrar no Projeto</span>
+    </a>
+  </div>
+  <input type="text" style="display: none;" value="'.$idprojeto.'">
+  <div class="testimonial">
+    
+    <div class="user-profile-picture">
+    <img src="'.$imgPro.'" alt="" class="imgPro">
+    </div>
+  <div class="user">
+    <span class="username">Status: '.$status.'</span>
+  </div>
+  </div>
+</div>'
+
                     ;
             }
             return;
@@ -58,3 +67,11 @@ try {
  catch (PDOException $ex) {
     echo $ex->getMessage();
 }
+?>
+
+<style>
+   .j{
+    text-align: justify;
+   }
+</style>
+
