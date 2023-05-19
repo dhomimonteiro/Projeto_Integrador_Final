@@ -20,8 +20,8 @@
                     <a class="nav-link" href="TelaContratante.php">Contratantes</a>
                 </li>
 
-                <li class="nav-item ms-4 me-3">
-                    <div class="row d-flex justify-content-center justify-content-lg-start">
+                <li class="nav-item mx-auto">
+                    <div class="row d-flex  justify-content-lg-start">
                         <div class="col-2">
                             <a href="Projeto/TelaLoginteste/index.php">
                                 <button class="botaoCadastrar px-3" id="botaoCadastrar">

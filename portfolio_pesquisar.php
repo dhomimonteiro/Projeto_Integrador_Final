@@ -29,7 +29,7 @@ include_once('Projeto/TelaLoginteste/conexao.php');
             $img = $row[3];
             $link = $row[4];
             echo '
-                    <div class="col-sm-12 col-lg-4 d-flex flex-row justify-content-center mx-2" id="imagem-portfolio">
+                    <div class="col-sm-12 col-lg-4 d-flex flex-row justify-content-center " id="imagem-portfolio">
                         <div class="imagens d-flex flex-column">
                             <img src="'.$img.'" class="w-100 h-100 imagemPortfolio" style="cursor: pointer" id="myImg" alt="'.$nome.'">
                             <p style="font-weight: 500;">'.$nome.'</p>

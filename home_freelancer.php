@@ -54,6 +54,7 @@
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <h1 style="font-size:30px;">Projetos recomendados</h1>
+                    <p>Projetos recomendados com base nas suas linguagens!</p>
                 </div>
                 <div class="projetos-recomendados">
                     <?php include_once('home_freelancer_projetosRec.php');?>

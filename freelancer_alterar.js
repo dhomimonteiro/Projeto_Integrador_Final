@@ -55,7 +55,11 @@ function freelancerAlterar(){
             $('#resultado').html("ENVIANDO...");
         },
         success: function(data, status, xhr) {
-            $('#resultado').html(data);
+            $('.modal').show();
+            $('.btn-close').click(function(){
+                $('.modal').hide();
+                
+            })
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
             $('#resultado').html(errorMessage, data);
@@ -80,7 +84,7 @@ function linguagemAdicionar(){
             $('#resultado').html("ENVIANDO...");
         },
         success: function(data, status, xhr) {
-            alert(data);
+            alert();
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
             alert(data);

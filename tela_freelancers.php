@@ -66,20 +66,20 @@
     ?>
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-6 topo-freelancers mt-4">
+        <div class="row d-flex flex-column-reverse flex-md-row">
+            <div class="col-sm-12 col-md-6 col-lg-6 topo-freelancers mt-4">
                 <h1 class="tituloFreelancer">Contrate um desenvolvedor de acordo com o que você precisa!</h1>
 
                 <p class="pt-2">A GetDev possui profissionais experientes em todas as áreas de desenvolvimento e com as mais variadas linguagens de programação. Encontre aqui quem você precisa!</p>
             </div>
 
-            <div class="col-lg-6 img">
+            <div class="col-md-2 col-lg-6 img">
                 <img src="img/img-tela-freelancer.jpg" alt="">
             </div>
         </div>
         <hr>
         <div class="row mt-2">
-            <div class="col-sm-2 col-lg-4 mt-3">
+            <div class="col-sm-12 col-md-4 col-lg-4 mt-3">
                 <div class="filtro-menu sticky-top">
 
                     <h5>Pesquise por nome</h5>

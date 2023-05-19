@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="form_AlterarFreelancer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="form_AlterarFreelancerSuccessIcon.css">
+
+
+
+
 </head>
 
 <body>
@@ -227,8 +233,8 @@
                     </div>
 
                     <div class="row mt-3 mb-4">
-                        <div class="col-sm-12 mt-3 ">
-                            <button class="btn btn-primary" name="btoSalvar" id="btoSalvar" onclick="freelancerAlterar()">Salvar</button>
+                        <div class="col-sm-12 mt-3 d-flex justify-content-center">
+                            <button class="btn " name="btoSalvar" id="btoSalvar" onclick="freelancerAlterar()">Salvar</button>
                         </div>
                     </div>
                 </form>
@@ -282,7 +288,7 @@
                     </div>
                     <div class="row mt-3 mb-4">
                         <div class="col-sm-12 mt-3 d-flex justify-content-center">
-                            <button class="btn" name="btoSalvar" id="btoSalvar" onclick="linguagemAdicionar()" style="background-color: var(--roxo-escuro); color:var(--cinza-claro)">Salvar</button>
+                            <button class="btn" name="btoSalvar" id="btoSalvar" onclick="linguagemAdicionar()">Salvar</button>
                         </div>
                     </div>
                 </form>
@@ -290,10 +296,32 @@
 
         </div>
 
+        <!---------------------------------->
+        <!-- MODAL DE SUCESSO DE ALTERAÇÃO-->
+        <!---------------------------------->
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button  type="button" class="btn-close ps-3 pt-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body">
+                        <p class="text-center">Dados alterados com sucesso!</p>
+                        <p class="text-center">
+                        <div class="success-checkmark">
+                            <div class="check-icon">
+                                <span class="icon-line line-tip"></span>
+                                <span class="icon-line line-long"></span>
+                                <div class="icon-circle"></div>
+                                <div class="icon-fix"></div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
-
-        <div id="resultado"></div>
     </div>
 
     <?php

@@ -128,6 +128,9 @@
             transition: .1s;
             background-color: transparent;
         }
+        body{
+            overflow-x: hidden;
+        }
     </style>
 
 </head>
@@ -153,7 +156,7 @@
     
     <div class="cartao">
     <div class="container-fluid">
-        <div class="row ">
+        <div class="row">
             <div class="col-sm-12 d-flex justify-content-center">
                 <div class="d-flex justify-content-center ">
                     <div class="cartao-conteudo">
@@ -210,17 +213,17 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
-        <div class="col-sm-1"></div>
-            <div class="col-sm-10">
+       <div>
+        <div class="row mt-5 mt-md-4 d-flex justify-content-sm-center">
+            <div class="col-sm-10 px-2">
                 <div class="seu-projeto">
                     <div class="texto mb-2">
                         <h3 class="d-inline seu-projeto-titulo">Seu projeto</h3>
                         <a href="perfil_freelancer_projetos.php" class="small d-inline" style="text-decoration: none;">Ver todos seus projetos</a>
                     </div>';
-            include_once("perfil_freelancer_seuProjeto.php");
+                    include_once("perfil_freelancer_seuProjeto.php");
 
-            echo '
+                    echo '
                 <hr class="mt-4">
             </div>
         </div>
@@ -240,16 +243,16 @@
             </div>
         </div>
             </div>
-            <div class="col-sm-1 col-md-1 d-lg-none"></div>
-            <div class="col-sm-1 col-md-1 d-lg-none"></div>
-            <div class="col-sm-10 col-md-10 col-lg-3 mt-3">';
+            <div class="col-1 col-md-1 d-lg-none"></div>
+            <div class="col-1 col-md-1 d-lg-none"></div>
+            <div class="col-12 col-md-10 col-lg-3 mt-3">';
 
             include_once('freelancer_feedback.php');
 
             echo '</div>            
         </div>
     </div>
-</div>      </div> </div>
+</div>      </div> </div> </div>
             ';
         }
     } catch (PDOException $ex) {

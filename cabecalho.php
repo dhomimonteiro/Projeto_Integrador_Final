@@ -57,6 +57,7 @@
                         <?=$nomeUsuario?>
                     </button>
                     <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="home_autenticar.php">Minha home</a></li>
                         <li><a class="dropdown-item" href="perfil_autenticar.php">Meu perfil</a></li>
                         <li><a class="dropdown-item" href="autenticar_sair.php">Sair</a></li>
                     </ul>
