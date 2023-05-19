@@ -119,7 +119,7 @@ function load_rating_data() {
             var html = '';
             html += '<div class="row">';
             html +=     '<div class="col-sm-12 d-flex justify-content-center">';
-            html +=         '<p>Tem nada aqui não</p>';
+            html +=         '<p> Esse freelancer ainda não possui feedback</p>';
             html +=     '</div>';
             html += '</div>';
 

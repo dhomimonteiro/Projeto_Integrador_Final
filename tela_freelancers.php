@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelancers</title>
 
+    <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 
@@ -15,8 +16,10 @@
 
     <style>
         .img {
-            width: 600px;
+            width: 100%;
             height: 300px;
+            max-width: 600px;
+            
         }
 
         .img img {
@@ -56,6 +59,15 @@
             border: none;
             background-color: var(--roxo-escuro);
         }
+
+        .tituloFreelancer {
+            font-family: 'Poppins';
+            font-weight: 600;
+        }
+
+        .destaque {
+            color: #7d2ae8;
+        }
     </style>
 </head>
 
@@ -66,15 +78,15 @@
     ?>
 
     <div class="container">
-        <div class="row d-flex flex-column-reverse flex-md-row">
-            <div class="col-sm-12 col-md-6 col-lg-6 topo-freelancers mt-4">
-                <h1 class="tituloFreelancer">Contrate um desenvolvedor de acordo com o que você precisa!</h1>
+        <div class="row d-flex flex-column-reverse align-items-sm-center flex-lg-row">
+            <div class="col-sm-12 col-md-10 col-lg-6 topo-freelancers mt-4">
+                <h1 class="tituloFreelancer text-sm-center text-md-start">Contrate um desenvolvedor de acordo com o que <span class="destaque"> você precisa!</span></h1>
 
                 <p class="pt-2">A GetDev possui profissionais experientes em todas as áreas de desenvolvimento e com as mais variadas linguagens de programação. Encontre aqui quem você precisa!</p>
             </div>
 
-            <div class="col-md-2 col-lg-6 img">
-                <img src="img/img-tela-freelancer.jpg" alt="">
+            <div class="col-md-2 col-lg-4 img">
+                <img src="img/img-tela-freelancer.png" alt="">
             </div>
         </div>
         <hr>
@@ -245,25 +257,25 @@
                     }
                 })
             }));
-        
+
         var texto = "";
-        $('#pesquisaNome').on('input', function(){
+        $('#pesquisaNome').on('input', function() {
             texto = $('#pesquisaNome').val();
 
             $.ajax({
-                    url: "tela_freelancer_fetch.php",
-                    type: "POST",
-                    data: "texto= " + texto,
-                    beforeSend: function() {
-                        $(".freelancers").html("Procurando");
-                    },
-                    success: function(data) {
-                        $(".freelancers").html(data);
-                    },
-                    error: function(jqXhr, textStatus, errorMessage) {
-                        $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
-                    }
-                })
+                url: "tela_freelancer_fetch.php",
+                type: "POST",
+                data: "texto= " + texto,
+                beforeSend: function() {
+                    $(".freelancers").html("Procurando");
+                },
+                success: function(data) {
+                    $(".freelancers").html(data);
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    $(".freelancers").html("Ops, algo de errado aconteceu. Recarregue a página para voltar ao normal!");
+                }
+            })
         });
     </script>
 

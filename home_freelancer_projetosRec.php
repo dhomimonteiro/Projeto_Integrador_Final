@@ -10,6 +10,12 @@
         transform: scale(1.1);
         transition: .1s;
     }
+
+    .mensagem {
+        font-family: 'Open sans', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+    }
 </style>
 
 <?php
@@ -26,6 +32,17 @@ try {
 } catch (PDOException $ex) {
     echo $ex->getMessage();
 }
+
+    if ($sql->rowCount()== 0) {
+        echo'
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-sm-6">
+                <div class="mensagem text-center">Não há projetos com suas linguagens no momento :(</div>
+            </div>
+        </div>
+
+        ';
+    }
 
 while ($row = $sql->fetch()) {
     $nome_projeto = $row[0];
@@ -81,7 +98,6 @@ while ($row = $sql->fetch()) {
 ';
    
 }
-
-
 ?>
+
 

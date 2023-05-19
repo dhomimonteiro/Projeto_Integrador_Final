@@ -55,7 +55,7 @@ if(isset($_POST["action"]))
     where id_freelancer = $id order by id_review desc");
 
 	if ($sql->rowCount()==0) {
-		echo 'tem nada aqui não';
+		echo 'Esse freelancer ainda não possui feedbacks.';
 	}
 
     while($row = $sql->fetch())

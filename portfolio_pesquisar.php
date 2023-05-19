@@ -17,7 +17,7 @@ include_once('Projeto/TelaLoginteste/conexao.php');
             echo '
             <div class="row mt-5">
                 <div class="col-sm-12 d-flex flex-column align-items-center">
-                    <h4> Ops, esse freelancer não tem um portfólio! :( </h4>
+                    <h4> Ops, esse freelancer não tem um portfólio! </h4>
                     <img src="img/no-found-portfolio.png" style="height:400px">
                 </div>
             </div>

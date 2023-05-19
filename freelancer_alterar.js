@@ -84,7 +84,10 @@ function linguagemAdicionar(){
             $('#resultado').html("ENVIANDO...");
         },
         success: function(data, status, xhr) {
-            alert();
+            $('.modal').show();
+            $('.btn-close').click(function(){
+                $('.modal').hide();
+            })
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
             alert(data);

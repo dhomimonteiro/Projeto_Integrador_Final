@@ -179,3 +179,14 @@
     transition: .1s;
 }
 
+#perfil-aba, #linguagem-aba {
+    color: var(--roxo-escuro);
+    font-family: 'Open Sans';
+}
+
+#perfil-aba:focus, #linguagem-aba:focus {
+
+    transform: scale(1.05);
+    transition: .1s;
+}
+

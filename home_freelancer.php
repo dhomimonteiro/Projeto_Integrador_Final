@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+    <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -54,7 +55,7 @@
             <div class="row mt-3">
                 <div class="col-sm-12">
                     <h1 style="font-size:30px;">Projetos recomendados</h1>
-                    <p>Projetos recomendados com base nas suas linguagens!</p>
+                    
                 </div>
                 <div class="projetos-recomendados">
                     <?php include_once('home_freelancer_projetosRec.php');?>

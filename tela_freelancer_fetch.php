@@ -39,6 +39,17 @@ if ($_POST) {
 
         $query = $conn->query($joaquim);
 
+        if ($query->rowCount() == 0) {
+            echo '
+            <div class="row mt-4">
+                <div class="col-sm-12 d-flex flex-column align-items-center">
+                    <h4> Ops, esse resultado não foi encontrado! :( </h4>
+                    <img src="img/no-found-freelancer.png">
+                </div>
+            </div>
+            ';
+        }
+
         while ($row1 = $query->fetch()) {
             echo '                             
         <div class="card mt-3">
@@ -106,6 +117,18 @@ if ($_POST) {
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
+
+        if ($sql->rowCount() == 0) {
+            echo '
+            <div class="row mt-4">
+                <div class="col-sm-12 d-flex flex-column align-items-center">
+                    <h4> Ops, esse resultado não foi encontrado! :( </h4>
+                    <img src="img/no-found-freelancer.png">
+                </div>
+            </div>
+            ';
+        }
+
         while ($row = $sql->fetch()) {
             $nome = $row[1];
             echo '                             
@@ -180,7 +203,7 @@ if ($_POST) {
             <div class="row mt-4">
                 <div class="col-sm-12 d-flex flex-column align-items-center">
                     <h4> Ops, esse resultado não foi encontrado! :( </h4>
-                    <img src="img/no-found.jpg" style="height:500px">
+                    <img src="img/no-found-freelancer.png">
                 </div>
             </div>
             ';
@@ -305,7 +328,7 @@ if ($_POST) {
             echo            '</div>
                     </div>
                     <div class="col-sm-3 d-flex flex-row justify-content-center">
-                        <a class="btn btn-primary" href="tela_freelancer_autenticar.php">Contratar</a>
+                    <a class="btn btoContratar" href="tela_freelancer_autenticar.php" id="btoContratar" name="btoContratar">Contratar</a>
                     </div>                    
                 </div>
             </div>

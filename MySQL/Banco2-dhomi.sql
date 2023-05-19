@@ -141,6 +141,9 @@ create table FreelancerLinguagem
 
 drop table freelancerLinguagem;
 
+select linguagem.nome_linguagem from freelancerlinguagem
+inner join linguagem on freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem;
+
 select freelancerlinguagem.id_freelancerLinguagem, freelancerlinguagem.id_freelancer_freelancerLinguagem, 
 freelancerlinguagem.id_linguagem_freelancerLinguagem, Linguagem.nome_linguagem, freelancer.nome_freelancer from freelancerlinguagem
 INNER JOIN Linguagem on  freelancerlinguagem.id_linguagem_freelancerLinguagem = Linguagem.id_linguagem
@@ -201,16 +204,31 @@ create table Projeto
     constraint Fk_Id_Linguagem_Projeto foreign key (id_linguagem_projeto) references Linguagem (id_linguagem)
 );
 
+SELECT * from projeto where status_projeto = 'Em espera' and id_linguagem_projeto = 1;
+SELECT * FROM projeto
+where id_linguagem_projeto in (
+    SELECT freelancerLinguagem.id_linguagem_freelancerLinguagem
+    FROM freelancerLinguagem where freelancerLinguagem.id_freelancer_freelancerLinguagem = 1
+);
+
+select projeto.nome_projeto, projeto.descricao_projeto, projeto.status_projeto, projeto.versao_projeto, contratante.nome_contratante,
+contratante.img_contratante, linguagem.nome_linguagem from projeto
+INNER JOIN Contratante on Projeto.id_contratante_projeto = Contratante.id_contratante
+INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where id_linguagem_projeto in (
+    SELECT freelancerLinguagem.id_linguagem_freelancerLinguagem
+    FROM freelancerLinguagem where freelancerLinguagem.id_freelancer_freelancerLinguagem = 1
+);
+
 drop table projeto;
 insert into projeto
-	(id_contratante_projeto, id_freelancer_projeto, id_linguagem_projeto, nome_projeto,img_projeto, versao_projeto,descricao_projeto, status_projeto, obs_projeto)
+	(id_contratante_projeto, id_linguagem_projeto, nome_projeto,img_projeto, versao_projeto,descricao_projeto, status_projeto, obs_projeto)
 values
-	(5, 1, 24,'Banco de Dados MySQL', '', '4.5','Construir um banco de dados MySQL para integrar todo o sistema da nossa empresa,
-    garantindo segurança, bom funcionamento e escalabilidade.', 'Finalizado', '');
+	(5, 7,'Sistema Desktop', '', '0.0','Melhorar nossa aplicação web com C# WinForms', 'Em espera', '');
 
 SELECT projeto.nome_projeto, projeto.img_projeto, projeto.descricao_projeto, projeto.status_projeto, contratante;
 select * from linguagem;
 select * from contratante;
+select * from freelancer;
 select * from projeto;
 select projeto.nome_projeto, projeto.descricao_projeto, projeto.status_projeto, projeto.versao_projeto, contratante.nome_contratante,
 contratante.img_contratante, linguagem.nome_linguagem from projeto
@@ -271,6 +289,8 @@ create table Funcionarios
 	status_Funcionario varchar(50) not null,
 	obs_Funcionario varchar(255) null
 );
+
+select * from projeto;
 
 create table reviewFreelancer
 (
