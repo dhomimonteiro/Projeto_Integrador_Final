@@ -218,7 +218,7 @@
                         <div class="col-sm-2"></div>
                         <div class="col-sm-3">
                         <div id="btnSair">
-                            <a href="" class="btn form-control" id="btnSair">Sair</a>
+                            <a href="Projeto/TelaLoginteste/index.php" class="btn form-control btnSair" id="btnSair">Sair</a>
                         </div>
                         </div>
                         <div class="col-sm-2">

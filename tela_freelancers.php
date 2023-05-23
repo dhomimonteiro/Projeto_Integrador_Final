@@ -148,24 +148,7 @@
 
                         </div>
                     </div>
-                    <button class="accordion titulo-menu w-100">
-                        <h5>Nota</h5>
-                    </button>
-                    <div class="panel menu-filtros px align-self-center text-center">
-                        <p class="small d-inline-block">
-                            <input type="radio" name="área">
-                            Front-end
-                        </p>
-                        <p class="small d-inline-block">
-                            <input type="radio" name="área">
-                            Back-end
-                        </p>
-                        <p class="small d-inline-block">
-                            <input type="radio" name="área">
-                            Fullstack
-                        </p>
-
-                    </div>
+                    
                 </div>
             </div>
             <div class="col sm-6 freelancers" style="min-height: 500px">

@@ -53,35 +53,20 @@ body{
     color: #2b343b;
     font-size: 11pt;
 }
-#btnCadastrar{
+#btnCadastrar, #btnSair{
     text-align: center;
     background: linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
     height: 40px;
     border: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #fff;
     border-radius: 20px;
     outline: none;
     cursor: pointer;
 }
 
-#btnCadastrar:hover{
+#btnCadastrar:hover, #btnSair:hover{
     background: linear-gradient(-45deg,#9731b6,#632b74, #5e015e);
     color: white;
 }
-#btnSair{
-    text-align: center;
-}
-#btnSair button{
-    background: linear-gradient(-45deg,#af40d1,#8a43a0, #800080);
-    height: 40px;
-    border: none;
-    font-size: 1.2em;
-    color: #fff;
-    border-radius: 20px;
-    outline: none;
-    cursor: pointer;
-}
-#btnSair button:hover{
-    background: linear-gradient(-45deg,#9731b6,#632b74, #5e015e);
-}
+

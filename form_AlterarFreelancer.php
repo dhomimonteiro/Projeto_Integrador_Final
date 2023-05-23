@@ -277,7 +277,7 @@
                                 <h6>Adicionar nova linguagem:</h6>
                             </div>
                             <div class="col-sm-6 d-inline-flex justify-content-start">
-                                <select name="txtLinguagem" id="txtLinguagem" class="select">
+                                <select name="txtLinguagem" id="txtLinguagem" class="select txtLinguagem">
                                     <option value="">--Selecione uma linguagem--</option>
                                     <?php
                                     include_once('TelaPesquisarProjeto.php');

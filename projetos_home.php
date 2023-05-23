@@ -8,7 +8,7 @@
             <?php
             include_once('Projeto/TelaLoginteste/conexao.php');
             try {
-                $sql = $conn->query('SELECT * FROM projeto LIMIT 8');
+                $sql = $conn->query('SELECT * FROM projeto ORDER BY RAND() LIMIT 8');
             } catch (PDOException $ex) {
                 echo $ex->getMessage();
             }
@@ -18,7 +18,7 @@
                 echo
 
                 '<div class="col-sm-3 d-flex flex-row justify-content-center" >' .
-                    '<img src="' . $img . '" alt="" class="bg-dark" style="height:200px;width:300px;margin-bottom: 50px; border-radius: 10%;">' .
+                    '<img src="' . $img . '" alt="" class="bg-dark" style="height:200px;width:300px;margin-bottom: 20px; border-radius: 10%; object-fit: cover">' .
                     '</div>';
             }
             ?>

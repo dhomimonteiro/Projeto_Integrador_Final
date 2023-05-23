@@ -2,7 +2,7 @@
     include_once('Projeto/TelaLoginteste/conexao.php');
 
 try {
-    $sql = $conn->query("Select * from Linguagem");
+    $sql = $conn->query("SELECT * from Linguagem order by nome_linguagem");
 
 
     while($linha = $sql->fetch()){
@@ -10,8 +10,8 @@ try {
         $ID = $linha[0];
         $Nome = $linha[1];
         
-
-        echo
+        echo 
+        // $ID . $Nome;
         '<option value="'.$ID.'">'.$Nome.'</option>';
     }
     

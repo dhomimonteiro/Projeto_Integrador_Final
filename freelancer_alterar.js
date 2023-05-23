@@ -69,17 +69,18 @@ function freelancerAlterar(){
 
 function linguagemAdicionar(){
     let id_freelancer = $('#txtID').val();
-    let id_linguagem = $('#txtLinguagem').val();
-
-    let action = 'freelancer_linguagem_cadastrar.php'
-
+    let id_linguagem = $('.txtLinguagem').val();
+    let action = 'freelancer_linguagem_cadastrar.php';
+    
     $.ajax({
+        
         url: action,
         type: 'post',
         data: {
             txtID: id_freelancer,
             txtLinguagem: id_linguagem 
         },
+        
         beforeSend: function() {
             $('#resultado').html("ENVIANDO...");
         },
@@ -88,6 +89,8 @@ function linguagemAdicionar(){
             $('.btn-close').click(function(){
                 $('.modal').hide();
             })
+
+            
         },
         error: function (jqXhr, textStatus, errorMessage, data) {
             alert(data);

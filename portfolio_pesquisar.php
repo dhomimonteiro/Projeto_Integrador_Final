@@ -11,7 +11,7 @@
 include_once('Projeto/TelaLoginteste/conexao.php');
 
     try {
-        $sql = $conn->query("SELECT * from Portfolio_Freelancer where id_freelancer_portfolio= $idUsuario");
+        $sql = $conn->query("SELECT * from Portfolio_Freelancer where id_freelancer_portfolio= $idUsuario order by id_projeto_porfolio desc");
 
         if ($sql->rowCount() == 0){
             echo '

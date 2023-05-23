@@ -67,7 +67,7 @@
     <!-- Section: Links -->
     <section class="">
       <!--Grid row-->
-      <div class="row">
+      <div class="row d-flex justify-content-around">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
           <h5 class="text-uppercase link" style="text-align: left;">Sobre a Empresa</h5>
@@ -110,7 +110,7 @@
               <a href="#!" class="text-white">Desenvolvimento Web</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Font-end</a>
+              <a href="#!" class="text-white">Front-end</a>
             </li>
             <li>
               <a href="#!" class="text-white">Back-end</a>
@@ -123,24 +123,7 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase link" style="text-align: left;">Freelancers</h5>
-
-          <ul class="list-unstyled mb-0" style="text-align: left;">
-            <li>
-              <a href="#!" class="text-white">Freelancers Brasil</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Freelancers Colômbia</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Freelancers Argentina</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Freelancers Paraguai</a>
-            </li>
-          </ul>
-        </div>
+        
         <!--Grid column-->
       </div>
       <!--Grid row-->

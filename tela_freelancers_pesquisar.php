@@ -94,7 +94,7 @@ while ($row = $sql->fetch()) {
     echo            '</div>
             </div>
             <div class="col-sm-3 d-flex flex-row justify-content-center">
-                <a class="btn btoContratar" href="tela_freelancer_autenticar.php" id="btoContratar" name="btoContratar">Contratar</a>
+                <a class="btn btoContratar" href="#" id="btoContratar" name="btoContratar">Contratar</a>
             </div>
         </div>
     </div>

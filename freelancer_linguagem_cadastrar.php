@@ -2,7 +2,7 @@
     include_once('Projeto/TelaLoginteste/conexao.php');
     
     if ($_POST) {
-        // print_r($_POST);
+        //  print_r($_POST);
         $id_freelancer = $_POST['txtID'];
         $id_linguagem = $_POST['txtLinguagem'];
         $status_linguagem = 'Ativo';

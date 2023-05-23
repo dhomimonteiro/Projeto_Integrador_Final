@@ -27,7 +27,7 @@ try {
     INNER JOIN Contratante on Projeto.id_contratante_projeto = Contratante.id_contratante
     INNER JOIN linguagem on projeto.id_linguagem_projeto = linguagem.id_linguagem where id_linguagem_projeto in (
         SELECT freelancerLinguagem.id_linguagem_freelancerLinguagem
-        FROM freelancerLinguagem where freelancerLinguagem.id_freelancer_freelancerLinguagem = $idUsuario
+        FROM freelancerLinguagem where freelancerLinguagem.id_freelancer_freelancerLinguagem = $idUsuario and projeto.status_projeto = 'Ativado'
     );");
 } catch (PDOException $ex) {
     echo $ex->getMessage();
@@ -88,7 +88,9 @@ while ($row = $sql->fetch()) {
 
         </div>
         <div class="row mt-3">
-            <div class="col-sm-9"></div>
+            <div class="col-sm-9">
+            <p style="background-color: #1e102e; color:#e6e6e6; border-radius: 5px" class="d-inline mx-2 px-2">' . $linguagem . '</p>
+            </div>
             <div class="col-sm-3 d-flex flex-row justify-content-center">
                 <button class="btn btoCandidatar">Candidatar-se</button>
             </div>
