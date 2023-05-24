@@ -116,7 +116,7 @@
                             <!-- The Modal -->
                             <div id="id01" class="w3-modal modal">
                                 <div class="w3-modal-content w3-animate-top">
-                                    <header class="w3-container w3-purple">
+                                    <header class="w3-container" style="background-color: #1e102e; color: white">
                                         <span onclick="document.getElementById('id01').style.display='none'" id="modalsair" class="w3-button w3-display-topright">&times;</span>
                                         <h2>Criar novo Projeto</h2>
                                     </header>
@@ -173,16 +173,18 @@
                                                 <input type="text" name="txtIDcontratante" id="txtIDcontratante" style="display:none" value="<?= $idUsuario ?>">
                                             </div>
                                         </div>
-                                        <footer class="w3-container w3-purple mt-3">
+                                        <footer class="w3-container mt-3" style="background-color: #1e102e; color: white">
                                             <div class="row p-3">
                                                 <div class="col-sm-10"></div>
                                                 <div class="col-sm-2">
                                                     <button id="btnCriarProjeto" class="w3-button w3-yellow form-control" onclick="criarProjeto()">Criar</button>
                                                 </div>
                                             </div>
+                                            
                                         </footer>
                                     </div>
                                 </div>
+                                
                                 <!-- motel -->
                         </form>
                     </div>

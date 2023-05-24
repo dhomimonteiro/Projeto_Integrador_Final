@@ -1,10 +1,14 @@
 <?php
     include_once('Projeto/TelaLoginteste/conexao.php');
     
-
 try {
 
     $sql = $conn->query("SELECT MAX(id_projeto) FROM projeto where id_contratante_projeto = $idUsuario");
+
+    if ($sql->rowCount() == 0) {
+      echo 'Você não criou projetos com a GetDev';
+    }
+
 
     while($linha = $sql->fetch()){
         $UltimoProjeto = $linha[0];
@@ -53,9 +57,6 @@ try {
                     ;
             }
             return;
-
-            
-        
 
         } 
         catch (PDOException $ex) {

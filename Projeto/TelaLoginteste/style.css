@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -119,9 +120,6 @@ body.active {
     cursor: pointer;
 }
 
-.caixaForm .form form input[type="submit"]:hover {
-
-}
 
 .caixaForm .form form .esqueceu {
     color: #040305;
@@ -142,11 +140,11 @@ body.active {
 
 .h3Entrar{
     font-size: 40px !important;
-    font-family: monospace !important;
+    font-family: 'Poppins', sans-serif;
 }
 .h3Inscrever{
     font-size: 25px !important;
-    font-family: monospace !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 .button {
@@ -165,9 +163,7 @@ body.active {
     position: relative;
     top: 2px;
    }
-   .border-none{
-
-   }
+   
 @media only screen and (max-width: 950px){
     .containerLogin{
         max-width: 400px;

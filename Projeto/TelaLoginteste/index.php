@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -80,7 +80,7 @@ if($_POST){
                 </div>
             </div>
             <div class="caixa inscrever">
-                <h2>Não possui conta??</h2>
+                <h2>Não possui conta?</h2>
                 <button class="btnCadastrar">Cadastrar</button>
             </div>
         </div>
@@ -119,7 +119,7 @@ if($_POST){
                     </div>
                     <div class="row mb-4">
                         <div class="col-sm-12">
-                            <button class=" btn-lg" formaction="../../../Projeto_Integrador_Final/form_CadastroFreelancer.php">Cadastrar como Freelancer</button>
+                            <button class="button form-control btn-lg" formaction="../../../Projeto_Integrador_Final/form_CadastroFreelancer.php">Cadastrar como Freelancer</button>
                         </div>
                     </div>
                     <div class="row mt-5">

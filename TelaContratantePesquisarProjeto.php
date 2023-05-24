@@ -2,8 +2,8 @@
     include_once('Projeto/TelaLoginteste/conexao.php');
 
 try {
-    $sql = $conn->query("select date_format(dtCriacao_projeto,'%d/%m/%Y'),nome_projeto,status_projeto,obs_projeto,id_linguagem_projeto ,id_projeto, img_projeto
-    from Projeto");
+    $sql = $conn->query("SELECT date_format(dtCriacao_projeto,'%d/%m/%Y'),nome_projeto,status_projeto,obs_projeto,id_linguagem_projeto ,id_projeto, img_projeto
+    from Projeto where status_projeto = 'Ativado'");
 
 
     while($linha = $sql->fetch()){

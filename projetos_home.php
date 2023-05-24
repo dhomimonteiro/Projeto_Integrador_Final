@@ -4,7 +4,7 @@
 <div class="col-12">
     
     <div class="container">
-        <div class="row mt-5">
+        <div class="row my-5">
             <?php
             include_once('Projeto/TelaLoginteste/conexao.php');
             try {

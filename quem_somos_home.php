@@ -1,4 +1,4 @@
-<div class="sessaoQueFazemos">
+<div class="sessaoQueFazemos" style="background: #fff;">
     <div class="container">
         <div class="row py-4">
             <div class="col-lg-6">

@@ -28,9 +28,9 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-sm-12 col-lg-6 topo-freelancers">
-                <h1 class="Titulo-Contratante">Procure uma emrpesa que se encaixe com você</h1>
+                <h1 class="Titulo-Contratante">Procure uma empresa que se encaixe com você</h1>
                 <hr>
-                <p>A GetDev possiu parceria com varias empresas "vai ter uma texto bem foda aqui to sem ideia"</p>
+                <p>A GetDev possiu parceria com várias empresas dedicadas e que postam projetos regularmente, sempre ofertando vagas para os nossos freelancers</p>
             </div>
             <div class="col-sm-12 col-lg-6">
                 <div class="fundo_img">
@@ -74,40 +74,7 @@
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="card ">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h5 class="card-title cardtitle">Pagina em HTML e CSS</h5>
-                                        <hr>
-                                    </div>
-                                    <div class="col-sm-4 ">
-                                        <p class="cardData">Criação: 25/09/1908</p>
-                                        <hr>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <img src="img/image.jpeg" class="imgCard" alt="" srcset="">
-                                    </div>
-                                    <div class="col-sm-8 mt-5">
-                                        <p class="card-text">O projeto de desenvolvimento de sistemas é um esforço
-                                            coordenado para criar software customizado para atender às necessidades
-                                            específicas de uma organização ou empresa. O processo de desenvolvimento
-                                            de sistemas pode ser dividido em várias fases, cada uma delas com suas
-                                            próprias tarefas e objetivos específicos.</p>
-                                        
-                                    </div>
-                                </div>
-                                <div class="row ">
-                                    <div class="col-sm-5"></div>
-                                    <div class="col-sm-3">Linguagem: CSS</div>
-                                    <div class="col-sm-4">
-                                        <a href="" class="btn btn-primary">Mandar Proposta</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <?php include_once('TelaContratantePesquisarProjeto.php') ?>
                     </div>
                 </div>
